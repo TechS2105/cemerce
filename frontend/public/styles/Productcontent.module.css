@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'productContentFont';
+    src: url('../fonts/magenda/MagendaRegular-MVwjx.ttf');
+}
+
+.productSubHeading{
+
+    font-size: 1.5rem;
+    font-family: 'productContentFont';
+    padding-left: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+
+}
+
+.productSubPara{
+
+    font-size: 1rem;
+    letter-spacing: 2px;
+    font-family: 'productContentFont';
+    padding-left: 20px;
+    margin-bottom: 10px;
+
+}
+
+.productCartButton{
+
+    margin-left: 20px;
+    width: 120px;
+    background-color: orange;
+    height: 1.8rem;
+    border: none;
+    color: snow;
+    font-family: 'productContentFont';
+    font-size: 1rem;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.8s ease;
+
+}
+
+.productCartButton:hover{
+
+    transform: scale(1.08) translate(5px, 5px);
+    background-color: transparent;
+    border: 1px solid orange;
+    color:  orange;
+
+}

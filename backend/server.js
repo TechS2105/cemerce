@@ -5,6 +5,7 @@ import pg from 'pg';
 import dotenv from 'dotenv';
 import shopProduct from './shop.js';
 import menProduct from './Men.js';
+import menCollections from './Mencollections.js'
 
 dotenv.config();
 
@@ -20,18 +21,35 @@ app.get('/', (req, res) => {
 
 });
 
+/** Create Shop Product api endpoint */
 app.get('/api/shop/product', (req, res) => {
 
     res.status(200).json(shopProduct);
 
 });
 
-/** create Men Product api fetch point */
+/** create Men Product api endpoint */
 app.get('/api/men/product', (req, res) => {
 
     res.status(200).json(menProduct);
 
-})
+});
+
+/** Create Men Product Collection api endpoint */
+app.get('/api/men/collections/product', (req, res) => {
+
+    try {
+        
+        res.status(200).json(menCollections);
+
+    } catch (error) {
+        
+        res.status(400).json({ error: error });
+
+    }
+
+});
+
 
 app.listen(PORT, () => {
 

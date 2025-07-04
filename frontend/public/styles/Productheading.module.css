@@ -1,0 +1,88 @@
+@font-face {
+    font-family: 'productHeadingFont';
+    src: url('../fonts/magenda/MagendaRegular-MVwjx.ttf');
+}
+
+.menProductHeading {
+
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+}
+
+.menProductHeading>h2 {
+
+    font-size: 4rem;
+    font-family: 'productHeadingFont';
+    letter-spacing: 2px;
+    position: relative;
+
+}
+
+.menProductHeading>h2::before {
+
+    position: absolute;
+    top: 5rem;
+    right: 0;
+    content: "";
+    width: 40%;
+    height: 5px;
+    background-color: orange;
+    border-radius: 50%;
+    animation: blackLineAnimation 5s linear infinite;
+
+}
+
+@keyframes blackLineAnimation {
+
+    50% {
+
+        transform: translateX(-200%);
+        opacity: 0;
+
+    }
+
+    0%,
+    100% {
+
+        transform: translateX(50%);
+
+    }
+
+}
+
+.menProductHeading>h2::after {
+
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    content: "";
+    height: 5px;
+    width: 40%;
+    background-color: #292929;
+    border-radius: 50%;
+    animation: orangeLineAnimation 5s linear infinite;
+
+}
+
+@keyframes orangeLineAnimation {
+
+    50% {
+
+        transform: translateX(200%);
+        opacity: 0;
+
+    }
+
+    0%,
+    100% {
+
+        transform: translateX(-50%);
+
+    }
+
+}
