@@ -37,6 +37,17 @@
     top: 20px;
     font-size: 30px;
     cursor: pointer;
+    transition: all 0.8s ease;
+
+}
+
+.productImage > svg:nth-child(1):hover{
+
+    transform: scale(1.1);
+    background-color: snow;
+    padding: 5px;
+    border-radius: 50%;
+    color: orange;
 
 }
 
@@ -48,6 +59,17 @@
     top: 100px;
     font-size: 30px;
     cursor: pointer;
+    transition: all 0.8s ease;
+
+}
+
+.productImage > svg:nth-child(2):hover{
+
+    color: orange;
+    transform: scale(1.1);
+    background-color: snow;
+    padding: 5px;
+    border-radius: 50%;
 
 }
 

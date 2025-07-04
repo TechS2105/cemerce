@@ -3,7 +3,8 @@ import WishlistStyle from '../../public/styles/Wishlist.module.css';
 import { RiArrowRightSLine } from "react-icons/ri";
 import {useNavigate} from 'react-router-dom'
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch} from 'react-redux';
+import { removeWishlistProduct } from '../features/Shop/WishListSlice';
 
 let isWishlistEmpty = 0;
 
@@ -12,6 +13,13 @@ function Wishlist() {
     const navigate = useNavigate();
 
     const { items: wishList } = useSelector((state) => state.wishlist);
+    const dispatch = useDispatch();
+
+    function handleRemoveWishlist(id) {
+        
+        dispatch(removeWishlistProduct(id));
+
+    }
     
     return (
 
@@ -53,12 +61,12 @@ function Wishlist() {
 
                                 return (
 
-                                    <tr>
+                                    <tr key={wishListItem.id}>
 
                                         <td><img src={wishListItem.image} alt={wishListItem.title} /></td>
                                         <td> {wishListItem.title} </td>
                                         <td> {wishListItem.price} /- </td>
-                                        <td> <RiDeleteBin6Line /> </td>
+                                        <td> <RiDeleteBin6Line onClick={() => { handleRemoveWishlist(wishListItem.id) }}/> </td>
 
                                     </tr> 
 

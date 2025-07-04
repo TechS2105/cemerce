@@ -8,7 +8,7 @@ function Productimage(props) {
 
         <>
         
-            <GoHeart />
+            <GoHeart onClick={props.onButtonClick} />
             <FaRegEye />
             <img src={props.productImage} alt={props.title} />
         

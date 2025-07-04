@@ -1,40 +1,75 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import ProductStyle from '../../public/styles/Products.module.css';
 import ProductImage from '../components/Productsimage';
 import ProductContent from '../components/Productcontent';
+import { fetchMenCollections } from '../features/Shop/MenCollectionSlice';
+import { useSelector, useDispatch } from 'react-redux';
+import { addToCart } from '../features/Shop/CartSlice';
+import { addToWishList } from '../features/Shop/WishListSlice';
 
 function Product() {
+
+    const { items: menCollection, status } = useSelector((state) => state.menCollections);
+    useSelector((state) => console.log(state.cart));
+    useSelector((state) => console.log(state.wishlist))
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+
+        if(status === 'idle'){
+
+            dispatch(fetchMenCollections());
+
+        }
+
+    }, [status, dispatch])
+
+    if(status === 'loading') return <p> Product is loading...</p>
+    if(status === 'failed') return <p> Product not found...</p>
     
     return (
 
         <>
         
-            <div className={ProductStyle.productBox}>
+            {menCollection.map((menProduct) => {
 
-                <div className={ProductStyle.productImage}>
+                return (
 
-                    <ProductImage 
-                    
-                        productImage = "https://images.unsplash.com/photo-1597354984706-fac992d9306f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHByb2R1Y3QlMjBpbWFnZXxlbnwwfHwwfHx8MA%3D%3D"
-                        
-                    />
+                    <div className={ProductStyle.productBox} key={menProduct.id}>
 
-                </div>
+                        <div className={ProductStyle.productImage}>
 
-                <div className={ProductStyle.productContent}>
+                            <ProductImage 
+                            
+                                productImage={menProduct.image}
+                                title={menProduct.title}
+                                onButtonClick = {() => {dispatch(addToWishList(menProduct))}}
+                                
+                            />
 
-                    <ProductContent
-                    
-                        productHeading="Men's Shirt"
-                        productCategory="Men's"
-                        productPrice='5000'
-                        cartButton="Add To Cart"
-                        
-                    />
+                        </div>
 
-                </div>
+                        <div className={ProductStyle.productContent}>
 
-            </div>
+                            <ProductContent
+                            
+                                productHeading={menProduct.title}
+                                productCategory={menProduct.category}
+                                productPrice={menProduct.price}
+                                cartButton="Add To Cart"
+                                onButtonClick = {() => {dispatch(addToCart(menProduct))}}
+                                
+                            />
+
+                        </div>
+
+                    </div>
+
+                );
+
+            })}
+           
             
         </>
 
