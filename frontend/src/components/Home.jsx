@@ -6,7 +6,7 @@ import HomeGrid from '../components/Homegrid';
 import HomeMenOutfit from '../components/Homemenoutfit';
 import { useNavigate } from 'react-router-dom';
 
-let video = '../../public/video/video.mp4';
+let video = '../../public/video/newvideo.mp4';
 
 function Home() {
 

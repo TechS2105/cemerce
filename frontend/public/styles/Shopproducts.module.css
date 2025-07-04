@@ -1,0 +1,94 @@
+@font-face {
+    font-family: 'shopProductFont';
+    src: url('../fonts/magenda/MagendaRegular-MVwjx.ttf');
+}
+
+.shopProductSection{
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 50px;
+
+}
+
+.shopProductSection > .shopProductBox{
+
+    width: 20rem;
+    height: 30rem;
+    box-shadow: 5px 5px 10px #29292950;
+    overflow: hidden;
+    border-radius: 10px;
+
+}
+
+.shopProductBox > .shopProductImage{
+
+    width: 100%;
+    height: 65%;
+    background-color: antiquewhite;
+
+}
+
+.shopProductImage > img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.shopProductContent{
+
+    width: 100%;
+    height: 35%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    font-family: 'shopProductFont';
+
+}
+
+.shopProductContent > h3{
+
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+
+}
+
+.shopProductContent > p{
+
+    letter-spacing: 2px;
+    font-size: 1rem;
+
+}
+
+.shopProductContent > button{
+
+    width: 120px;
+    height: 1.9rem;
+    background-color: orange;
+    border: none;
+    outline: none;
+    font-family: 'shopProductFont';
+    color: snow;
+    font-weight: bold;
+    letter-spacing: 1.4px;
+    cursor: pointer;
+    transition: all 0.8s ease;
+
+}
+
+.shopProductContent > button:hover{
+
+    border: 1px solid orange;
+    background-color: transparent;
+    color: #292929;
+    transform: scale(1.2) translate(10px, 5px);
+
+}

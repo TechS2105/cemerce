@@ -6,7 +6,7 @@ export const fetchHomeMenProduct = createAsyncThunk('homemenProduct/fetchHomeMen
     const response = await axios.get('http://localhost:3000/api/men/product');
     return response.data;
 
-})
+});
 
 const HomeMenSlice = createSlice({
 
@@ -14,6 +14,7 @@ const HomeMenSlice = createSlice({
     initialState: {
 
         items: [],
+        secondItems: [],
         status: 'idle'
 
     },
@@ -35,7 +36,7 @@ const HomeMenSlice = createSlice({
 
         })
 
-    }
+    },
 
 });
 
