@@ -1,0 +1,26 @@
+.categoryBox {
+
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    filter: drop-shadow(5px 2px 5px #292929);
+    cursor: pointer;
+    transition: all 0.8s ease;
+
+}
+
+.categoryBox:hover{
+
+    transform: scale(1.2);
+    border-radius: 10px;
+
+}
+
+.categoryBox>img {
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}

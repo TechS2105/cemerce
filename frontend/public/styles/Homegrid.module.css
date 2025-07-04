@@ -1,0 +1,113 @@
+@font-face {
+    font-family: gridFont;
+    src: url('../fonts/magenda/MagendaRegular-MVwjx.ttf');
+}
+
+.grid{
+
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px 100px 100px 100px 100px 100px;
+    overflow: hidden;
+
+}
+
+.grid > .gridBox1{
+
+    grid-row: 1 / -1;
+    grid-column: 1 / 8;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+
+}
+
+.grid .gridBox1 > h2{
+
+    padding-left: 20px;
+    font-family: 'gridFont';
+    font-size: 5rem;
+    width: 700px;
+    color: snow;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px #292929;
+
+}
+
+.grid .gridBox1 > img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    z-index: -2;
+
+}
+
+.grid > .gridBox2{
+
+    grid-area: 1 / 16 / 5 / 8;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+
+}
+
+.grid .gridBox2 > img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    z-index: -2
+
+}
+
+.grid .gridBox2 > h2{
+
+    font-size: 5rem;
+    font-family: 'homeTextFont';
+    padding-left: 20px;
+    color: snow;
+    width: 600px;
+    text-shadow: 2px 2px 5px #292929;
+    letter-spacing: 3px;
+
+}
+
+.grid > .gridBox3{
+
+    grid-area: 5 / 8 / -1 / 16;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+
+}
+
+.grid .gridBox3 > h2{
+
+    padding-left: 20px;
+    font-size: 5rem;
+    width: 600px;
+    color: snow;
+    font-family: 'homeTextFont';
+    text-shadow: 2px 2px 5px #292929;
+    letter-spacing: 2px;
+
+}
+
+.grid .gridBox3 > img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    z-index: -2;
+
+}
