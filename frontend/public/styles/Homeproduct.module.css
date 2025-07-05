@@ -1,0 +1,183 @@
+@font-face {
+    font-family: 'homeProductFont';
+    src: url('../fonts/magenda/MagendaRegular-MVwjx.ttf');
+}
+
+.homeProductContainer{
+
+    width: 100%;
+    height: 38rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+
+}
+
+.homeProductContainer > .homeProductBox{
+
+    width: 20rem;
+    height: 30rem;
+    box-shadow: 5px 5px 10px #29292962;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+
+.homeProductBox > .homeProductImage{
+
+    width: 100%;
+    height: 65%;
+    position: relative;
+
+}
+
+.homeProductImage > img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+
+}
+
+.homeProductImage > svg:nth-child(1){
+
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: orange;
+    font-size: 30px;
+    cursor: pointer;
+    transition: all 0.8s ease;
+
+}
+
+.homeProductImage > svg:nth-child(2){
+
+    position: absolute;
+    right: 20px;
+    top: 100px;
+    font-size: 30px;
+    color: orange;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+
+}
+
+.homeProductImage > svg:hover{
+
+    transform: scale(1.2);
+    color: snow;
+
+}
+
+.homeProductBox > .homeProductContent{
+
+    width: 100%;
+    height: 35%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    font-family: 'homeProductFont';
+
+}
+
+.homeProductContent > h3{
+
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+
+}
+
+.homeProductContent > p{
+
+    font-size: 1.1rem;
+
+}
+
+.homeProductContent > button{
+
+    width: 120px;
+    height: 1.7rem;
+    background-color: orange;
+    border: none;
+    outline: none;
+    color: snow;
+    font-family: 'homeProductFont';
+    font-size: 1rem;
+    font-weight: bolder;
+    letter-spacing: 1.3px;
+    cursor: pointer;
+    transition: all 0.8s ease;
+
+}
+
+.homeProductContent > button:hover{
+
+    transform: scale(1.05);
+    box-shadow: 2px 2px 2px #2929295f;
+
+}
+
+.homeProductButton{
+
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.homeProductButton > button{
+
+    width: 200px;
+    height: 40px;
+    background-color: transparent;
+    color: #292929;
+    border: 1px solid orange;
+    font-family: 'homeProductFont';
+    font-size: 1rem;
+    border-radius: 50px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.8s ease;
+
+}
+
+.homeProductButton > button:hover{
+
+    color: snow;
+
+}
+
+.homeProductButton > button::before{
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    content: "";
+    background-color: orange;
+    transition: all 0.8s ease;
+
+}
+
+.homeProductButton > button:hover::before{
+
+    height: 100%;
+    z-index: -2;
+
+}

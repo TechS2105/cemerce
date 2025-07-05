@@ -6,6 +6,7 @@ import HomeGrid from '../components/Homegrid';
 import HomeMenOutfit from '../components/Homemenoutfit';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../components/Footer';
+import HomeWomenProduct from '../components/Homewomenproduct';
 
 let video = '../../public/video/newvideo.mp4';
 
@@ -97,6 +98,12 @@ function Home() {
 
             </div>
 
+            {/** Women Product Section component*/}
+
+            <HomeWomenProduct />
+
+            {/** Footer Section Component */}
+            
             <Footer />
             
         </>

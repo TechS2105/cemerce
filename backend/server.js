@@ -6,6 +6,7 @@ import dotenv from 'dotenv';
 import shopProduct from './shop.js';
 import menProduct from './Men.js';
 import menCollections from './Mencollections.js'
+import Women from './Women.js';
 
 dotenv.config();
 
@@ -50,6 +51,19 @@ app.get('/api/men/collections/product', (req, res) => {
 
 });
 
+app.get('/api/women/product', (req, res) => {
+
+    try {
+        
+        res.status(200).json(Women);
+
+    } catch (error) {
+        
+        res.status(400).json({ error: error });
+
+    }
+
+})
 
 app.listen(PORT, () => {
 

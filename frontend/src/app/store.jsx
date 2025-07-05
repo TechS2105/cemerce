@@ -4,6 +4,7 @@ import CartSlice from '../features/Shop/CartSlice';
 import WishListSlice from '../features/Shop/WishListSlice';
 import ProductSlice from '../features/Shop/ShopProductSlice';
 import MenCollectionSlice from '../features/Shop/MenCollectionSlice';
+import HomeWomenSlice from '../features/Shop/HomeWomenSlice';
 
 const store = configureStore({
 
@@ -13,7 +14,8 @@ const store = configureStore({
         cart: CartSlice,
         wishlist: WishListSlice,
         shopProduct: ProductSlice,
-        menCollections: MenCollectionSlice
+        menCollections: MenCollectionSlice,
+        homeWomenProduct: HomeWomenSlice
 
     }
 
