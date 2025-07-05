@@ -5,8 +5,9 @@ import pg from 'pg';
 import dotenv from 'dotenv';
 import shopProduct from './shop.js';
 import menProduct from './Men.js';
-import menCollections from './Mencollections.js'
+import menCollections from './Mencollections.js';
 import Women from './Women.js';
+import womenCollections from './Womencollections.js';
 
 dotenv.config();
 
@@ -51,6 +52,8 @@ app.get('/api/men/collections/product', (req, res) => {
 
 });
 
+/** Create Women Home Product Collection API Endpoint */
+
 app.get('/api/women/product', (req, res) => {
 
     try {
@@ -63,7 +66,23 @@ app.get('/api/women/product', (req, res) => {
 
     }
 
-})
+});
+
+/** Create Women Product Collection API Endpoint */
+
+app.get('/api/women/collections/product', (req, res) => {
+
+    try {
+
+        res.status(200).json(womenCollections);
+
+    } catch (error) {
+        
+        res.status(400).json({ error: error });
+
+    }
+
+});
 
 app.listen(PORT, () => {
 
