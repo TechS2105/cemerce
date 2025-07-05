@@ -1,0 +1,93 @@
+@font-face {
+    font-family: 'discountTextFont';
+    src: url('../fonts/magenda/MagendaRegular-MVwjx.ttf');
+}
+
+.productDiscountSection{
+
+    width: 100%;
+    height: 25rem;
+    display: flex;
+
+}
+
+.productDiscountSection > .productDiscountImageContainer{
+
+    width: 50%;
+    height: 100%;
+
+}
+
+.productDiscountImageContainer > img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.productDiscountSection > .productDiscountContent{
+
+    width: 50%;
+    background-color: #292929;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    
+
+}
+
+.productDiscountContent > h2{
+
+    padding-left: 20px;
+    font-family: 'discountTextFont';
+    font-size: 3rem;
+    letter-spacing: 2px;
+    color: snow;
+
+}
+
+.productDiscountContent p{
+
+    font-size: 5rem;
+    padding-left: 20px;
+    color: snow;
+    font-family: 'discountTextFont';
+    letter-spacing: 2px;
+
+}
+
+.productDiscountContent p > span{
+
+    color: orange;
+    margin-right: 10px;
+
+}
+
+.productDiscountContent > button{
+
+    margin-left: 20px;
+    width: 150px;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid snow;
+    color: orange;
+    font-family: 'discountTextFont';
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+}
+
+.productDiscountContent > button:hover{
+
+    transform: translateX(30px) scale(1.3);
+    border: 1px solid orange;
+    color: snow;
+
+}

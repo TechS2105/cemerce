@@ -7,6 +7,7 @@ import HomeMenOutfit from '../components/Homemenoutfit';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../components/Footer';
 import HomeWomenProduct from '../components/Homewomenproduct';
+import ProductDiscount from '../components/Productdiscount';
 
 let video = '../../public/video/newvideo.mp4';
 
@@ -101,6 +102,16 @@ function Home() {
             {/** Women Product Section component*/}
 
             <HomeWomenProduct />
+
+            {/** Women Product Discount Section */}
+
+            <ProductDiscount
+            
+                discountImage="https://plus.unsplash.com/premium_photo-1661319067088-61e0b9e079b0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fHw%3D"
+                discountHeading="Women's Product Discount"
+                onButtonClick={() => {navigate('/shop')}}
+            
+            />
 
             {/** Footer Section Component */}
             
