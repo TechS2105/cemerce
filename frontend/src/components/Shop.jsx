@@ -2,6 +2,7 @@ import React from 'react';
 import ShopStyle from '../../public/styles/Shop.module.css'
 import ShopBannerImage from '../components/Shopbanner';
 import ShopProducts from '../components/Shopproducts';
+import Footer from '../components/Footer'
 
 let shopBannerImage = "../../public/images/shopbanner.jpeg"
 
@@ -32,6 +33,8 @@ function Shop() {
                 <ShopProducts />
 
             </div>
+
+            <Footer />
 
         </>
 

@@ -5,6 +5,7 @@ import {useNavigate} from 'react-router-dom'
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { useSelector, useDispatch} from 'react-redux';
 import { removeWishlistProduct } from '../features/Shop/WishListSlice';
+import Footer from '../components/Footer';
 
 let isWishlistEmpty = 0;
 
@@ -82,6 +83,8 @@ function Wishlist() {
                 }
 
             </div>
+
+            <Footer />
 
         </>
 

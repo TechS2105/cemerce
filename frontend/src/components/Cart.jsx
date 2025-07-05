@@ -5,6 +5,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { useSelector, useDispatch } from 'react-redux';
 import { removeCartProduct } from '../features/Shop/CartSlice';
+import Footer from '../components/Footer';
 
 let isCart = 0;
 
@@ -83,6 +84,8 @@ function Cart() {
                 }
 
             </div>
+
+            <Footer />
             
         </>
 
