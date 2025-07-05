@@ -1,0 +1,613 @@
+@font-face {
+    font-family: 'footerLogoFont';
+    src: url('../fonts/chermoni/CHERMONI.otf');
+}
+
+@font-face {
+    font-family: 'footerTextFont';
+    src: url('../fonts/magenda/MagendaRegular-MVwjx.ttf');
+}
+
+footer{
+
+    width: 100%;
+    height: 50rem;
+    background-image: url('https://images.unsplash.com/photo-1630905119003-329447458f85?q=80&w=1161&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+footer > .footerOverlay{
+
+    width: 100%;
+    height: 100%;
+    background-color: #292929ba; 
+
+}
+
+.footerOverlay > .footerLinkBoxes{
+
+    width: 100%;
+    height: 65%;
+    display: flex;
+    gap: 20px;
+
+}
+
+/** First Footer Link Box */
+
+.footerLinkBoxes > .footerBox1{
+
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 20px;
+    gap: 50px;
+    font-family: 'footerTextFont';
+
+}
+
+.footerBox1 > .aboutHeading{
+
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+.footerBox1 .aboutHeading > h3{
+
+    color: snow;
+    font-size: 3rem;
+    position: relative;
+    letter-spacing: 2px;
+
+}
+
+.aboutHeading > h3::before{
+
+    position: absolute;
+    top: 100%;
+    left: 2px;
+    height: 3px;
+    width: 50%;
+    background-color: orange;
+    content: "";
+
+}
+
+.footerBox1 > .aboutContent{
+
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+.aboutContent > p{
+
+    color: snow;
+    line-height: 25px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    font-size: 1.08rem;
+
+}
+
+.aboutContent > ul{
+
+    list-style-type: none;
+    color: orange;
+
+}
+
+.aboutContent ul > li{
+
+    margin-bottom: 2px;
+    font-size: 1.08rem;
+
+}
+
+.aboutContent ul li > span{
+    
+    color: snow;
+
+}
+
+/** Second Footer Box */
+
+.footerLinkBoxes>.footerBox2 {
+
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 50px;
+    font-family: 'footerTextFont';
+
+}
+
+.footerBox2 > .quickLinksHeading{
+
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+.footerBox2 .quickLinksHeading > h3{
+
+    color: snow;
+    font-family: 'footerTextFont';
+    font-size: 3rem;
+    position: relative;
+    padding-left: 20px;
+    letter-spacing: 2px;
+
+}
+
+.quickLinksHeading > h3::before{
+
+    position: absolute;
+    top: 120%;
+    left: 20px;
+    content: "";
+    width: 50%;
+    height: 3px;
+    background-color: orange;
+
+}
+
+.footerBox2 > .quickLinksContent{
+
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+.quickLinksContent > ul{
+
+    font-family: 'footerTextFont';
+    list-style-type: none;
+    padding-left: 20px;
+
+}
+
+.quickLinksContent ul > li a{
+
+    color: snow;
+    text-decoration: none;
+    display: inline-flex;
+    width: 100%;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.quickLinksContent ul li > a::before{
+
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: orange;
+    content: "";
+    transition: all 0.5s ease;
+
+}
+
+.quickLinksContent ul li > a:hover{
+
+    transform: translateX(20px);
+
+}
+
+.quickLinksContent ul li > a:hover::before{
+
+    width: 200%;
+
+}
+
+/** Third Footer Link Box */
+
+.footerLinkBoxes>.footerBox3 {
+
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 50px;
+    font-family: 'footerTextFont';
+
+}
+
+.footerBox3 > .otherLinksHeading{
+
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+.footerBox3 .otherLinksHeading > h3{
+
+    font-family: 'footerTextFont';
+    font-size: 3rem;
+    color: snow;
+    position: relative;
+    letter-spacing: 2px;
+
+}
+
+.footerBox3 .otherLinksHeading > h3::before{
+
+    position: absolute;
+    top: 120%;
+    left: 0;
+    content: "";
+    width: 50%;
+    height: 3px;
+    background-color: orange;
+
+}
+
+.footerBox3 > .otherLinksContent{
+
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+.footerBox3 .otherLinksContent > ul{
+
+    list-style-type: none;
+
+}
+
+.otherLinksContent ul > li a{
+
+    color: snow;
+    display: inline-flex;
+    width: 100%;
+    margin-bottom: 20px;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+    position: relative;
+    transition: all 0.5s ease;
+
+}
+
+.otherLinksContent ul li > a:hover{
+
+    transform: translateX(20px);
+
+}
+
+.otherLinksContent ul li > a::before{
+
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    content: "";
+    background-color: orange;
+    transition: all 0.5s ease;
+}
+
+.otherLinksContent ul li > a:hover::before{
+
+    width: 100%;
+
+}
+
+/** Fourth Footer Link Box */
+
+.footerLinkBoxes > .footerBox4 {
+
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    font-family: 'footerTextFont';
+    gap: 50px;
+
+}
+
+.footerBox4 > .newsLetterHeading{
+
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+.footerBox4 .newsLetterHeading > h3{
+
+    color: snow;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    position: relative;
+
+}
+
+.footerBox4 .newsLetterHeading > h3::before{
+
+    position: absolute;
+    top: 120%;
+    left: 0;
+    content: "";
+    width: 50%;
+    height: 3px;
+    background-color: orange;
+
+}
+
+.footerBox4 > .newsLetterContent{
+
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+.newsLetterContent > p{
+
+    color: snow;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    letter-spacing: 1px;
+
+}
+
+.newsLetterContent form > input{
+
+    width: 300px;
+    height: 30px;
+    padding-left: 10px;
+
+}
+
+.newsLetterContent form > button{
+
+    width: 130px;
+    height: 40px;
+    text-transform: uppercase;
+    background-color: transparent;
+    color: snow;
+    font-family: 'footerTextFont';
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border: 1px solid orange;
+    position: relative;
+    transition: all 0.8s ease;
+    overflow: hidden;
+
+}
+
+.newsLetterContent form > button:hover{
+
+    color: snow;
+  
+
+}
+
+.newsLetterContent form > button::before{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 0%;
+    height: 100%;
+    background-color: orange;
+    transition: all 0.8s ease;
+
+}
+
+.newsLetterContent form > button:hover::before{
+
+    width: 100%;
+
+}
+
+::placeholder{
+
+    font-family: 'footerTextFont';
+    letter-spacing: 2px;
+
+}
+
+.footerOverlay > .footerCopyright{
+
+    width: 100%;
+    height: 35%;
+    display: flex;
+
+}
+
+.footerCopyright > .copyrightContent{
+
+    width: 20%;
+    height: 100%;
+    background-color: orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.copyrightContent > p{
+
+    color: snow;
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'footerTextFont';
+    letter-spacing: 2px;
+
+}
+
+.footerCopyright > .copyrightLogo{
+
+    width: 60%;
+    height: 100%;
+    background-color: snow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+
+}
+
+.copyrightLogo > .creatorName{
+
+    font-size: 1.2rem;
+    text-align: center;
+    display: inline-flex;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'footerTextFont';
+    letter-spacing: 2px;
+    position: relative;
+
+}
+
+.copyrightLogo > .creatorName::before{
+
+    position: absolute;
+    top: 30px;
+    content: "";
+    width: 10%;
+    height: 2px;
+    background-color: orange;
+
+}
+
+.creatorName > a{
+
+    text-decoration: none;
+    color: orange;
+    transition: all 0.8s ease;
+    margin-left: 5px;
+
+}
+
+.creatorName > a:hover{
+
+    transform: scale(2) translateX(15px) rotateY(360deg);
+
+}
+
+.copyrightLogo > p{
+
+    font-size: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'footerLogoFont';
+    font-weight: bold;
+    letter-spacing: 1rem;
+    animation: footerLogoAnimation 10s linear infinite;
+    width: 60vw;
+
+}
+
+.copyrightLogo p > .footerLogo{
+
+    display: inline-flex;
+    color: orange;
+    align-items: center;
+    height: 100%;
+
+}
+
+@keyframes footerLogoAnimation {
+    
+    from{
+
+        transform: translateX(-100%);
+
+
+    }to{
+
+        transform: translateX(100%);
+
+    }
+
+}
+
+.footerCopyright > .copyrightSocial{
+
+    width: 20%;
+    height: 100%;
+    background-color: orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.copyrightSocial > ul{
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style-type: none;
+
+}
+
+.copyrightSocial ul > li{
+
+    color: snow;
+    font-size: 30px;
+    cursor: pointer;
+    transition: all 0.8s ease;
+
+}
+
+.copyrightSocial ul > li:hover{
+
+    transform: scale(1.5);
+    color: black;
+    filter:  drop-shadow(5px 5px 20px #fff);
+
+}

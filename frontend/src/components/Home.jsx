@@ -5,6 +5,7 @@ import CategoryBox from '../components/Categorybox';
 import HomeGrid from '../components/Homegrid';
 import HomeMenOutfit from '../components/Homemenoutfit';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../components/Footer';
 
 let video = '../../public/video/newvideo.mp4';
 
@@ -95,6 +96,8 @@ function Home() {
                 </div>
 
             </div>
+
+            <Footer />
             
         </>
 
