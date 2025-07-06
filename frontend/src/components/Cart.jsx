@@ -38,52 +38,57 @@ function Cart() {
 
             </div>
 
-            <div className={CartStyle.cartProduct}>
+            <div className={CartStyle.cartProductContainer}>
 
-                {isCart === cart.length ? <div className={CartStyle.isEmptyStyle}> Your Cart Is Empty... </div> : 
+                <div className={CartStyle.cartProduct}>
 
-                    <table>
+                    {isCart === cart.length ? <div className={CartStyle.isEmptyStyle}> Your Cart Is Empty... </div> : 
 
-                        <thead>
+                        <table>
 
-                            <tr>
+                            <thead>
 
-                                <th>Product Image</th>
-                                <th>Product Name</th>
-                                <th>Product Price</th>
-                                <th>Remove Product</th>
+                                <tr>
 
-                            </tr>
+                                    <th>Product Image</th>
+                                    <th>Product Name</th>
+                                    <th>Product Price</th>
+                                    <th>Remove Product</th>
 
-                        </thead>
+                                </tr>
 
-                        <tbody>
+                            </thead>
 
-                            {cart.map((cartItem) => {
+                                <tbody>
 
-                                return (
-                                    
-                                    <tr key={cartItem.id}>
+                                    {cart.map((cartItem) => {
 
-                                        <td><img src={cartItem.image} alt={cartItem.title} /></td>
-                                        <td> <p> {cartItem.title} </p>  </td>
-                                        <td> <p> {cartItem.price} /- </p></td>
-                                        <td> <RiDeleteBin6Line onClick={() => {handleRemove(cartItem.id)}} /> </td>
+                                        return (
+                                                
+                                            <tr key={cartItem.id}>
 
-                                    </tr>
-                                    
-                                )
+                                                <td><img src={cartItem.image} alt={cartItem.title} /></td>
+                                                <td> <p> {cartItem.title} </p>  </td>
+                                                <td> <p> {cartItem.price} /- </p></td>
+                                                <td> <RiDeleteBin6Line onClick={() => {handleRemove(cartItem.id)}} /> </td>
 
-                            })}
-                            
+                                            </tr>
+                                                
+                                        )
 
-                        </tbody>
+                                        })}
+                                        
 
-                    </table>
+                                    </tbody>
 
-                }
+                                </table>
+
+                            }
+
+                </div>
 
             </div>
+        
 
             <Footer />
             

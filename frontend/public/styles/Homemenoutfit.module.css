@@ -46,13 +46,16 @@
 
 }
 
-.menProductImage > svg{
+.menProductImage > svg:nth-child(1){
 
-    font-size: 28px;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 50px;
     color: orange;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    bottom: 20px;
+    background-color: snow;
+    right: 20px;
     cursor: pointer;
     transition: all 0.5s ease;
 
@@ -61,14 +64,23 @@
 .menProductImage > svg:nth-child(2){
 
     position: absolute;
-    top: 70px;
+    bottom: 100px;
+    right: 20px;
+    background-color: snow;
+    color: orange;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 50px;
+    transition: all 0.5s ease;
 
 }
 
 .menProductImage > svg:hover{
 
-    transform: scale(1.1);
+    transform: scale(1.2) rotateY(360deg);
     color: snow;
+    background-color: orange;
+    cursor: pointer;
 
 }
 

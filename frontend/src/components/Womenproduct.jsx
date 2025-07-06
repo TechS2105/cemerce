@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addToCart } from '../features/Shop/CartSlice';
 import { GoHeart } from "react-icons/go";
 import { addToWishList } from "../features/Shop/WishListSlice";
+import { FaRegEye } from "react-icons/fa";
 
 function Womenproduct() {
     
@@ -36,6 +37,7 @@ function Womenproduct() {
                         <div className={WomenProductStyle.womenProductImage}>
 
                             <GoHeart onClick={ () => {dispatch(addToWishList(womenItems));}} />
+                            <FaRegEye />
                             <img src={womenItems.image} alt={womenItems.title} />
 
                         </div>

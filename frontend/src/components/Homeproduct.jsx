@@ -3,6 +3,7 @@ import HomeProductStyle from '../../public/styles/Homeproduct.module.css';
 import { fetchHomeWomenProduct } from '../features/Shop/HomeWomenSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart } from '../features/Shop/CartSlice';
+import { addToWishList } from '../features/Shop/WishListSlice';
 import { useNavigate } from 'react-router-dom';
 import { GoHeart } from "react-icons/go";
 import { FaRegEye } from "react-icons/fa";
@@ -43,8 +44,8 @@ function Homeproduct() {
 
                             <div className={HomeProductStyle.homeProductImage}>
 
-                                <GoHeart />
                                 <FaRegEye />
+                                <GoHeart onClick={ () => {dispatch(addToWishList(womenProduct))}} />
                                 <img src={womenProduct.image} alt={womenProduct.title} />
 
                             </div>
