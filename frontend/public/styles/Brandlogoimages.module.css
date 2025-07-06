@@ -1,0 +1,63 @@
+.brandLogoContainer{
+
+    width: 100%;
+    height: 20rem;
+
+}
+
+.brandLogoContainer > .brandLogos{
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+
+.brandLogos > ul{
+
+    /* width: 100%;  */
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    animation: logoAnimation 20s linear infinite;
+
+}
+
+.brandLogos ul > li{
+
+    margin-right: 100px;
+
+}
+
+@keyframes logoAnimation {
+
+    from{
+
+        transform: translateX(0%);
+
+    }to{
+
+        transform: translateX(-100%);
+
+    }
+    
+}
+
+.brandLogos ul li > img{
+
+    filter: grayscale();
+    transition: all 0.5s ease;
+
+}
+
+.brandLogos ul li > img:hover{
+
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.351);
+    filter: grayscale(0);
+    border-radius: 10%;
+
+}

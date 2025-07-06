@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import Footer from '../components/Footer';
 import HomeWomenProduct from '../components/Homewomenproduct';
 import ProductDiscount from '../components/Productdiscount';
+import BrandCarousel from '../components/Brandcarousel';
 
 let video = '../../public/video/newvideo.mp4';
 
@@ -112,6 +113,10 @@ function Home() {
                 onButtonClick={() => {navigate('/shop')}}
             
             />
+
+            {/** Brand Logo Carousel Seciton */}
+
+            <BrandCarousel />
 
             {/** Footer Section Component */}
             
