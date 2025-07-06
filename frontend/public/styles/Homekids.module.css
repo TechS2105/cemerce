@@ -1,0 +1,233 @@
+@font-face {
+    font-family: 'homeKidFont';
+    src: url('../fonts/magenda/MagendaRegular-MVwjx.ttf');
+}
+
+.homeKidsContainer{
+
+    width: 100%;
+    height: 50rem;
+    overflow: hidden;
+
+}
+
+.homeKidsContainer > .homeKidsHeading{
+
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+}
+
+.homeKidsHeading > h2{
+
+    font-size: 3rem;
+    letter-spacing: 2px;
+    font-family: 'homeKidFont';
+    position: relative;
+
+}
+
+.homeKidsHeading > h2::before{
+
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: orange;
+    width: 50%;
+    height: 4px;
+    border-radius: 50px;
+    content: "";
+
+}
+
+.homeKidsProduct{
+
+    width: 100%;
+    height: 44rem;
+
+}
+
+.homeKidsProduct > .homeKidsPorductContainer{
+
+    width: 100%;
+    height: 36rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.homeKidsPorductContainer > .homeKidsProductBox{
+
+    width: 20rem;
+    height: 30rem;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #29292949;
+    overflow: hidden;
+
+}
+
+.homeKidsProductBox > .homeKidsProductImage{
+
+    width: 100%;
+    height: 65%;
+    position: relative;
+
+}
+
+.homeKidsProductImage > img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+
+}
+
+.homeKidsProductImage > svg:nth-child(1){
+
+   position: absolute;
+   bottom: 100px;
+   right: 20px;
+   background-color: snow;
+   color: orange;
+   padding: 10px;
+   font-size: 20px;
+   border-radius: 50px;
+   transition: all 0.5s ease;
+
+}
+
+.homeKidsProductImage > svg:nth-child(2){
+
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 20px;
+    padding: 10px;
+    background-color: snow;
+    color: orange;
+    border-radius: 50px;
+    transition: all 0.5s ease;
+
+}
+
+.homeKidsProductImage > svg:hover{
+
+    cursor: pointer;
+    background-color: orange;
+    color: snow;
+    transform: rotateY(360deg) scale(1.2);
+
+}
+
+.homeKidsProductBox > .homeKidsProductContent{
+
+    width: 100%;
+    height: 35%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+.homeKidsProductContent > h3{
+
+    font-family: 'homeKidFont';
+    font-family: 1.2rem;
+    letter-spacing: 2px;
+    
+}
+
+.homeKidsProductContent > p{
+
+    font-family: 'homeKidFont';
+    letter-spacing: 2px;
+    font-size: 1rem;
+
+}
+
+.homeKidsProductContent > button{
+
+    background-color: orange;
+    border: none;
+    outline: none;
+    width: 120px;
+    height: 2rem;
+    font-family: 'homeKidFont';
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: snow;
+    transition: all 0.5s ease;
+
+}
+
+.homeKidsProductContent > button:hover{
+
+    transform: scale(1.05) translateX(5px);
+    box-shadow: 2px 2px 2px #29292966;
+    cursor: pointer;
+
+}
+
+.homeKidsProduct > .homeKidsPorductButton{
+
+    width: 100%;
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.homeKidsPorductButton > button{
+
+    width: 200px;
+    height: 40px;
+    border-radius: 50px;
+    border: 1px solid orange;
+    background-color: transparent;
+    font-family: 'homeKidFont';
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.8s ease;
+    overflow: hidden;
+
+}
+
+.homeKidsPorductButton > button:hover{
+
+    color: snow;
+
+}
+
+.homeKidsPorductButton > button::before{
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    content: "";
+    background-color: orange;
+    transition: all 0.8s ease;
+    z-index: -2;
+
+}
+
+.homeKidsPorductButton > button:hover::before{
+
+    height: 100%;
+
+}

@@ -9,6 +9,7 @@ import Footer from '../components/Footer';
 import HomeWomenProduct from '../components/Homewomenproduct';
 import ProductDiscount from '../components/Productdiscount';
 import BrandCarousel from '../components/Brandcarousel';
+import HomeKids from '../components/Homekids';
 import TestimonialCarousel from '../components/Testimonialcarousel';
 
 let video = '../../public/video/newvideo.mp4';
@@ -113,6 +114,20 @@ function Home() {
                 discountHeading="Women's Product Discount"
                 onButtonClick={() => {navigate('/shop')}}
             
+            />
+
+            {/** Home Kids Product Section */}
+
+            <HomeKids />
+
+            {/** Kids Product Discount Section */}
+
+            <ProductDiscount
+            
+                discountImage="https://images.unsplash.com/photo-1741992556912-3b2d62461e75?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                discountHeading="Kid's Product Discount"
+                onButtonClick={() => {navigate('/kids')}}
+                
             />
 
             {/** Testimonial Carousel Section */}

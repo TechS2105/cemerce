@@ -8,6 +8,7 @@ import menProduct from './Men.js';
 import menCollections from './Mencollections.js';
 import Women from './Women.js';
 import womenCollections from './Womencollections.js';
+import Kids from './Kids.js';
 
 dotenv.config();
 
@@ -75,6 +76,22 @@ app.get('/api/women/collections/product', (req, res) => {
     try {
 
         res.status(200).json(womenCollections);
+
+    } catch (error) {
+        
+        res.status(400).json({ error: error });
+
+    }
+
+});
+
+/** Create Kids Home Product API Endpoint */
+
+app.get('/api/kids/product', (req, res) => {
+
+    try {
+        
+        res.status(200).json(Kids);
 
     } catch (error) {
         

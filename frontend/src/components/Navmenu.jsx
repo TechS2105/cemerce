@@ -19,9 +19,9 @@ function Navmenu({state, onClick}) {
 
                         <li><NavLink to="/">HOME</NavLink></li>
                         <li><NavLink to="/shop">SHOP</NavLink></li>
-                        <li><NavLink to="/men">MEN</NavLink></li>
-                        <li><NavLink to="/women">WOMEN</NavLink></li>
-                        <li><NavLink to="/contact">CONTACT</NavLink></li>
+                        <li><NavLink to="/men">MEN'S</NavLink></li>
+                        <li><NavLink to="/women">WOMEN'S</NavLink></li>
+                        <li><NavLink to="/kids">KID'S</NavLink></li>
 
                     </ul>
 
