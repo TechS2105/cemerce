@@ -1,0 +1,114 @@
+@font-face {
+    font-family: 'womenProductFont';
+    src: url('../fonts/magenda/MagendaRegular-MVwjx.ttf');
+}
+
+.womenProductBox{
+
+    width: 20rem;
+    height: 30rem;
+    box-shadow: 5px 5px 15px #29292966;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+
+.womenProductBox > .womenProductImage{
+
+    width: 100%;
+    height: 65%;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.womenProductImage > img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+
+}
+
+.womenProductImage > svg{
+
+    position: absolute;
+    bottom: 20px;
+    background-color: snow;
+    padding: 10px;
+    border-radius: 50%;
+    right: 20px;
+    color: orange;
+    font-size: 20px;
+    transition: all 0.5s ease;
+
+}
+
+.womenProductImage > svg:hover{
+
+    transform: scale(1.2) rotateY(360deg);
+    cursor: pointer;
+    background-color: orange;
+    color: snow;
+
+}
+
+.womenProductBox > .womenProductContent{
+
+    width: 100%;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+    font-family: 'womenProductFont';
+
+}
+
+.womenProductContent > h3{
+
+    font-size: 1.2rem;
+    padding-left: 20px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+
+}
+
+.womenProductContent > p{
+
+    font-size: 1rem;
+    padding-left: 20px;
+
+}
+
+.womenProductContent > button{
+
+    margin-left: 20px;
+    width: 120px;
+    height: 1.6rem;
+    background-color: orange;
+    border: none;
+    outline: none;
+    font-family: 'womenProductFont';
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    color: snow;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+}
+
+.womenProductContent > button:hover{
+
+    transform: scale(1.05) translateY(5px);
+    background-color: transparent;
+    border: 1px solid orange;
+    color: orange;
+
+}

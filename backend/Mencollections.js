@@ -14,7 +14,7 @@ const Mencollections = [
 
         id: 2,
         image: "https://cdn.shopify.com/s/files/1/1150/2764/files/Sleeve_Style_t-_shirts_480x480.jpg?v=1734330119",
-        cateogry: "Men's",
+        category: "Men's Outfit",
         title: 'Men’s T-Shirts by Sleeve Style',
         price: "1000"
 
@@ -23,10 +23,10 @@ const Mencollections = [
     {
 
         id: 3,
-        title: 'Denim Jins With Black Shirt & Brown Jacket',
-        image: 'https://images.unsplash.com/photo-1617114919297-3c8ddb01f599?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        title: 'Black Line Patterned Shirt and White Casual Outfit',
+        image: 'https://images.unsplash.com/photo-1667843577412-f97672c9a114?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8',
         category: "Men's Outfit",
-        price: '5000'
+        price: '7000',
 
     },
 

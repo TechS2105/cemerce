@@ -118,7 +118,87 @@ const shopProduct = [
         category: "Women's",
         price: "1800"
 
-    }
+    },
+
+    {
+
+        id: 13,
+        title: 'Black Line Patterned Shirt and White Casual Outfit',
+        image: 'https://images.unsplash.com/photo-1667843577412-f97672c9a114?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8',
+        category: "Men's Outfit",
+        price: '7000',
+
+    },
+
+    {
+
+        id: 14,
+        image: 'https://images.unsplash.com/photo-1612336307429-8a898d10e223?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        title: 'Culotte dress',
+        price: '5000',
+        category: "Women's Outfit"
+
+    },
+
+    {
+
+        id: 15,
+        title: 'Denim Jins With Black Shirt & Brown Jacket',
+        image: 'https://images.unsplash.com/photo-1617114919297-3c8ddb01f599?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        category: "Men's Outfit",
+        price: '5000'
+        
+    },
+
+    {
+
+        id: 16,
+        image: 'https://images.unsplash.com/photo-1733043014211-8d699f6a82b1?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        title: 'Wrap around dress',
+        price: '2000',
+        category: "Women's Outfit"
+
+    },
+
+    {
+
+        id: 17,
+        title: 'Black Jins With Red Pattern Shirt',
+        image: 'https://images.unsplash.com/photo-1617662408044-cda3ab7134c9?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        category: "Men's Outfit",
+        price: "6000"
+
+    },
+
+    {
+
+        id: 18,
+        image: 'https://images.unsplash.com/photo-1528813569347-f16dd076e347?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        title: 'Sundress',
+        price: '3000',
+        category: "Women's Outfit"
+
+    },
+
+    {
+
+        id: 6,
+        title: 'Blue line Shirt With Grey Formal Outfit',
+        image: 'https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?q=80&w=765&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        category: "Men's Outfit",
+        price: '7000',
+
+    },
+
+    {
+
+        id: 20,
+        image: 'https://plus.unsplash.com/premium_photo-1661425743889-8e9f763afe39?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        title: " Shift dress",
+        price: '5000',
+        category: "Women's Outfit"
+
+    }, 
 
 ]
 

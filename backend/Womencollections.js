@@ -124,7 +124,7 @@ const Womencollections = [
 
         id: 13,
         image: 'https://images.unsplash.com/photo-1549364011-6e0d052ef2ee?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        title: 'Blue Morder Jeans with Long Sleeve Sweater',
+        title: 'Blue Modern Jeans with Long Sleeve Sweater',
         price: '5000',
         category: "Women's Outfit"
 
