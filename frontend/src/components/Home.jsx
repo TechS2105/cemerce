@@ -9,6 +9,7 @@ import Footer from '../components/Footer';
 import HomeWomenProduct from '../components/Homewomenproduct';
 import ProductDiscount from '../components/Productdiscount';
 import BrandCarousel from '../components/Brandcarousel';
+import TestimonialCarousel from '../components/Testimonialcarousel';
 
 let video = '../../public/video/newvideo.mp4';
 
@@ -113,6 +114,10 @@ function Home() {
                 onButtonClick={() => {navigate('/shop')}}
             
             />
+
+            {/** Testimonial Carousel Section */}
+
+            <TestimonialCarousel />
 
             {/** Brand Logo Carousel Seciton */}
 

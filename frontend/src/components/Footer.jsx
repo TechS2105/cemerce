@@ -33,7 +33,7 @@ function Footer() {
 
                             <div className={FooterStyle.aboutContent}>
 
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates repellendus suscipit saepe.</p>
+                                <p>C-EMERCE delivers trendy, affordable fashion for all—women, men, and kids. Shop styles you love, with comfort and confidence!.</p>
 
                                 <ul>
 
