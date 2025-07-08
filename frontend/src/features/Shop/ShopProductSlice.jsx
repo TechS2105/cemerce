@@ -3,9 +3,7 @@ import axios from 'axios';
 
 export const fetchShopProduct = createAsyncThunk('shopProduct/fetchShopProduct', async () => {
     
-    const response = await axios.get(
-      "https://cemerce.onrender.com/api/shop/product"
-    );
+    const response = await axios.get("http://localhost:3000/api/shop/product");
     return response.data;
 
 });
