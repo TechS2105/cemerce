@@ -96,7 +96,7 @@ function Navbar() {
                 <ul>
                 
                     <li><input type="search" placeholder='Search Your Product...'/></li>
-                    <li><NavLink to="#"><AiOutlineUser /></NavLink></li>
+                    <li><NavLink to="/user"><AiOutlineUser /></NavLink></li>
                     <li><NavLink to="/wishlist"><GoHeart /></NavLink></li>
                     <li><NavLink to="/cart"><HiOutlineShoppingCart /><span>{productLength.length}</span></NavLink></li>
 

@@ -1,0 +1,106 @@
+@font-face {
+    font-family: 'signInFont';
+    src: url('../fonts/magenda/MagendaRegular-MVwjx.ttf');
+}
+
+.signInContainer{
+
+    width: 500px;
+    height: 400px;
+    background-color: rgb(255, 255, 255);
+    cursor: default;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 15px 15px 5px #2929295f;
+
+}
+
+.signInContainer > .signInFormHeading{
+
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #292929;
+
+}
+
+.signInFormHeading > h2{
+
+    color: orange;
+    font-family: 'signInFont';
+    font-size: 2rem;
+    height: 3rem;
+    letter-spacing: 0.3rem;
+    border: 2px solid snow;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;;
+
+}
+
+.signInContainer > .signInFormSection{
+
+    height: 18rem;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+
+}
+
+.signInFormSection form > label{
+
+    font-family: 'signInFont';
+    letter-spacing: 2px;
+    font-size: 2rem;
+
+}
+
+.signInFormSection form > input{
+
+    width: 400px;
+    border-radius: 5px;
+    height: 35px;
+    padding-left: 10px;
+    border: none;
+    outline: none;
+    background-color: orange;
+    font-family: 'signInFont';
+    letter-spacing: 2px;
+    color: snow;
+
+}
+
+.signInFormSection form > input::placeholder{
+
+    color: snow;
+    font-size: 1rem;
+
+}
+
+.signInFormSection form > button{
+
+    width: 150px;
+    height: 30px;
+    background-color: #292929;
+    color: snow;
+    font-family: 'signInFont';
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+
+.errorStyle{
+
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-top: 5px;
+    font-family: 'signInFont';
+
+}

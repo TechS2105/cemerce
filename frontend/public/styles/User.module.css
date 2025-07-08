@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'userPageFont';
+    src: url('../fonts/magenda/MagendaRegular-MVwjx.ttf');
+}
+
+.userContainer{
+
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.userContainer > .signUpBox{
+
+    width: 50%;
+    height: 100%;
+    background-color: #292929;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+
+}
+
+.signUpBox > h2{
+
+    font-size: 10rem;
+    letter-spacing: 2px;
+    font-family: 'userPageFont';
+    color: orange;
+    transition: all 0.8s ease;
+
+}
+
+.signUpBox > h2:hover{
+
+    transform: scale(1.2);
+    letter-spacing: 15px;
+
+}
+
+.userContainer > .signInBox{
+
+    width: 50%;
+    height: 100%;
+    background-color: orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+
+}
+
+.signInBox > h2{
+
+    font-family: 'userPageFont';
+    font-size: 10rem;
+    letter-spacing: 2px;
+    color: snow;
+    transition: all 0.8s ease;
+
+}
+
+.signInBox > h2:hover{
+
+    letter-spacing: 15px;
+    transform: scale(1.2);
+
+}
