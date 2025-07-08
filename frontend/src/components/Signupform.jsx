@@ -19,9 +19,17 @@ function Signupform() {
 
             return new Promise((resolve, reject) => {
 
-                resolve();
+                try {
+                   
+                    resolve();
 
-            })
+                } catch (error) {
+                    
+                    reject(error);
+                    
+                }
+
+            });
 
         }, d * 1000)
     
