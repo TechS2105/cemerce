@@ -6,8 +6,33 @@ import { FaInstagram } from "react-icons/fa6";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaPinterestP } from "react-icons/fa";
 import { AiOutlineYoutube } from "react-icons/ai";
+import { useForm } from 'react-hook-form';
 
 function Footer() {
+
+    const {
+
+        register,
+        handleSubmit,
+        reset,
+        formState: { errors, isSubmitting }
+
+    } = useForm();
+
+    const onSubmit = async (data) => {
+        
+        const res = await fetch("http://localhost:3000/api/send/mail", {
+
+            headers: {"Content-Type" : "application/json; charset=utf-8"},
+            method: "POST",
+            body: JSON.stringify(data)
+
+        });
+        let resData = await res.json(); 
+        console.log(data, resData);
+        reset();
+
+    };
 
     let year = new Date().getFullYear(); 
     
@@ -110,9 +135,15 @@ function Footer() {
 
                                 <p>Sign up to our newsletter to receive exclusive offers.</p><br />
 
-                                <form>
+                                <form onSubmit={handleSubmit(onSubmit)}>
 
-                                    <input type="email" placeholder='Email'/><br /><br/>
+                                    <input type="email" placeholder='Email' {...register('email', { required: { value: true, message: 'This field is required' }, maxLength: { value: 50, message: "Max length is 50" } })} /><br />
+                                    
+                                    {errors.email && <div className={FooterStyle.errorMessage}>{ errors.email.message }</div>}
+
+                                    <br />
+
+                                    {isSubmitting && <div className={FooterStyle.successMail}> Mail has been submitting...</div>}
                                     <button type='submit'> Subscribe </button>
 
                                 </form>

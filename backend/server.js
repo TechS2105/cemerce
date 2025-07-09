@@ -9,6 +9,7 @@ import Women from './Women.js';
 import womenCollections from './Womencollections.js';
 import Kids from './Kids.js';
 import KidCollection from './Kidscollections.js';
+import nodemailer from 'nodemailer';
 
 dotenv.config();
 
@@ -101,6 +102,8 @@ app.get('/api/kids/product', (req, res) => {
 
 });
 
+/** Create Kids Collection API Endpoint */
+
 app.get('/api/kids/collections/product', (req, res) => {
 
     try {
@@ -113,7 +116,90 @@ app.get('/api/kids/collections/product', (req, res) => {
 
     }
 
-})
+});
+
+/** Create Newsletter Mail Endpoint */
+
+app.get('/api/send/mail', (req, res) => {
+
+    res.status(400).json({ message: "Ready to send mail..." });
+
+});
+
+const newsletterMail = nodemailer.createTransport({
+
+    service: "gmail",
+    host: 'smpt.gmail.com',
+    port: '465',
+    secure: true,
+    logger: false,
+    debug: true,
+    secureConnection: true,
+    auth: {
+        
+        user: 'sovandey2105@gmail.com',
+        pass: 'qilqsyuoyhkhxaom'
+
+    },
+    tls: {
+
+        rejectUnauthorized: true
+
+    }
+
+});
+
+newsletterMail.verify((error) => {
+
+    if (error) {
+        
+        res.status(400).json({ message: error })
+
+    } else {
+        
+        console.log('Ready To Send');
+
+    }
+
+});
+
+app.post('/api/send/mail', (req, res) => {
+
+    console.log(req.body);
+
+    const { email } = req.body;
+
+    const mail = {
+
+        from: email,
+        to: 'sovandey2105@gmail.com',
+        subject: 'You got a newsletter mail',
+        html: `<p> ${email} This person has been subscribe C-EMERCE Newsletter </p>`
+
+    }
+
+    newsletterMail.sendMail(mail, (error) => {
+
+        if (error) {
+            
+            res.json(error)
+
+        } else {
+            
+            res.json({
+
+                code: 200,
+                status: 'Mail has been send successfully'
+
+            })
+
+        }
+
+    })
+
+});
+
+/** Server Port */
 
 app.listen(PORT, () => {
 
