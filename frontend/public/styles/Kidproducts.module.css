@@ -1,0 +1,140 @@
+@font-face {
+    font-family: 'kidsProductFont';
+    src: url('../fonts/magenda/MagendaRegular-MVwjx.ttf');
+}
+
+.kidProductContainer{
+
+    width: 100%;
+    height: 100%;
+    padding: 50px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+
+}
+
+.kidProductContainer > .kidProductBox{
+
+    width: 20rem;
+    height: 30rem;
+    box-shadow: 5px 5px 10px #29292980;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+
+.kidProductBox > .kidProductImage{
+
+    width: 100%;
+    height: 65%;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.kidProductImage > img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+
+}
+
+.kidProductImage > svg:nth-child(1){
+
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: orange;
+    background-color: snow;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+}
+
+.kidProductImage > svg:nth-child(2){
+
+    position: absolute;
+    bottom: 100px;
+    right: 20px;
+    color: orange;
+    background-color: snow;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+}
+
+.kidProductImage > svg:hover{
+
+    transform: scale(1.2) rotateY(360deg);
+    background-color: orange;
+    color: snow;
+
+
+}
+
+.kidProductBox > .kidProductContent{
+
+    width: 100%;
+    height: 35%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    font-family: 'kidsProductFont';
+
+}
+
+.kidProductContent > h3{
+
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+
+}
+
+.kidProductContent > p{
+
+    font-size: 1rem;
+    letter-spacing: 2px;
+
+}
+
+.kidProductContent > button{
+
+    width: 120px;
+    height: 1.6rem;
+    background-color: orange;
+    border: none;
+    font-family: 'kidsProductFont';
+    letter-spacing: 2px;
+    color: snow;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+}
+
+.kidProductContent > button:hover{
+
+    transform: scale(1.06) translate(5px, 5px);
+    border: 1px solid orange;
+    background-color: transparent;
+    color: orange;
+
+}
+
+

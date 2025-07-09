@@ -7,6 +7,7 @@ import MenCollectionSlice from '../features/Shop/MenCollectionSlice';
 import HomeWomenSlice from '../features/Shop/HomeWomenSlice';
 import WomenCollectionSlice from '../features/Shop/WomenCollectionSlice';
 import HomeKidsSlice from '../features/Shop/HomeKidsSlice';
+import KidCollectionsSlice from '../features/Shop/KidCollectionsSlice';
 
 const store = configureStore({
 
@@ -19,7 +20,8 @@ const store = configureStore({
         menCollections: MenCollectionSlice,
         homeWomenProduct: HomeWomenSlice,
         womenProduct: WomenCollectionSlice,
-        homeKidsProduct: HomeKidsSlice
+        homeKidsProduct: HomeKidsSlice,
+        kidCollections: KidCollectionsSlice
 
     }
 

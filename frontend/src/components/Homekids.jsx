@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { fetchKidsHomeProduct } from '../features/Shop/HomeKidsSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart } from '../features/Shop/CartSlice';
+import { addToWishList } from "../features/Shop/WishListSlice"; 
 
 function Homekids() {
     
@@ -50,7 +51,7 @@ function Homekids() {
                                 <div className={HomeKidStyle.homeKidsProductImage}>
 
                                     <FaRegEye />
-                                    <GoHeart />
+                                    <GoHeart onClick={ () => {dispatch(addToWishList(kidsItem));}} />
                                     <img src={kidsItem.image} alt={kidsItem.title} />
 
                                 </div>

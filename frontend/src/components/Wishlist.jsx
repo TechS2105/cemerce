@@ -39,48 +39,53 @@ function Wishlist() {
 
             <div className={WishlistStyle.wishListTable}>
 
-                {isWishlistEmpty === wishList.length ? <div className={WishlistStyle.isWishlist}> Your Wishlist Is Empty...</div> : 
+                <div className={WishlistStyle.wishListProduct}>
                     
-                    <table>
+                    {isWishlistEmpty === wishList.length ? <div className={WishlistStyle.isWishlist}> Your Wishlist Is Empty...</div> : 
+                                        
+                        <table>
 
-                        <thead>
+                            <thead>
 
-                            <tr> 
+                                <tr> 
 
-                                <th>Product Image</th>
-                                <th>Product Name</th>
-                                <th>Product Price</th>
-                                <th>Product Remove</th>
+                                    <th>Product Image</th>
+                                    <th>Product Name</th>
+                                    <th>Product Price</th>
+                                    <th>Product Remove</th>
 
-                            </tr>
+                                </tr>
 
-                        </thead>
+                            </thead>
 
-                        <tbody>
+                            <tbody>
 
-                            {wishList.map((wishListItem) => {
+                                {wishList.map((wishListItem) => {
 
-                                return (
+                                    return (
 
-                                    <tr key={wishListItem.id}>
+                                        <tr key={wishListItem.id}>
 
-                                        <td><img src={wishListItem.image} alt={wishListItem.title} /></td>
-                                        <td> {wishListItem.title} </td>
-                                        <td> {wishListItem.price} /- </td>
-                                        <td> <RiDeleteBin6Line onClick={() => { handleRemoveWishlist(wishListItem.id) }}/> </td>
+                                            <td><img src={wishListItem.image} alt={wishListItem.title} /></td>
+                                            <td> {wishListItem.title} </td>
+                                            <td> {wishListItem.price} /- </td>
+                                            <td> <RiDeleteBin6Line onClick={() => { handleRemoveWishlist(wishListItem.id) }}/> </td>
 
-                                    </tr> 
+                                        </tr> 
 
-                                );
+                                    );
 
-                            })}
-                        
+                                })}
+                                            
 
-                        </tbody>
+                            </tbody>
 
-                    </table>
-                    
-                }
+                        </table>
+                                        
+                    }
+
+                </div>
+               
 
             </div>
 

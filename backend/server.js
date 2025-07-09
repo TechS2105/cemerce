@@ -1,7 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import pg from 'pg';
 import dotenv from 'dotenv';
 import shopProduct from './shop.js';
 import menProduct from './Men.js';
@@ -9,6 +8,7 @@ import menCollections from './Mencollections.js';
 import Women from './Women.js';
 import womenCollections from './Womencollections.js';
 import Kids from './Kids.js';
+import KidCollection from './Kidscollections.js';
 
 dotenv.config();
 
@@ -100,6 +100,20 @@ app.get('/api/kids/product', (req, res) => {
     }
 
 });
+
+app.get('/api/kids/collections/product', (req, res) => {
+
+    try {
+        
+        res.status(200).json(KidCollection);
+
+    } catch (error) {
+        
+        res.status(400).json({message: error});
+
+    }
+
+})
 
 app.listen(PORT, () => {
 
