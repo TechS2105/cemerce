@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import '../public/styles/App.css';
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
 import RootLayout from './layouts/Rootlayout';
@@ -12,6 +12,22 @@ import Wishlist from './components/Wishlist';
 import User from './components/Userpage';
 
 function App() {
+
+    useEffect(() => { 
+
+        let responsiveDiv = document.createElement('div');
+        responsiveDiv.classList.add('resDivContainer');
+        let body = document.querySelector('body');
+        body.prepend(responsiveDiv);
+
+        if (window.innerWidth < 900) {
+            
+            document.querySelector(".resDivContainer").innerHTML =
+              "This site's tablet and mobile responsiveness has been under maintenance.<br><br> Please stay with us.";
+
+        }
+
+    }, []);
 
     const router = createBrowserRouter(
 

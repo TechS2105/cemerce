@@ -27,7 +27,7 @@
     background-color: #292929;
     position: fixed;
     bottom: 0;
-    z-index: 999999999;
+    z-index: 2;
     display: flex;
     align-items: center;
     overflow: hidden;

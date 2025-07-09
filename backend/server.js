@@ -199,6 +199,27 @@ app.post('/api/send/mail', (req, res) => {
 
 });
 
+/** Create Register Endpoint */
+app.get('/register', (req, res) => {
+    
+    try {
+        
+        res.status(200).json({ message: "Successfully created registered endpoint..." })
+
+    } catch (error) {
+        
+        res.status(400).json({ message: error });
+
+    }
+
+});
+
+app.post('/register', (req, res) => {
+
+    
+
+});
+
 /** Server Port */
 
 app.listen(PORT, () => {
