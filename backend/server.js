@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import dotenv from 'dotenv';
+import env from 'dotenv';
 import shopProduct from './shop.js';
 import menProduct from './Men.js';
 import menCollections from './Mencollections.js';
@@ -10,14 +10,28 @@ import womenCollections from './Womencollections.js';
 import Kids from './Kids.js';
 import KidCollection from './Kidscollections.js';
 import nodemailer from 'nodemailer';
+import bcrypt from 'bcrypt';
+import pg from 'pg';
 
-dotenv.config();
+env.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
 app.use(cors());
+
+const db = new pg.Client({
+
+    user: process.env.PG_USER,
+    host: process.env.PG_HOST,
+    database: process.env.PG_DATABASE,
+    password: process.env.PG_PASSWORD,
+    port: process.env.PG_PORT
+
+});
+
+db.connect();
 
 app.get('/', (req, res) => {
 
@@ -153,7 +167,7 @@ newsletterMail.verify((error) => {
 
     if (error) {
         
-        res.status(400).json({ message: error })
+        res.json(error)
 
     } else {
         
@@ -208,15 +222,49 @@ app.get('/register', (req, res) => {
 
     } catch (error) {
         
-        res.status(400).json({ message: error });
+        res.json( error );
 
     }
 
 });
 
-app.post('/register', (req, res) => {
+app.post('/register', async (req, res) => {
 
-    
+    console.log(req.body);
+
+    const { fullname, email, mobile, password } = req.body;
+
+    const checkCustomer = await db.query("SELECT * FROM customer WHERE email = $1", [email]);
+
+    if (checkCustomer.rows.length > 0) {
+        
+        res.status(200).json({ message: "Your are already exists.." });
+
+    } else {
+        
+        bcrypt.genSalt(10, (error, salt) => {
+
+            if (error) {
+                
+                res.status(400).json({ message: error });
+
+            }
+                
+            bcrypt.hash(password, salt, async (error, hash) => {
+
+                if(error){
+
+                    res.status(400).json({ message: error });
+
+                }
+
+                await db.query("INSERT INTO customer(name, email, mobile, password) VALUES($1, $2, $3, $4)", [fullname, email, mobile, hash]);
+
+            });
+
+        })
+
+    }
 
 });
 

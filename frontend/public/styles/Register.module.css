@@ -1,0 +1,104 @@
+@font-face {
+    font-family: 'registerFont';
+    src: url('../fonts/magenda/MagendaRegular-MVwjx.ttf');
+}
+
+.registerDiv{
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 999999;
+    background-color: rgba(255, 255, 255, 0.193);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.registerDiv > .register{
+
+    width: 600px;
+    height: 530px;
+    background-color: rgba(255, 255, 255, 0.148);
+    backdrop-filter: blur(50px);
+    box-shadow: 5px 5px 10px #292929;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+
+}
+
+.register > .registerHeading {
+
+    width: 100%;
+    height: 35%;
+    padding-left: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+}
+
+.registerHeading h2 > span{
+
+    color: orange;
+
+}
+
+.registerHeading > svg{
+
+    position: absolute;
+    right: 50px;
+    border-radius: 50px;
+    top: 20px;
+    cursor: pointer;
+    background-color: orange;
+    padding: 10px;
+    color: #ffffff;
+    font-size: 20px;
+    transition: all 0.5s ease;
+
+}
+
+.registerHeading > svg:hover{
+
+    transform: scale(1.2);
+    background-color: snow;
+    color: orange;
+
+}
+
+.register > .registerHeading h2{
+
+    color: #292929;
+    font-size: 2rem;
+    font-family: 'registerFont';
+    letter-spacing: 2px;
+    position: relative;
+
+}
+
+.registerHeading > h2::before{
+
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 50%;
+    height: 3px;
+    content: "";
+    background-color: orange;
+
+}
+
+.register > .registerForm{
+
+    width: 100%;
+    height: 100%;
+
+}

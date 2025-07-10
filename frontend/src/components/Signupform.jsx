@@ -1,46 +1,54 @@
 import React from 'react';
 import SignUpFormContainerStyle from '../../public/styles/Signupformcontainer.module.css';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 
 function Signupform() {
+
+    const navigate = useNavigate();
 
     const {
         
         register,
         handleSubmit,
-        // reset,
+        reset,
         formState: { errors }
 
     } = useForm();
-
-    const delay = (d) => {
-
-        setTimeout(() => {
-
-            return new Promise((resolve, reject) => {
-
-                try {
-                   
-                    resolve();
-
-                } catch (error) {
-                    
-                    reject(error);
-                    
-                }
-
-            });
-
-        }, d * 1000)
-    
-    }
     
     const onSubmit = async (data) => {
         
-        await delay(2);
-        console.log(data);
+        try{
 
-    };
+            const response = await fetch("http://localhost:3000/register", {
+
+                headers: { "Content-Type": "application/json; charset=utf-8" },
+                method: "POST",
+                body: JSON.stringify(data)
+
+            });
+            let getData = await response.json();
+            console.log(data, getData);
+
+            if(getData && getData.status === "success"){
+
+                reset();
+                navigate("/cart");
+
+            }else{
+
+                navigate('/cart');
+
+            }
+
+        }catch(error){
+
+            console.log(error);
+
+        }
+       
+
+    }
 
     return (
 
