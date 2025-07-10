@@ -9,7 +9,6 @@ import Women from './components/Women';
 import Kids from './components/Kids';
 import Cart from './components/Cart';
 import Wishlist from './components/Wishlist';
-import User from './components/Userpage';
 
 function App() {
 
@@ -42,7 +41,6 @@ function App() {
                 <Route path='kids' element={<Kids />} />
                 <Route path='wishlist' element={<Wishlist />} />
                 <Route path='cart' element={<Cart />} />
-                <Route path='user' element={<User />} />
 
             </Route>
 
