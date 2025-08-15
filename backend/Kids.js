@@ -38,6 +38,26 @@ const Kids = [
         category: "Kid's Outfit",
         price: '8000'
 
+    }, 
+
+    {
+
+        id: 5,
+        image: 'https://images.unsplash.com/photo-1725071287951-b12b67bd3dd9?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        title: 'Half Sleeve Blue T-Shirt With Khaki Pant',
+        category: "Kid's Outfit",
+        price: '4000'
+
+    },
+
+    {
+
+        id: 6,
+        image: 'https://images.unsplash.com/photo-1661274765524-20669dc4091b?q=80&w=686&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        title: 'Blue Western Coat With White Shirt',
+        category: "Kid's Outfit",
+        price: '5000'
+
     }
 
 ]

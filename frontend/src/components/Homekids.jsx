@@ -7,13 +7,17 @@ import { fetchKidsHomeProduct } from '../features/Shop/HomeKidsSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart } from '../features/Shop/CartSlice';
 import { addToWishList } from "../features/Shop/WishListSlice"; 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation } from 'swiper/modules';
+import 'swiper/css';
+import ReuseableNavigationArrow from '../components/Reuseablenavigationarrow';
+import ReuseableHomeProductButton from '../components/Reuseablehomeproductbutton';
 
 function Homekids() {
-    
-    const navigate = useNavigate();
 
     const { items: kidsProduct, status } = useSelector((state) => state.homeKidsProduct);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     useEffect(() => {
 
@@ -40,13 +44,33 @@ function Homekids() {
 
             <div className={HomeKidStyle.homeKidsProduct}>
 
-                <div className={HomeKidStyle.homeKidsPorductContainer}>
+                <Swiper className={HomeKidStyle.homeKidsPorductContainer}
+                
+                    slidesPerView={4}
+                    spaceBetween={20}
+                    loop={true}
+                    speed={1000}
+                    autoplay={{
+
+                        delay: 2000
+
+                    }}
+                    navigation={{
+
+                        nextEl: '#next',
+                        prevEl: "#previous"
+
+                    }}
+
+                    modules={[Autoplay, Navigation]}
+                    
+                >
 
                     {kidsProduct.map((kidsItem) => {
 
                         return (
 
-                            <div className={HomeKidStyle.homeKidsProductBox} key={kidsItem.id}>
+                            <SwiperSlide className={HomeKidStyle.homeKidsProductBox} key={kidsItem.id}>
 
                                 <div className={HomeKidStyle.homeKidsProductImage}>
 
@@ -65,21 +89,26 @@ function Homekids() {
 
                                 </div>
 
-                            </div>
+                            </SwiperSlide>
 
                         );
 
                     })}
+
+                </Swiper>
+
+                <ReuseableNavigationArrow
+                
+                    next="next"
+                    previous="previous"
                     
-                   
+                />
 
-                </div>
-
-                <div className={HomeKidStyle.homeKidsPorductButton}>
-
-                    <button onClick={() => {navigate('/kids')}}> View More </button>
-
-                </div>
+                <ReuseableHomeProductButton
+                
+                    pageLink={() => navigate('/kids')}
+                
+                />
 
             </div>
 
