@@ -11,8 +11,9 @@ import ProductDiscount from '../components/Productdiscount';
 import BrandCarousel from '../components/Brandcarousel';
 import HomeKids from '../components/Homekids';
 import TestimonialCarousel from '../components/Testimonialcarousel';
+import HomeBannerCarousel from '../components/Homebannercarousel';
 
-let video = '../../public/video/newvideo.mp4';
+// let video = '../../public/video/newvideo.mp4';
 
 function Home() {
 
@@ -24,14 +25,15 @@ function Home() {
         
             {/** Hero Section Video */}
 
-            <div className={HomeStyle.bannerSection}>
+            {/* <div className={HomeStyle.bannerSection}>
 
                 <video src={video} autoPlay loop muted></video>
 
-            </div>
+            </div> */}
+
+            <HomeBannerCarousel />
 
             {/** Notice Carousel */}
-            
             <div className={HomeStyle.noticeSection}>
 
                 <div className={HomeStyle.noticeContent}>
@@ -53,7 +55,6 @@ function Home() {
             </div>
 
             {/** Category Section */}
-
             <div className={HomeStyle.categorySection}>
 
                 <CategoryBox />   
@@ -61,7 +62,6 @@ function Home() {
             </div>
 
             {/** Product Grid Section */}
-
             <div className={HomeStyle.gridProductSection}>
 
                 <HomeGrid />
@@ -69,7 +69,6 @@ function Home() {
             </div>
 
             {/** Men Product Section */}
-
             <div className={HomeStyle.menProductSection}>
 
                 <div className={HomeStyle.menHeading}>
@@ -87,7 +86,6 @@ function Home() {
             </div>
 
             {/** Men Product Discount */}
-
             <div className={HomeStyle.menProductdDiscount}>
 
                 <div className={HomeStyle.discountProduct}></div>
@@ -103,11 +101,9 @@ function Home() {
             </div>
 
             {/** Women Product Section component*/}
-
             <HomeWomenProduct />
 
             {/** Women Product Discount Section */}
-
             <ProductDiscount
             
                 discountImage="https://plus.unsplash.com/premium_photo-1661319067088-61e0b9e079b0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fHw%3D"
@@ -117,11 +113,9 @@ function Home() {
             />
 
             {/** Home Kids Product Section */}
-
             <HomeKids />
 
             {/** Kids Product Discount Section */}
-
             <ProductDiscount
             
                 discountImage="https://images.unsplash.com/photo-1741992556912-3b2d62461e75?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -131,15 +125,12 @@ function Home() {
             />
 
             {/** Testimonial Carousel Section */}
-
             <TestimonialCarousel />
 
             {/** Brand Logo Carousel Seciton */}
-
             <BrandCarousel />
 
             {/** Footer Section Component */}
-            
             <Footer />
             
         </>

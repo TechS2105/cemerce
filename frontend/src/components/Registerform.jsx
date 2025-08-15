@@ -1,6 +1,8 @@
 import React from 'react';
 import RegisterFormStyle from '../../public/styles/Registerform.module.css';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
+import LoginFormContainer from '../components/Login';
 
 function Registerform() {
 
@@ -9,11 +11,52 @@ function Registerform() {
         register,
         handleSubmit,
         formState: { errors },
-        // reset,
+        reset,
 
     } = useForm();
 
-    const onSubmit = (data) => console.log(data);
+    const navigate = useNavigate();
+
+    const onSubmit = async (data) => {
+        
+        try { 
+
+            const response = await fetch("http://localhost:3000/register", {
+
+                headers: { "Content-Type": "application/json; charset=utf-8" },
+                method: "POST",
+                body: JSON.stringify(data)
+
+            });
+
+            if (!response.ok) {
+                
+                throw new Error(`HTTP Status ${response.status}`);
+
+            }
+
+            let getData = await response.json()
+            console.log(data, getData);
+
+            if (getData.success) {
+                
+                reset();
+                navigate('/cart');
+
+            }else{
+
+                alert(getData.message || "You have already been registered. Please login.");
+
+            }
+
+        } catch (error) {
+            
+            console.log(error)
+
+        }
+        
+
+    };
     
     return (
 

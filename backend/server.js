@@ -19,6 +19,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
+app.use(express.json());
 app.use(cors());
 
 const db = new pg.Client({
@@ -167,7 +168,7 @@ newsletterMail.verify((error) => {
 
     if (error) {
         
-        res.json(error)
+        console.log(error)
 
     } else {
         
@@ -213,21 +214,22 @@ app.post('/api/send/mail', (req, res) => {
 
 });
 
-/** Create Register Endpoint */
+/** Create GET Register Endpoint */
 app.get('/register', (req, res) => {
-    
+
     try {
-        
-        res.status(200).json({ message: "Successfully created registered endpoint..." })
+
+        res.status(200).json({ message: "Successfully registered..." });
 
     } catch (error) {
         
-        res.json( error );
+        req.status(400).json({message: error});
 
     }
 
 });
 
+/** Create POST Register Endpoint */
 app.post('/register', async (req, res) => {
 
     console.log(req.body);
@@ -238,31 +240,100 @@ app.post('/register', async (req, res) => {
 
     if (checkCustomer.rows.length > 0) {
         
-        res.status(200).json({ message: "Your are already exists.." });
+        res.send(200).json({ message: "You have already been registered." })
 
     } else {
         
-        bcrypt.genSalt(10, (error, salt) => {
+        bcrypt.genSalt(12, (error, salt) => {
 
             if (error) {
-                
-                res.status(400).json({ message: error });
+
+                console.log(error);
 
             }
-                
+
             bcrypt.hash(password, salt, async (error, hash) => {
 
-                if(error){
+                if (error) {
+                    
+                    console.log(error);
 
-                    res.status(400).json({ message: error });
+                } else {
+                    
+                    await db.query("INSERT INTO customer(name, email, mobile, password) VALUES($1, $2, $3, $4)", [fullname, email, mobile, hash]);
 
                 }
 
-                await db.query("INSERT INTO customer(name, email, mobile, password) VALUES($1, $2, $3, $4)", [fullname, email, mobile, hash]);
-
-            });
+            })
 
         })
+
+    }
+
+});
+
+/**  Create GET  Login Endpoint */
+app.get('/login', async (req, res) => {
+
+    try {
+        
+        res.status(200).json({ message: "Successfully loggedin..." });
+
+    } catch (error) {
+        
+        res.status(400).json({ message: error });
+
+    }
+
+});
+
+/** Create POST Login Endpoint */
+app.post('/login', async (req, res) => {
+
+    console.log(req.body);
+
+    try{
+
+        const {email, password} = req.body;
+
+        const checkRegisterCustomer = await db.query("SELECT * FROM customer WHERE email = $1", [email]);
+
+        if(checkRegisterCustomer.rows.length > 0){
+
+            let customer = checkRegisterCustomer.rows[0];
+            let customerPass = customer.password;
+            
+            bcrypt.compare(password, customerPass, (error, result) => {
+
+                if (error) {
+                    
+                    console.log(error);
+
+                } else {
+                    
+                    if (result) {
+                        
+                        console.log("Page is redirecting...")
+
+                    } else {
+                        
+                        console.log("Incorrect Password..")
+                        
+                    }
+
+                }
+
+            })
+
+        } else {
+            
+            console.log("User not found...");
+
+        }
+
+    }catch(error){
+
+        res.status(400).json({message: error});
 
     }
 

@@ -1,19 +1,61 @@
 import React from 'react';
 import LoginFormStyle from '../../public/styles/Loginform.module.css';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 
 function Loginform() {
+
+    const navigate = useNavigate();
 
     const {
 
         handleSubmit,
         register,
-        // reset,
+        reset,
         formState: { errors }
 
     } = useForm();
 
-    const onSubmit = (data) => console.log(data);
+    const onSubmit = async (data) => {
+        
+        try{
+
+            const response = await fetch("http://localhost:3000/login", {
+            
+                headers: { "Content-Type": "application/json; charset=utf-8" },
+                method: "POST",
+                body: JSON.stringify(data)
+                
+            });
+
+            if (!response.ok) {
+                
+                throw new Error(`HTTP! Status ${response.status}`);
+
+            }
+
+            let getData = await response.json();
+            console.log(data, getData);
+            
+            if (getData.success) {
+                
+                reset();
+                navigate('/cart');
+
+            } else {
+                
+                alert(getData.message || "Username or Password has been incorrect");
+                navigate('/');
+
+            }
+
+        }catch(error){
+
+            console.log(error);
+
+        }
+    
+    };
     
     return (
 
