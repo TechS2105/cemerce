@@ -4,9 +4,14 @@ import { fetchHomeWomenProduct } from '../features/Shop/HomeWomenSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart } from '../features/Shop/CartSlice';
 import { addToWishList } from '../features/Shop/WishListSlice';
-import { useNavigate } from 'react-router-dom';
 import { GoHeart } from "react-icons/go";
 import { FaRegEye } from "react-icons/fa";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { Autoplay, Navigation } from 'swiper/modules';
+import ReuseableNavigationArrow from '../components/Reuseablenavigationarrow';
+import ReuseableHomeProductButton from '../components/Reuseablehomeproductbutton';
+import { useNavigate } from 'react-router-dom';
 
 function Homeproduct() {
 
@@ -14,7 +19,6 @@ function Homeproduct() {
     useSelector((state) => console.log(state.cart));
 
     const dispatch = useDispatch();
-
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -34,13 +38,35 @@ function Homeproduct() {
 
         <>
             
-            <div className={HomeProductStyle.homeProductContainer}>
+            <Swiper className={HomeProductStyle.homeProductContainer}
+            
+                slidesPerView={4}
+                spaceBetween={20}
+                loop={true}
+                speed={1000}
+                autoplay={{
+
+                    delay: 2000,
+                    reverseDirection: true
+
+                }}
+
+                navigation={{
+
+                    nextEl: "#next",
+                    prevEl: "#previous"
+
+                }}
+
+                modules={[Autoplay, Navigation]}
+            
+            >
 
                 {homeWomenProducts.map((womenProduct) => {
 
                     return (
 
-                        <div className={HomeProductStyle.homeProductBox} key={womenProduct.id}>
+                        <SwiperSlide className={HomeProductStyle.homeProductBox} key={womenProduct.id}>
 
                             <div className={HomeProductStyle.homeProductImage}>
 
@@ -59,19 +85,27 @@ function Homeproduct() {
 
                             </div>
 
-                        </div>
+                        </SwiperSlide>
 
                     );
 
                 })}
 
-            </div>
+            </Swiper>
 
-            <div className={HomeProductStyle.homeProductButton}>
+            <ReuseableNavigationArrow
+            
+                next="next"
+                previous="previous"
+                
+            />
 
-                    <button onClick={() => {navigate('/women')}}> View More </button>
-
-            </div>
+            <ReuseableHomeProductButton
+            
+                pageLink={() => navigate('/women')}
+                
+            />
+            
         </>
 
     );
