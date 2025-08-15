@@ -2,15 +2,17 @@ import React, {useEffect} from 'react';
 import HomeMenOutfitStyle from '../../public/styles/Homemenoutfit.module.css';
 import { GoHeart } from "react-icons/go";
 import { FaEye } from "react-icons/fa";
-import { useNavigate } from 'react-router-dom';
 import { fetchHomeMenProduct } from '../features/Shop/HomeMenSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart } from '../features/Shop/CartSlice';
 import { addToWishList } from '../features/Shop/WishListSlice';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { Autoplay, Navigation } from 'swiper/modules';
+import ReuseabelNavigationArrow from '../components/Reuseablenavigationarrow';
+import Reuseablenavigationarrow from '../components/Reuseablenavigationarrow';
 
 function Homemenoutfit() {
-
-    const navigate = useNavigate();
 
     const { items: menProduct, status } = useSelector((state) => state.homeMenProduct);
     
@@ -36,13 +38,34 @@ function Homemenoutfit() {
 
         <>
         
-            <div className={HomeMenOutfitStyle.menHomeOutfit}>
+            <Swiper className={HomeMenOutfitStyle.menHomeOutfit}
+            
+                slidesPerView={4}
+                spaceBetween={20}
+                loop={true}
+                speed={1000}
+                autoplay={{
+
+                    delay: 2000
+
+                }}
+
+                navigation={{
+
+                    nextEl: '#next',
+                    prevEl: '#previous'
+
+                }}
+
+                modules={[Autoplay, Navigation]}
+                
+            >
 
                 {menProduct.map((menItem) => {
 
                     return (
 
-                        <div className={HomeMenOutfitStyle.menProduct} key={menItem.id}>
+                        <SwiperSlide className={HomeMenOutfitStyle.menProduct} key={menItem.id}>
 
                             <div className={HomeMenOutfitStyle.menProductImage}>
 
@@ -61,22 +84,21 @@ function Homemenoutfit() {
 
                             </div>
 
-                        </div> 
+                        </SwiperSlide> 
 
                     );
 
                 })}
                 
-                
-
-            </div>
-
-            <div className={HomeMenOutfitStyle.menLinkButton}>
-
-                <button onClick={() => {navigate('/men')}}> View More </button>
-
-            </div>
+            </Swiper>
             
+            <Reuseablenavigationarrow
+            
+                next="next"
+                previous="previous"
+                
+            />
+
         </>
 
     );

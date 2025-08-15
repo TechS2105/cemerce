@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'productNavigationArrowFont';
+    src: url('../fonts/magenda/MagendaRegular-MVwjx.ttf');
+}
+
+.navArrowBox{
+
+    width: 95%;
+    height: 4rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+}
+
+.navArrowBox > ul{
+
+    display: flex;
+    gap: 100px;
+    list-style-type: none;
+
+}
+
+.navArrowBox ul li > span{
+
+    font-family: 'productNavigationArrowFont';
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.8s ease;
+    display: inline-flex;
+
+}
+
+.navArrowBox ul > li{
+
+    position: relative;
+
+}
+
+.navArrowBox ul > li:nth-child(1)::after{
+
+    position: absolute;
+    top: 8px;
+    left: 110px;
+    width: 75%;
+    height: 1.8px;
+    background-color: orange;
+    content: "";
+
+}
+
+.navArrowBox ul li > span:hover{
+
+    transform: scale(1.1) skew(-20deg);
+    
+}

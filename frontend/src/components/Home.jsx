@@ -12,8 +12,7 @@ import BrandCarousel from '../components/Brandcarousel';
 import HomeKids from '../components/Homekids';
 import TestimonialCarousel from '../components/Testimonialcarousel';
 import HomeBannerCarousel from '../components/Homebannercarousel';
-
-// let video = '../../public/video/newvideo.mp4';
+import ReuseHomeProductButton from '../components/Reuseablehomeproductbutton';
 
 function Home() {
 
@@ -23,14 +22,9 @@ function Home() {
 
         <>
         
+            <main>
+            
             {/** Hero Section Video */}
-
-            {/* <div className={HomeStyle.bannerSection}>
-
-                <video src={video} autoPlay loop muted></video>
-
-            </div> */}
-
             <HomeBannerCarousel />
 
             {/** Notice Carousel */}
@@ -80,6 +74,11 @@ function Home() {
                 <div className={HomeStyle.menOutfitSection}>
 
                     <HomeMenOutfit />
+                    <ReuseHomeProductButton
+                        
+                        pageLink={() => navigate('/men')}
+                            
+                    />
 
                 </div>
 
@@ -130,6 +129,8 @@ function Home() {
             {/** Brand Logo Carousel Seciton */}
             <BrandCarousel />
 
+            </main>
+                
             {/** Footer Section Component */}
             <Footer />
             

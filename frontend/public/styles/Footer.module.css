@@ -570,7 +570,6 @@ footer > .footerOverlay{
     font-family: 'footerLogoFont';
     font-weight: bold;
     letter-spacing: 1rem;
-    animation: footerLogoAnimation 10s linear infinite;
     width: 60vw;
 
 }
@@ -581,21 +580,6 @@ footer > .footerOverlay{
     color: orange;
     align-items: center;
     height: 100%;
-
-}
-
-@keyframes footerLogoAnimation {
-    
-    from{
-
-        transform: translateX(-100%);
-
-
-    }to{
-
-        transform: translateX(100%);
-
-    }
 
 }
 

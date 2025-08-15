@@ -1,0 +1,62 @@
+@font-face {
+    font-family: 'HomeProductButtonFont';
+    src: url('../fonts/magenda/MagendaRegular-MVwjx.ttf');
+}
+
+.linkButton {
+
+    width: 100%;
+    height: 14%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.linkButton>button {
+
+    width: 200px;
+    height: 40px;
+    background-color: transparent;
+    color: #131313;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: 'HomeProductButtonFont';
+    font-weight: bolder;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    border: 1px solid orange;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.8s ease;
+
+}
+
+.linkButton>button::before {
+
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    height: 0%;
+    width: 100%;
+    background-color: orange;
+    transition: all 0.8s ease;
+    z-index: -2;
+
+}
+
+.linkButton>button:hover {
+
+    border: none;
+    color: snow;
+
+}
+
+.linkButton>button:hover::before {
+
+    height: 100%;
+
+}
