@@ -13,6 +13,7 @@ import HomeKids from '../components/Homekids';
 import TestimonialCarousel from '../components/Testimonialcarousel';
 import HomeBannerCarousel from '../components/Homebannercarousel';
 import ReuseHomeProductButton from '../components/Reuseablehomeproductbutton';
+import Loader from '../components/Loader';
 
 function Home() {
 
@@ -22,6 +23,8 @@ function Home() {
 
         <>
         
+            <Loader />
+            
             <main>
             
             {/** Hero Section Video */}
