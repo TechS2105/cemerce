@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import HomeStyle from '../../public/styles/Home.module.css';
 import { GoDotFill } from "react-icons/go";
 import CategoryBox from '../components/Categorybox';
@@ -18,6 +18,263 @@ import Loader from '../components/Loader';
 function Home() {
 
     const navigate = useNavigate();
+
+    const [menProductAnime, setMenProductAnime] = useState({
+
+        transform: "translateY(100px)",
+        opacity: "0",
+        filter: "blur(20px)",
+
+    });
+
+    const [menProductCarousel, setMenProductCarousel] = useState({
+
+        transform: "translateY(1000px)",
+        opacity: "0",
+        filter: "blur(20px)"
+
+    });
+
+    const [menProductButton, setMenProductButton] = useState({
+
+        opacity: "0",
+        filter: "blur(20px)",
+
+    });
+
+    const [homeMenViewMoreButton, setHomeMenViewMoreButton] = useState({
+
+        transform: "translateY(100px)",
+        opacity: "0",
+        filter: "blur(20px)",
+
+    });
+
+    // Men Product Discount Section 
+    const [menDiscountImageAnime, setMenDiscountImageAnime] = useState({
+
+        opacity: "0",
+        filter: "blur(20px)",
+
+    });
+
+    const [menProductDiscountHeading, setMenProductHeading] = useState({
+
+        opacity: "0",
+        filter: "blur(20px)",
+
+    });
+
+    const [menProductDiscountPara1, setMenProductDiscountPara1] = useState({
+
+        opacity: "0",
+        filter: "blur(20px)",
+
+    });
+
+    const [menProductDiscountPara2, setMenProductDiscountPara2] = useState({
+
+        opacity: '0',
+        filter: "blur(20px)",
+
+    });
+
+    const [menProductDiscountShopNowButton, setMenProductDiscountShopNowButton] = useState({
+
+        opacity: '0',
+        filter: "blur(20px)",
+
+    });
+
+    function handleMenProductScroll() {
+        
+        if (window.scrollY > 1500) {
+           
+            setMenProductAnime({
+
+                transform: "translateY(0px)",
+                transition: "all 0.8s ease",
+                opacity: "1",
+                filter: "blur(0px)"
+
+            });
+
+            setMenProductCarousel({
+
+                transform: "translateY(0px)",
+                transition: "all 0.8s ease 0.5s",
+                opacity: "1",
+                filter: "blur(0px)"
+
+            });
+
+        } else {
+            
+            setMenProductAnime({
+
+                transform: "translateY(100px)",
+                transition: "all 0.8s ease",
+                opacity: "0",
+                filter: "blur(20px)",
+
+            });
+
+            setMenProductCarousel({
+
+                transform: "translateY(1000px)",
+                transition: "all 0.8s ease",
+                opacity: "0",
+                filter: "blur(20px)"
+
+            })
+
+        }
+        
+        if (window.scrollY >= 1800) {
+            
+            setMenProductButton({
+
+                opacity: "1",
+                filter: "blur(0px)",
+                transition: "all 0.8s ease 0.3s"
+
+            });
+
+        } else {
+            
+            setMenProductButton({
+
+                opacity: "0",
+                filter: "blur(20px)",
+                transition: 'all 0.8s ease'
+
+            });
+
+        }
+
+        if (window.scrollY >= 2000) {
+            
+            setHomeMenViewMoreButton({
+
+                transform: "translateY(0px)",
+                transition: "all 0.8s ease",
+                opacity: "1",
+                filter: "blur(0px)",
+
+            });
+
+        } else {
+            
+            setHomeMenViewMoreButton({
+
+                transform: "translateY(100px)",
+                transition: "all 0.8s ease",
+                opacity: "0",
+                filter: "blur(20px)",
+
+            })
+
+        }
+
+    }
+
+    function handleMenProductDiscount() {
+        
+        if (window.scrollY > 2300) {
+            
+            setMenDiscountImageAnime({
+
+                opacity: '1',
+                filter: "blur(0px)",
+                transition: "all 0.8s ease"
+
+            });
+
+            setMenProductHeading({
+
+                opacity: '1',
+                filter: "blur(0px)",
+                transition: "all 0.8s ease 0.2s"
+
+            });
+
+            setMenProductDiscountPara1({
+
+                opacity: '1',
+                filter: "blur(0px)",
+                transition: "all 0.8s ease 0.4s"
+
+            });
+
+            setMenProductDiscountPara2({
+
+                opacity: '1',
+                filter: "blur(0px)",
+                transition: "all 0.8s ease 0.6s"
+
+            });
+
+            setMenProductDiscountShopNowButton({
+
+                opacity: "1",
+                filter: "blur(0px)",
+                transition: "all 0.8s ease"
+
+            })
+            
+
+        }else{
+
+            setMenDiscountImageAnime({
+
+                opacity: '0',
+                filter: "blur(20px)",
+                transition: "all 0.8s ease"
+
+            });
+
+            setMenProductHeading({
+
+                opacity: '0',
+                filter: "blur(20px)",
+                transition: "all 0.8s ease"
+
+            });
+
+            setMenProductDiscountPara1({
+
+                opacity: '0',
+                filter: "blur(20px)",
+                transition: "all 0.8s ease"
+
+            });
+
+            setMenProductDiscountPara2({
+
+                opacity: '0',
+                filter: "blur(20px)",
+                transition: "all 0.8s ease"
+
+            });
+
+            setMenProductDiscountShopNowButton({
+
+                opacity: "0",
+                filter: "blur(20px)",
+                transition: "all 0.8s ease"
+
+            })
+
+        }
+
+    }
+
+    useEffect(() => {
+
+        window.addEventListener("scroll", handleMenProductScroll);
+        window.addEventListener("scroll", handleMenProductDiscount);
+
+    }, [])
     
     return (
 
@@ -66,20 +323,26 @@ function Home() {
             </div>
 
             {/** Men Product Section */}
-            <div className={HomeStyle.menProductSection}>
+            <div className={HomeStyle.menProductSection} onScroll={handleMenProductScroll}>
 
                 <div className={HomeStyle.menHeading}>
                     
-                    <h2> Men's Outfit </h2>
+                    <h2 style={menProductAnime}> Men's Outfit </h2>
                 
                 </div>
 
                 <div className={HomeStyle.menOutfitSection}>
 
-                    <HomeMenOutfit />
+                    <HomeMenOutfit 
+
+                            menProductCarousel={menProductCarousel}
+                            menProductButton={menProductButton}
+                            
+                    />
                     <ReuseHomeProductButton
                         
-                        pageLink={() => navigate('/men')}
+                            pageLink={() => navigate('/men')}
+                            homeViewMoreButton={homeMenViewMoreButton}
                             
                     />
 
@@ -88,15 +351,15 @@ function Home() {
             </div>
 
             {/** Men Product Discount */}
-            <div className={HomeStyle.menProductdDiscount}>
+            <div className={HomeStyle.menProductdDiscount} onScroll={handleMenProductDiscount}>
 
-                <div className={HomeStyle.discountProduct}></div>
+                <div className={HomeStyle.discountProduct} style={menDiscountImageAnime}></div>
                 <div className={HomeStyle.discountProductContent}>
 
-                    <h2> Men's Product Discount </h2>
-                    <p><span style={{color: "orange", marginRight: "20px"}}> 50% </span> OFF </p>
-                    <p>Limited <span> Time </span> Offer </p>
-                    <button onClick={() => navigate('/shop')}> Shop Now </button>
+                    <h2 style={menProductDiscountHeading}> Men's Product Discount </h2>
+                    <p style={menProductDiscountPara1}><span style={{color: "orange", marginRight: "20px"}}> 50% </span> OFF </p>
+                    <p style={menProductDiscountPara2}>Limited <span> Time </span> Offer </p>
+                    <button onClick={() => navigate('/shop')} style={menProductDiscountShopNowButton}> Shop Now </button>
 
                 </div>
 

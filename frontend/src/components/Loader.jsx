@@ -159,7 +159,7 @@ function Loader() {
         setThirdBlockStyle({
 
             transform: "translateY(1000px)",
-            transition: "all 2s ease 6s",
+            transition: "all 2s ease 5.9s",
             filter: "blur(20x)",
             opacity: "0"
 
@@ -168,7 +168,7 @@ function Loader() {
         setForuthBlockStyle({
 
             transform: "translateY(-1000px)",
-            transition: "all 2s ease 5s",
+            transition: "all 2s ease 4.9s",
             filter: "blur(20px)",
             opacity: "0"
 
@@ -177,7 +177,7 @@ function Loader() {
         setFifthBlockStyle({
 
             transform: "translateY(1000px)",
-            transition: "all 2s ease 6s",
+            transition: "all 2s ease 5.8s",
             filter: "blur(20px)",
             opacity: "0"
 
@@ -186,7 +186,7 @@ function Loader() {
         setSixthBlockStyle({
 
             transform: 'translateY(-1000px)',
-            transition: "all 2s ease 5s",
+            transition: "all 2s ease 4.8s",
             filter: "blur(20px)",
             opacity: "0",
 
@@ -195,7 +195,7 @@ function Loader() {
         setSeventhBlockStyle({
 
             transform: "translateY(1000px)",
-            transition: "all 2s ease 6s",
+            transition: "all 2s ease 5.7s",
             filter: "blur(20px)",
             opacity: "0"
 

@@ -9,10 +9,9 @@ import { addToWishList } from '../features/Shop/WishListSlice';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Autoplay, Navigation } from 'swiper/modules';
-import ReuseabelNavigationArrow from '../components/Reuseablenavigationarrow';
 import Reuseablenavigationarrow from '../components/Reuseablenavigationarrow';
 
-function Homemenoutfit() {
+function Homemenoutfit({menProductCarousel, menProductButton}) {
 
     const { items: menProduct, status } = useSelector((state) => state.homeMenProduct);
     
@@ -58,6 +57,7 @@ function Homemenoutfit() {
                 }}
 
                 modules={[Autoplay, Navigation]}
+                style={menProductCarousel}
                 
             >
 
@@ -96,6 +96,7 @@ function Homemenoutfit() {
             
                 next="next"
                 previous="previous"
+                homeProductNavButton={menProductButton}
                 
             />
 
