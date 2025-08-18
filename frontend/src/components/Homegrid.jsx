@@ -305,7 +305,7 @@ function Homegrid() {
 
         window.addEventListener('scroll', handleGridScroll);
 
-    }, [])
+    }, []);
     
     return (
 
@@ -330,7 +330,7 @@ function Homegrid() {
                 <h2 style={secondGirdTextAnime}> <span style={{color: "orange"}}>W</span>omen's Office Wear </h2>
 
                 <GridImage
-                
+                    
                     image={image2}
                     hoverAnime={secondImage}
                 />
