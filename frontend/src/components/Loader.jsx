@@ -131,9 +131,9 @@ function Loader() {
         setLoaderBlockAnime({
 
             transform: "translateY(-2000px)",
-            transition: "all 2s ease 7s",
+            transition: "all 2s ease 6.8s",
             opacity: "0",
-            filter: "blur(5px)",
+            filter: "blur(2px)",
 
         })
 

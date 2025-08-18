@@ -13,7 +13,7 @@ import ReuseableNavigationArrow from '../components/Reuseablenavigationarrow';
 import ReuseableHomeProductButton from '../components/Reuseablehomeproductbutton';
 import { useNavigate } from 'react-router-dom';
 
-function Homeproduct() {
+function Homeproduct({homeWomenProductAnime, homeWemenProductNavigationArrow, homeWomenProductViewMoreButton}) {
 
     const { items: homeWomenProducts, status } = useSelector((state) => state.homeWomenProduct);
     useSelector((state) => console.log(state.cart));
@@ -59,6 +59,7 @@ function Homeproduct() {
                 }}
 
                 modules={[Autoplay, Navigation]}
+                style={homeWomenProductAnime}
             
             >
 
@@ -97,12 +98,14 @@ function Homeproduct() {
             
                 next="next"
                 previous="previous"
+                homeProductNavButton={homeWemenProductNavigationArrow}
                 
             />
 
             <ReuseableHomeProductButton
             
                 pageLink={() => navigate('/women')}
+                homeViewMoreButton={homeWomenProductViewMoreButton}
                 
             />
             
