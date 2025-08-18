@@ -25,7 +25,7 @@ function Testimonialcarousel() {
 
                             {Testimonials.map((author) => (
 
-                                <div className={TestimonialCarouselStyle.testimonialBox}>
+                                <div className={TestimonialCarouselStyle.testimonialBox} key={author.id}>
 
                                     <div className={TestimonialCarouselStyle.testimonialContent}>
 
@@ -61,7 +61,7 @@ function Testimonialcarousel() {
 
                             {Testimonials.map((author) => (
 
-                                <div className={TestimonialCarouselStyle.testimonialBox}>
+                                <div className={TestimonialCarouselStyle.testimonialBox} key={author.id}>
 
                                     <div className={TestimonialCarouselStyle.testimonialContent}>
 
@@ -97,7 +97,7 @@ function Testimonialcarousel() {
 
                             {Testimonials.map((author) => (
 
-                                <div className={TestimonialCarouselStyle.testimonialBox}>
+                                <div className={TestimonialCarouselStyle.testimonialBox} key={author.id}>
 
                                     <div className={TestimonialCarouselStyle.testimonialContent}>
 

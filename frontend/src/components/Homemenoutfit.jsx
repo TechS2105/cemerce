@@ -14,9 +14,6 @@ import Reuseablenavigationarrow from '../components/Reuseablenavigationarrow';
 function Homemenoutfit({menProductCarousel, menProductButton}) {
 
     const { items: menProduct, status } = useSelector((state) => state.homeMenProduct);
-    
-    useSelector((state) => console.log(state.cart));
-    useSelector((state) => console.log(state.wishlist));
 
     const dispatch = useDispatch();
 

@@ -19,6 +19,7 @@ function Home() {
 
     const navigate = useNavigate();
 
+    // Men Product Section 
     const [menProductAnime, setMenProductAnime] = useState({
 
         transform: "translateY(100px)",
@@ -86,6 +87,7 @@ function Home() {
 
     });
 
+    // Men Product Scroll Anime
     function handleMenProductScroll() {
         
         if (window.scrollY > 1500) {
@@ -178,6 +180,7 @@ function Home() {
 
     }
 
+    // Men Product Discount Scroll Anime
     function handleMenProductDiscount() {
         
         if (window.scrollY > 2300) {
@@ -269,10 +272,137 @@ function Home() {
 
     }
 
+    // Women Discount Section 
+    const [womenDiscountImageAnime, setWomenDiscountImageAnime] = useState({
+
+        opacity: "0",
+        filter: "blur(20px)"
+
+    });
+
+    const [womenDiscountHeadingAnime, setWomenDiscountHeadingAnime] = useState({
+
+        opacity: "0",
+        filter: 'blur(20px)',
+
+    });
+
+    const [womenDiscountFirstParaAnime, setWomenDiscountFirstParaAnime] = useState({
+
+        opacity: "0",
+        filter: "blur(20px)",
+
+    });
+
+    const [womenDiscountSecondParaAnime, setWomenDiscountSecondParaAnime] = useState({
+
+        opacity: "0",
+        filter: "blur(20px)",
+
+    });
+
+    const [womenDiscountShopNowButton, setWomenDiscountShopNowButton] = useState({
+
+        opacity: "0",
+        filter: "blur(20px)",
+
+    });
+
+    // Women Product Discount Scroll Anime
+    function handleWomenProductDiscountScroll() {
+        
+        if (window.scrollY > 3400) {
+            
+            setWomenDiscountImageAnime({
+
+                opacity: "1",
+                filter: "blur(0px)",
+                transition: "all 0.8s ease"
+
+            });
+
+            setWomenDiscountHeadingAnime({
+
+                opacity: "1",
+                filter: "blur(0px)",
+                transition: "all 0.8s ease 0.3s"
+
+            });
+
+            setWomenDiscountFirstParaAnime({
+
+                opacity: "1",
+                filter: 'blur(0px)',
+                transition: "all 0.8s ease 0.5s"
+
+            });
+
+            setWomenDiscountSecondParaAnime({
+
+                opacity: "1",
+                filter: "blur(0px)",
+                transition: "all 0.8s ease 0.8s"
+
+            });
+
+            setWomenDiscountShopNowButton({
+
+                opacity: "1",
+                filter: "blur(0px)",
+                transition: "all 1s ease"
+
+            });
+
+        } else {
+            
+            setWomenDiscountImageAnime({
+
+                opacity: "0",
+                filter: "blur(20px)",
+                transition: "all 0.8s ease"
+
+            });
+
+            setWomenDiscountHeadingAnime({
+
+                opacity: "0",
+                filter: "blur(20px)",
+                transition: 'all 0.8s ease 0.8s'
+
+            });
+
+            setWomenDiscountFirstParaAnime({
+
+                opacity: '0',
+                filter: "blur(20px)",
+                transition: "all 0.8s ease 0.5s"
+
+            });
+
+            setWomenDiscountSecondParaAnime({
+
+                opacity: "0",
+                filter: "blur(20px)",
+                transition: "all 0.8s ease 0.3s"
+
+            });
+
+            setWomenDiscountShopNowButton({
+
+                opacity: "0", 
+                filter: "blur(20px)"
+
+            })
+
+        }
+
+    }
+
     useEffect(() => {
 
         window.addEventListener("scroll", handleMenProductScroll);
         window.addEventListener("scroll", handleMenProductDiscount);
+        window.addEventListener("scroll", handleWomenProductDiscountScroll);
 
     }, [])
     
@@ -373,7 +503,13 @@ function Home() {
             
                 discountImage="https://plus.unsplash.com/premium_photo-1661319067088-61e0b9e079b0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fHw%3D"
                 discountHeading="Women's Product Discount"
-                onButtonClick={() => {navigate('/shop')}}
+                onButtonClick={() => { navigate('/shop') }}
+                handleWomenProductDiscountScroll={handleWomenProductDiscountScroll}  
+                womenDiscountImageAnime={womenDiscountImageAnime} 
+                womenDiscountHeadingAnime={womenDiscountHeadingAnime}  
+                womenDiscountFirstParaAnime={womenDiscountFirstParaAnime} 
+                womenDiscountSecondParaAnime={womenDiscountSecondParaAnime}
+                womenDiscountShopNowButton={womenDiscountShopNowButton}    
             
             />
 

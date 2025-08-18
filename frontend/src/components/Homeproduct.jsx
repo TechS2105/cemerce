@@ -16,8 +16,6 @@ import { useNavigate } from 'react-router-dom';
 function Homeproduct({homeWomenProductAnime, homeWemenProductNavigationArrow, homeWomenProductViewMoreButton}) {
 
     const { items: homeWomenProducts, status } = useSelector((state) => state.homeWomenProduct);
-    useSelector((state) => console.log(state.cart));
-
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
