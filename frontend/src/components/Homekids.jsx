@@ -13,7 +13,7 @@ import 'swiper/css';
 import ReuseableNavigationArrow from '../components/Reuseablenavigationarrow';
 import ReuseableHomeProductButton from '../components/Reuseablehomeproductbutton';
 
-function Homekids() {
+function Homekids({kidsProductSectionScrollAnime, kidsProductSectionHeadingAnime, kidsProductAnime, kidsProductNavigationArrow, kidsProductSectionViewMoreButton}) {
 
     const { items: kidsProduct, status } = useSelector((state) => state.homeKidsProduct);
     const dispatch = useDispatch();
@@ -34,11 +34,11 @@ function Homekids() {
 
     return (
 
-        <div className={HomeKidStyle.homeKidsContainer}>
+        <div className={HomeKidStyle.homeKidsContainer} onScroll={kidsProductSectionScrollAnime}>
 
             <div className={HomeKidStyle.homeKidsHeading}>
 
-                <h2> Kid's Outfit </h2>
+                <h2 style={kidsProductSectionHeadingAnime}> Kid's Outfit </h2>
 
             </div>
 
@@ -63,6 +63,7 @@ function Homekids() {
                     }}
 
                     modules={[Autoplay, Navigation]}
+                    style={kidsProductAnime}
                     
                 >
 
@@ -101,12 +102,14 @@ function Homekids() {
                 
                     next="next"
                     previous="previous"
+                    homeProductNavButton={kidsProductNavigationArrow}
                     
                 />
 
                 <ReuseableHomeProductButton
                 
                     pageLink={() => navigate('/kids')}
+                    homeViewMoreButton={kidsProductSectionViewMoreButton}
                 
                 />
 

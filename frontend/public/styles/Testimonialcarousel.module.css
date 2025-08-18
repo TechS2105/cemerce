@@ -18,6 +18,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    overflow: hidden;
 
 }
 
@@ -57,6 +58,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 
 }
 

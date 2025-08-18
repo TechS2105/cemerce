@@ -398,11 +398,271 @@ function Home() {
 
     }
 
+    // Kid Product Section Heading
+    const [kidsProductSectionHeadingAnime, setKidsProductSectionHeadingAnime] = useState({
+
+        opacity: "0",
+        filter: "blur(20px)",
+        transform: "translateY(200px)",
+        
+    });
+
+    // Kid Product Section Product
+    const [kidsProductAnime, setKidsProductAnime] = useState({
+
+        opacity: "0",
+        filter: "blur(20px) brightness(250%)",
+        transform: "translateY(1000px)"
+
+    });
+
+    // Kid Product Section Navigation Arrow
+    const [kidsProductNavigationArrow, setKidsProductNavigationArrow] = useState({
+
+        opacity: "0",
+        filter: "blur(20px)",
+
+    });
+
+    // Kid Product Section View More Button
+    const [kidsProductSectionViewMoreButton, setKidsProductSectionViewMoreButton] = useState({
+
+        opacity: "0",
+        filter: "blur(20px)",
+        transform: "translateY(200px)",
+
+    });
+
+    // Kid Product Section Scroll
+    function handleKidsProductSectionScroll() {
+        
+        if(window.scrollY > 3800){
+
+            setKidsProductSectionHeadingAnime({
+
+                opacity: "1",
+                filter: "blur(0px)",
+                transform: "translateY(0px)",
+                transition: "all 0.8s ease"
+
+            });
+
+            setKidsProductAnime({
+
+                opacity: "1",
+                filter: "blur(0px) brightness(100%)",
+                transform: "translateY(0px)",
+                transition: "all 0.8s ease 0.5s",
+
+            });
+
+        } else {
+            
+            setKidsProductSectionHeadingAnime({
+
+                opacity: "0",
+                filter: "blur(20px)",
+                transform: "translateY(200px)",
+                transition: "all 0.8s ease"
+
+            });
+
+            setKidsProductAnime({
+
+                opacity: "0",
+                filter: "blur(20px) brightness(250%)",
+                transform: "translateY(1000px)",
+                transition: "all 0.8s ease"
+
+            })
+
+        }
+
+        if (window.scrollY >= 4300) {
+            
+            setKidsProductNavigationArrow({
+
+                opacity: "1",
+                filter: "blur(0px)",
+                transition: "all 0.8s ease"
+
+            });
+
+        } else {
+            
+            setKidsProductNavigationArrow({
+
+                opacity: "1",
+                filter: "blur(20px)",
+                transition: "all 0.8s ease"
+
+            });
+
+        }
+
+        if (window.scrollY >= 4400) {
+            
+            setKidsProductSectionViewMoreButton({
+
+                opacity: "1",
+                filter: 'blur(0px)',
+                transform: "translateY(0px)",
+                transition: "all 0.8s ease",
+
+            });
+
+        } else {
+            
+            setKidsProductSectionViewMoreButton({
+
+                opacity: "0",
+                filter: "blur(20px)",
+                transform: "translateY(200px)",
+                transition: "all 0.8s ease"
+
+            });
+
+        }
+
+    }
+
+    // Kid Product Discount Image Section 
+    const [kidDiscountImageAnime, setKidDiscountImageAnime] = useState({
+
+        opacity: "0",
+        filter: "blur(20px) brightness(350%)",
+
+    });
+
+    // Kid Product Discount Heading Anime
+    const [kidDiscountHeadingAnime, setKidDiscountHeadingAnime] = useState({
+
+        opacity: "0",
+        filter: "blur(20px)",
+
+    });
+
+    // Kid Product Discount First Para Anime
+    const [kidDiscountFirstParaAnime, setKidDiscountFirstParaAnime] = useState({
+
+        opacity: "0",
+        filter: "blur(20px)",
+
+    });
+
+    // Kid Product Discount Second Para Anime
+    const [kidDiscountSecondParaAnime, setKidDiscountSecondParaAnime] = useState({
+
+        opacity: "0",
+        filter: "blur(20px)",
+
+    });
+
+    // Kid Product Discount Shop Now Button
+    const [kidDiscountShopNowButton, setKidDiscountShopNowButton] = useState({
+
+        opacity: "0",
+        filter: "blur(20px)",
+
+    });
+
+    // Kid Product Discount Section Scroll
+    function handleKidsProductDiscountScroll() {
+        
+        if (window.scrollY > 4600) {
+            
+            setKidDiscountImageAnime({
+
+                opacity: "1",
+                transition: 'all 0.8s ease',
+                filter: "blur(0px) brightness(100%)"
+
+            });
+
+            setKidDiscountHeadingAnime({
+
+                opacity: "1",
+                transition: 'all 0.8s ease 0.3s',
+                filter: "blur(0px)"
+
+            });
+
+            setKidDiscountFirstParaAnime({
+
+                opacity: '1',
+                transition: 'all 0.8s ease 0.6s',
+                filter: "blur(0px)",
+
+            });
+
+            setKidDiscountSecondParaAnime({
+
+                opacity: '1',
+                transition: 'all 0.8s ease 0.8s',
+                filter: 'blur(0px)',
+
+            });
+
+            setKidDiscountShopNowButton({
+
+                opacity: "1",
+                transition: "all 1s ease",
+                filter: "blur(0px)"
+
+            });
+
+        } else {
+            
+            setKidDiscountImageAnime({
+
+                opacity: "0",
+                transition: 'all 0.8s ease',
+                filter: "blur(20px) brightness(350%)"
+
+            });
+
+            setKidDiscountHeadingAnime({
+
+                opacity: "0",
+                transition: "all 0.8s ease",
+                filter: "blur(20px)",
+
+            });
+
+            setKidDiscountFirstParaAnime({
+
+                opacity: "0",
+                transition: "all 0.8s ease",
+                filter: "blur(20px)",
+
+            });
+
+            setKidDiscountSecondParaAnime({
+
+                opacity: "0",
+                transition: "all 0.8s ease",
+                filter: "blur(20px)",
+
+            });
+
+            setKidDiscountShopNowButton({
+
+                opacity: '0',
+                filter: "blur(20px)"
+
+            });
+
+        }
+
+    }
+
     useEffect(() => {
 
         window.addEventListener("scroll", handleMenProductScroll);
         window.addEventListener("scroll", handleMenProductDiscount);
         window.addEventListener("scroll", handleWomenProductDiscountScroll);
+        window.addEventListener("scroll", handleKidsProductSectionScroll);
+        window.addEventListener("scroll", handleKidsProductDiscountScroll);
 
     }, [])
     
@@ -504,24 +764,38 @@ function Home() {
                 discountImage="https://plus.unsplash.com/premium_photo-1661319067088-61e0b9e079b0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fHw%3D"
                 discountHeading="Women's Product Discount"
                 onButtonClick={() => { navigate('/shop') }}
-                handleWomenProductDiscountScroll={handleWomenProductDiscountScroll}  
-                womenDiscountImageAnime={womenDiscountImageAnime} 
-                womenDiscountHeadingAnime={womenDiscountHeadingAnime}  
-                womenDiscountFirstParaAnime={womenDiscountFirstParaAnime} 
-                womenDiscountSecondParaAnime={womenDiscountSecondParaAnime}
-                womenDiscountShopNowButton={womenDiscountShopNowButton}    
+                handleProductDiscountScroll={handleWomenProductDiscountScroll}  
+                discountImageAnime={womenDiscountImageAnime} 
+                discountHeadingAnime={womenDiscountHeadingAnime}  
+                discountFirstParaAnime={womenDiscountFirstParaAnime} 
+                discountSecondParaAnime={womenDiscountSecondParaAnime}
+                discountShopNowButton={womenDiscountShopNowButton}    
             
             />
 
             {/** Home Kids Product Section */}
-            <HomeKids />
+            <HomeKids
+                
+                kidsProductSectionScrollAnime={handleKidsProductSectionScroll}  
+                kidsProductSectionHeadingAnime={kidsProductSectionHeadingAnime} 
+                kidsProductAnime={kidsProductAnime}   
+                kidsProductNavigationArrow={kidsProductNavigationArrow}
+                kidsProductSectionViewMoreButton={kidsProductSectionViewMoreButton}    
+                    
+            />
 
             {/** Kids Product Discount Section */}
             <ProductDiscount
             
                 discountImage="https://images.unsplash.com/photo-1741992556912-3b2d62461e75?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 discountHeading="Kid's Product Discount"
-                onButtonClick={() => {navigate('/kids')}}
+                onButtonClick={() => { navigate('/kids') }}
+                handleProductDiscountScroll={handleKidsProductDiscountScroll} 
+                discountImageAnime={kidDiscountImageAnime}
+                discountHeadingAnime={kidDiscountHeadingAnime}
+                discountFirstParaAnime={kidDiscountFirstParaAnime}   
+                discountSecondParaAnime={kidDiscountSecondParaAnime}  
+                discountShopNowButton={kidDiscountShopNowButton}    
                 
             />
 
