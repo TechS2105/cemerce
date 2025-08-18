@@ -280,7 +280,7 @@ function Home() {
 
         <>
         
-            <Loader />
+            {/* <Loader /> */}
             
             <main>
             

@@ -6,7 +6,7 @@ function Gridimage(props) {
 
         <>
 
-        <img src={props.image} alt={props.image} />
+            <img src={props.image} alt={props.image} style={props.hoverAnime} />
       
         </>
 
