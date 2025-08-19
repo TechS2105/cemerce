@@ -14,6 +14,7 @@ import TestimonialCarousel from '../components/Testimonialcarousel';
 import HomeBannerCarousel from '../components/Homebannercarousel';
 import ReuseHomeProductButton from '../components/Reuseablehomeproductbutton';
 import Loader from '../components/Loader';
+import HomeProductVideo from '../components/Homeproductvideo';
 
 function Home() {
 
@@ -32,7 +33,7 @@ function Home() {
 
         transform: "translateY(1000px)",
         opacity: "0",
-        filter: "blur(20px)"
+        filter: "blur(20px) brightness(250%)"
 
     });
 
@@ -55,7 +56,7 @@ function Home() {
     const [menDiscountImageAnime, setMenDiscountImageAnime] = useState({
 
         opacity: "0",
-        filter: "blur(20px)",
+        filter: "blur(20px) brightness(150%)",
 
     });
 
@@ -90,7 +91,9 @@ function Home() {
     // Men Product Scroll Anime
     function handleMenProductScroll() {
         
-        if (window.scrollY > 1500) {
+        console.log(window.scrollY);
+
+        if (window.scrollY > 2100) {
            
             setMenProductAnime({
 
@@ -106,7 +109,7 @@ function Home() {
                 transform: "translateY(0px)",
                 transition: "all 0.8s ease 0.5s",
                 opacity: "1",
-                filter: "blur(0px)"
+                filter: "blur(0px) brightness(100%)"
 
             });
 
@@ -126,19 +129,19 @@ function Home() {
                 transform: "translateY(1000px)",
                 transition: "all 0.8s ease",
                 opacity: "0",
-                filter: "blur(20px)"
+                filter: "blur(20px) brightness(250%)"
 
             })
 
         }
         
-        if (window.scrollY >= 1800) {
+        if (window.scrollY >= 2600) {
             
             setMenProductButton({
 
                 opacity: "1",
                 filter: "blur(0px)",
-                transition: "all 0.8s ease 0.3s"
+                transition: "all 0.8s ease"
 
             });
 
@@ -154,7 +157,7 @@ function Home() {
 
         }
 
-        if (window.scrollY >= 2000) {
+        if (window.scrollY >= 2700) {
             
             setHomeMenViewMoreButton({
 
@@ -183,12 +186,12 @@ function Home() {
     // Men Product Discount Scroll Anime
     function handleMenProductDiscount() {
         
-        if (window.scrollY > 2300) {
+        if (window.scrollY > 3000) {
             
             setMenDiscountImageAnime({
 
                 opacity: '1',
-                filter: "blur(0px)",
+                filter: "blur(0px) brightness(100%)",
                 transition: "all 0.8s ease"
 
             });
@@ -231,7 +234,7 @@ function Home() {
             setMenDiscountImageAnime({
 
                 opacity: '0',
-                filter: "blur(20px)",
+                filter: "blur(20px) brightness(150%)",
                 transition: "all 0.8s ease"
 
             });
@@ -283,7 +286,7 @@ function Home() {
     const [womenDiscountHeadingAnime, setWomenDiscountHeadingAnime] = useState({
 
         opacity: "0",
-        filter: 'blur(20px)',
+        filter: 'blur(20px) brightness(150%)',
 
     });
 
@@ -316,7 +319,7 @@ function Home() {
             setWomenDiscountImageAnime({
 
                 opacity: "1",
-                filter: "blur(0px)",
+                filter: "blur(0px) brightness(100%)",
                 transition: "all 0.8s ease"
 
             });
@@ -358,7 +361,7 @@ function Home() {
             setWomenDiscountImageAnime({
 
                 opacity: "0",
-                filter: "blur(20px)",
+                filter: "blur(20px) brightness(150%)",
                 transition: "all 0.8s ease"
 
             });
@@ -712,6 +715,9 @@ function Home() {
 
             </div>
 
+            {/** Home Product Video Section */}
+            <HomeProductVideo />
+                
             {/** Men Product Section */}
             <div className={HomeStyle.menProductSection} onScroll={handleMenProductScroll}>
 

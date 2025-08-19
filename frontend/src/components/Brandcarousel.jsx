@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import BrandLogoImage from '../components/Brandlogoimg';
 import BrandLogoStyle from '../../public/styles/Brandlogoimages.module.css';
 
@@ -11,14 +11,56 @@ let logo6 = '../../public/images/brand logos/Untitled design (5).png';
 let logo7 = '../../public/images/brand logos/Untitled design (8).png';
 
 function Brandcarousel() {
+
+    const [brandCarousalStyle, setBrandCarouselStyle] = useState({
+
+        tranform: "translateY(500px)",
+        opacity: "0",
+        filter: "blur(50px)",
+
+    });
+
+    function handleBrandScrollAnimation() {
+        
+       if(window.scrollY > 5700){
+
+           setBrandCarouselStyle({
+
+               opacity: "1",
+               filter: "blur(0px)",
+               tranform: "translateY(0px)",
+               transition: "all 1s ease"
+               
+           });
+           
+       } else {
+           
+           setBrandCarouselStyle({
+               
+               opacity: "0",
+               filter: "blur(50px)",
+               transform: "translateY(500px)",
+               transition: "all 1s ease"
+               
+           })
+
+       }
+
+    }
+
+    useEffect(() => {
+
+        window.addEventListener('scroll', handleBrandScrollAnimation);
+
+    }, [])
     
     return (
 
         <>
         
-            <div className={BrandLogoStyle.brandLogoContainer}>
+            <div className={BrandLogoStyle.brandLogoContainer} onScroll={handleBrandScrollAnimation}>
 
-                <div className={BrandLogoStyle.brandLogos}>
+                <div className={BrandLogoStyle.brandLogos} style={brandCarousalStyle}>
 
                     <ul>
 

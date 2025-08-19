@@ -17,7 +17,7 @@ function Homewomenproduct() {
 
         transform: 'translateY(500px)',
         opacity: "0",
-        filter: "blur(20px)"
+        filter: "blur(20px) brightness(150%)"
 
     });
 
@@ -38,7 +38,7 @@ function Homewomenproduct() {
 
     function handleWomenProductScroll() {
         
-        if (window.scrollY > 2700) {
+        if (window.scrollY > 3300) {
             
             setHomeWomenProductHeading({
 
@@ -53,7 +53,7 @@ function Homewomenproduct() {
 
                 transform: "translateY(0px)",
                 opacity: "1",
-                filter: "blur(0px)",
+                filter: "blur(0px) brightness(100%)",
                 transition: "all 0.8s ease 0.3s"
 
             });
@@ -73,20 +73,20 @@ function Homewomenproduct() {
 
                 transform: "translateY(500px)",
                 transition: "all 0.8s ease",
-                filter: "blur(20px)",
+                filter: "blur(20px) brightness(150%)",
                 opacity: "0"
 
             });
 
         }
 
-        if (window.scrollY >= 3020) {
+        if (window.scrollY >= 3700) {
             
             setHomeWomenProductNavigationArrow({
 
                 opacity: "1",
                 filter: "blur(0px)",
-                transition: "all 0.8s ease 0.3s"
+                transition: "all 0.8s ease"
 
             });
 
@@ -102,7 +102,7 @@ function Homewomenproduct() {
 
         }
 
-        if (window.scrollY >= 3200) {
+        if (window.scrollY >= 3900) {
             
             setHomeWomenProductViewMoreButton({
 
