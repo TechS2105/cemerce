@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'navBarLinkFont';
+    src: url('../fonts/magenda/MagendaRegular-MVwjx.ttf');
+}
+
+.navigationBar{
+
+    background-color: orange;
+    height: 2rem;
+    padding-left: 50px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-left: 50px;
+
+}
+
+.navigationBar > span{
+
+    color: #292929;
+    padding: 0px 10px;
+    font-family: 'navBarLinkFont';
+    display: inline-flex;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 2px;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 5px;
+
+}
+
+.navigationBar > svg{
+
+    color: #fff;
+    font-size: 25px;
+
+}
+
+.navigationBar > p{
+
+    font-family: 'navBarLinkFont';    
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    font-weight: bolder
+
+}

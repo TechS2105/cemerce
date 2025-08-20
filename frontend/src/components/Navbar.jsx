@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import NavbarStyle from '../../public/styles/Navbar.module.css';
 import { FiMenu } from "react-icons/fi";
 import { AiOutlineUser } from "react-icons/ai";
@@ -6,7 +6,8 @@ import { GoHeart } from "react-icons/go";
 import { HiOutlineShoppingCart } from "react-icons/hi2";
 import NavMenu from '../components/Navmenu';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { fetchCartProduct } from '../features/Shop/CartSlice';
+import { useSelector, useDispatch } from 'react-redux';
 import RegisterPage from '../components/Register';
 import LoginPage from '../components/Login';
 
@@ -14,7 +15,14 @@ function Navbar() {
 
     const navigate = useNavigate();
 
-    const productLength = useSelector((state) => state.cart.items);
+    const { items: cartProductLength } = useSelector((state) => state.cart);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+
+        dispatch(fetchCartProduct());
+
+    }, [dispatch])
 
     const [navMenu, setNavMenu] = useState({
 
@@ -277,7 +285,7 @@ function Navbar() {
                         
                     </li>
                     <li><NavLink to="/wishlist"><GoHeart /></NavLink></li>
-                    <li><NavLink to="/cart"><HiOutlineShoppingCart /><span>{productLength.length}</span></NavLink></li>
+                    <li><NavLink to="/cart"><HiOutlineShoppingCart /><span>{cartProductLength.length}</span></NavLink></li>
 
                 </ul>        
 

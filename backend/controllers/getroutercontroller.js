@@ -6,6 +6,7 @@ import homeWomenCollection from '../Women.js';
 import womenProductPageCollection from '../Womencollections.js';
 import homeKidCollection from '../Kids.js';
 import kidProductPageCollection from '../Kidscollections.js';
+import db from '../database/database.js';
 
 // GET Root 
 const getRootRoute = (req, res) => {
@@ -157,6 +158,24 @@ const getSendMailRouter = (req, res) => {
 
 }
 
+// GET Cart Product From DB 
+const getCartProduct = async (req, res) => {
+
+    try {
+        
+        const getCartAllProduct = await db.query("SELECT * FROM cart");
+        let cartProducts = [];
+        cartProducts = getCartAllProduct.rows;
+        res.status(200).json(cartProducts);
+
+    } catch (error) {
+        
+        res.status(400).json({ message: error });
+
+    }
+
+}
+
 export default {
 
     getVideoProductRouter,
@@ -168,6 +187,7 @@ export default {
     getWomenProductPageProductCollectionRouter,
     getHomeKidProductCollectionRouter,
     getKidProductPageProductCollectionRouter,
-    getSendMailRouter
+    getSendMailRouter,
+    getCartProduct,
 
 }

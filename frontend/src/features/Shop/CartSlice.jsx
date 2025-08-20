@@ -1,48 +1,57 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+
+// GET Cart Product 
+export const fetchCartProduct = createAsyncThunk('cart/fetchCartProduct', async () => {
+    
+    const response = await axios.get("http://localhost:3000/api/cart/product");
+    return response.data;
+
+});
+
+// POST Cart Product
+export const addToCart = createAsyncThunk('cart/addToCart', async ({image, title, category, price} ) => {
+    
+    const response = await axios.post("http://localhost:3000/api/cart/product", { image, title, category, price });
+    return response.data;
+
+});
+
+// DELETE Cart Product
+export const removeCartProduct = createAsyncThunk('cart/removeCartProduct', async (id) => {
+    
+    await axios.delete(`http://localhost:3000/api/cart/delete/product/${id}`);
+    return id;
+
+});
 
 const CartSlice = createSlice({
 
     name: 'cart',
     initialState: {
-        
+
         items: [],
-        tempItems: [],
-        totalPrice: 0
+        status: 'idle'
 
     },
-    reducers: {
+    extraReducers: (build) => {
 
-        addToCart: (state, action) => {
+        build.addCase(fetchCartProduct.fulfilled, (state, action) => {
 
-            const existingItems = state.items.find((item) => item.id === action.payload.id);
+            state.items = action.payload
 
-            if (existingItems) {
-                
-                existingItems.quantity += 1
+        }).addCase(addToCart.fulfilled, (state, action) => {
 
-            } else {
-                
-                state.items.push({ ...action.payload, quantity: 1 });
+            state.items.push(action.payload);
 
-            }
-
-            state.tempItems = [...state.items];
-            state.totalPrice = state.items.reduce((sum, item) => sum + item.price, 0);
-
-        },
-
-        removeCartProduct: (state, action) => {
+        }).addCase(removeCartProduct.fulfilled, (state, action) => {
 
             state.items = state.items.filter((item) => item.id !== action.payload);
 
-            state.tempItems = [...state.items];
-            state.totalPrice = state.items.reduce((sum, item) => sum + item.price, 0);
-
-        }
+        })
 
     }
 
 });
 
-export const { addToCart, removeCartProduct } = CartSlice.actions;
 export default CartSlice.reducer;

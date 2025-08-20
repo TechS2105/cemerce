@@ -1,9 +1,9 @@
-import { Pool } from 'pg';
+import pg from 'pg';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-const pool = new Pool({
+const db = new pg.Client({
 
     user: process.env.PG_USER,
     host: process.env.PG_HOST,
@@ -13,4 +13,6 @@ const pool = new Pool({
 
 });
 
-export default pool;
+db.connect();
+
+export default db;

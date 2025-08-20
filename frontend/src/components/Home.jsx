@@ -670,10 +670,10 @@ function Home() {
     return (
 
         <>
-        
-            <Loader />
             
             <main>
+
+            {/* <Loader /> */}
             
             {/** Hero Section Video */}
             <HomeBannerCarousel />

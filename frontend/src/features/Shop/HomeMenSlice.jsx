@@ -14,7 +14,6 @@ const HomeMenSlice = createSlice({
     initialState: {
 
         items: [],
-        secondItems: [],
         status: 'idle'
 
     },
@@ -27,7 +26,7 @@ const HomeMenSlice = createSlice({
 
         }).addCase(fetchHomeMenProduct.fulfilled, (state, action) => {
 
-            state.status = "succeeded",
+            state.status = "succeeded"
             state.items = action.payload
 
         }).addCase(fetchHomeMenProduct.rejected, (state) => {

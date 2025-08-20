@@ -58,11 +58,11 @@ function Homemenoutfit({menProductCarousel, menProductButton}) {
                 
             >
 
-                {menProduct.map((menItem) => {
+                {menProduct.map((menItem, idx) => {
 
                     return (
 
-                        <SwiperSlide className={HomeMenOutfitStyle.menProduct} key={menItem.id}>
+                        <SwiperSlide className={HomeMenOutfitStyle.menProduct} key={idx}>
 
                             <div className={HomeMenOutfitStyle.menProductImage}>
 
@@ -77,7 +77,7 @@ function Homemenoutfit({menProductCarousel, menProductButton}) {
                                 <h3 style={{ paddingLeft: "20px" }}> {menItem.title.length > 40 ? menItem.title.slice(0, 40) : menItem.title} </h3>
                                 <p style={{paddingLeft: "20px"}}> Category: {menItem.category} </p>
                                 <p style={{paddingLeft: "20px"}}> Price: {menItem.price} /- </p>
-                                <button style={{marginLeft: "20px"}} onClick={() => dispatch(addToCart(menItem))}> Add To Cart </button>
+                                <button style={{ marginLeft: "20px" }} onClick={() => { dispatch(addToCart(menItem)) }}> Add To Cart </button>
 
                             </div>
 
