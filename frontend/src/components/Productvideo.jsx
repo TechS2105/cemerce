@@ -1,14 +1,13 @@
 import React from 'react';
-import { Autoplay } from 'swiper/modules';
 
-function Productvideo(props) {
+function Productvideo({productVideo}) {
     
     return (
 
         <>
         
-           <video src={props.video} style={{width: "100%", height: "100%", objectFit: "cover", objectPosition: "center"}} autoPlay muted loop></video>
-            
+            <video src={productVideo} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }} autoPlay muted loop></video>
+
         </>
 
     );

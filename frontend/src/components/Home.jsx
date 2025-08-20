@@ -90,8 +90,6 @@ function Home() {
 
     // Men Product Scroll Anime
     function handleMenProductScroll() {
-        
-        console.log(window.scrollY);
 
         if (window.scrollY > 2100) {
            
@@ -673,7 +671,7 @@ function Home() {
 
         <>
         
-            {/* <Loader /> */}
+            <Loader />
             
             <main>
             

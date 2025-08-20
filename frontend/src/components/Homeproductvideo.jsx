@@ -1,9 +1,43 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import HomeProductVideoStyle from '../../public/styles/Homeproductvideo.module.css';
 import ProductVideo from '../components/Productvideo';
 import HomeVideoProductDetails from '../components/Homeproductvideodetails';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { Autoplay, Navigation } from 'swiper/modules';
 
-function Homeproductvideo(){
+function Homeproductvideo() {
+    
+    const [getVideoProduct, setGetVideoProduct] = useState([]);
+
+    useEffect(() => {
+
+        const fetchProduct = async () => {
+
+            try {
+                
+                const response = await fetch('http://localhost:3000/api/video/product');
+
+                if (!response) {
+                    
+                    throw new Error(`!HTTP Status is ${response.status}`);
+
+                }
+
+                let data = await response.json();
+                setGetVideoProduct(data);
+
+            } catch (error) {
+                
+                console.error(error);
+
+            }
+
+        }
+
+        fetchProduct();
+
+    }, []);
 
     return (
 
@@ -17,34 +51,56 @@ function Homeproductvideo(){
 
                 </div>
 
-                <div className={HomeProductVideoStyle.videoProductSectionCarousel}>
+                <Swiper className={HomeProductVideoStyle.videoProductSectionCarousel}
+                
+                    slidesPerView={5}
+                    loop={true}
+                    spaceBetween={20}
+                    speed={1000}
+                    autoplay={{
 
-                    <div className={HomeProductVideoStyle.videoProductBox}>
+                        delay: 2000
 
-                        <div className={HomeProductVideoStyle.videoProduct}>
+                    }}
 
-                            <ProductVideo
-                            
-                                video="../../public/video/Product Video Folder/Boys Formal/video2.mp4"
-                                
-                            />
+                    modules={[Autoplay]}    
+                    
+                >
 
-                        </div>
+                    {getVideoProduct.map((videoproduct) => {
 
-                        <div className={HomeProductVideoStyle.videoProductDetails}>
+                        return (
 
-                            <HomeVideoProductDetails
-                            
-                                videoProductHeading="Black Shirt With Formal Gray Pant"
-                                price="2000"
-                                
-                            />
+                            <SwiperSlide className={HomeProductVideoStyle.videoProductBox} key={videoproduct.id}>
 
-                        </div>
+                                <div className={HomeProductVideoStyle.videoProduct}>
 
-                    </div>
+                                    <ProductVideo
+                                    
+                                        productVideo={videoproduct.videoURL}
+                                        
+                                    />
 
-                </div>
+                                </div>
+
+                                <div className={HomeProductVideoStyle.videoProductDetails}>
+
+                                    <HomeVideoProductDetails
+                                    
+                                        videoProductHeading={videoproduct.title}
+                                        price={videoproduct.price}
+                                        
+                                    />
+
+                                </div>
+
+                            </SwiperSlide>
+
+                        );
+
+                    })}    
+                    
+                </Swiper>
 
            </div>
             

@@ -8,7 +8,7 @@ function Loadertext({LoaderStyle, firstBlockStyle, secondBlockStyle, thirdBlockS
         <>
             
             <div className={LoaderStyle.characterDiv1} style={firstBlockStyle}>
-
+                
                 <LoaderTextComponent
                             
                     character="C"
