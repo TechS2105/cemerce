@@ -29,6 +29,7 @@ router.delete('/api/cart/delete/product/:id', deleteRouterController.deleteCartP
 
 router.get('/api/wishlist/product', getRouterController.getWishlistProduct); // GET Wishlist Product Router
 router.post('/api/wishlist/product', postRouterController.postWishlistProductRouter); // POST Wishlist Product Router
+router.delete('/api/wishlist/delete/product/:id', deleteRouterController.deleteWishlistProductRouter); // DELETE Wishlist Product Router
 
 export default router;
 

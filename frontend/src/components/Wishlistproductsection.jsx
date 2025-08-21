@@ -1,7 +1,21 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import WishlistProduct from '../components/Wishlistproduct';
+import { fetchWishlistProduct } from '../features/Shop/WishListSlice';
+import { useSelector, useDispatch } from 'react-redux';
+import EmptyProductMessage from '../components/Emptyproductmessage';
 
-function Wishlistproductsection({WishlistStyle}) {
+let productLength = 0; 
+
+function Wishlistproductsection({WishlistStyle, WishlistItems, DeleteWishlistProduct}) {
+
+    const { items: wishlistProductLength } = useSelector((state) => state.wishlist);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+
+        dispatch(fetchWishlistProduct());
+
+    }, [dispatch]);
     
     return (
 
@@ -15,11 +29,19 @@ function Wishlistproductsection({WishlistStyle}) {
 
                 </div>
 
-                <WishlistProduct
+                {productLength !== wishlistProductLength.length ?
+
+                    <WishlistProduct
                 
-                    WishlistStyle={WishlistStyle}
+                        WishlistStyle={WishlistStyle}
+                        WishlistItems={WishlistItems}
+                        DeleteWishlistProduct={DeleteWishlistProduct}
                     
-                />
+                    />
+
+                    : <EmptyProductMessage />
+                    
+                }
 
             </div>
             

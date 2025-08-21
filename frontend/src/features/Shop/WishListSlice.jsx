@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+// GET Wishlist Product
 export const fetchWishlistProduct = createAsyncThunk('wishlist/fetchWishlistProduct', async () => {
     
     const response = await axios.get('http://localhost:3000/api/wishlist/product');
@@ -8,6 +9,7 @@ export const fetchWishlistProduct = createAsyncThunk('wishlist/fetchWishlistProd
 
 });
 
+// POST Wishlist Product
 export const addToWishlist = createAsyncThunk('wishlist/addToWishlist', async ({ image, title, category, price }) => {
     
     const response = await axios.post('http://localhost:3000/api/wishlist/product', { image, title, category, price });
@@ -15,7 +17,15 @@ export const addToWishlist = createAsyncThunk('wishlist/addToWishlist', async ({
 
 });
 
-const WishlistSlice = createSlice({
+// Delete Wishlist Product
+export const removeWishlistProduct = createAsyncThunk('wishlist/removeWishlistProduct', async (id) => {
+    
+    await axios.delete(`http://localhost:3000/api/wishlist/delete/product/${id}`);
+    return id;
+
+});
+
+const WishListSlice = createSlice({
 
     name: 'wishlist',
     initialState: {
@@ -28,11 +38,15 @@ const WishlistSlice = createSlice({
 
         build.addCase(fetchWishlistProduct.fulfilled, (state, action) => {
 
-            state.items = action.payload;
+            state.items = action.payload
 
         }).addCase(addToWishlist.fulfilled, (state, action) => {
 
-            state.items.push(action.payload);
+            state.items.push(action.payload)
+
+        }).addCase(removeWishlistProduct.fulfilled, (state, action) => {
+
+            state.items = state.items.filter((item) => item.id !== action.payload);
 
         })
 
@@ -40,4 +54,4 @@ const WishlistSlice = createSlice({
 
 });
 
-export default WishlistSlice.reducer;
+export default WishListSlice.reducer;

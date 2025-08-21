@@ -18,8 +18,27 @@ const deleteCartProductRouter = async (req, res) => {
 
 }
 
+// DELETE Wishlist Product
+const deleteWishlistProductRouter = async (req, res) => {
+
+    const { id } = req.params;
+
+    try {
+        
+        await db.query("DELETE FROM wishlist WHERE id = $1", [id]);
+        res.status(200).send();
+
+    } catch (error) {
+        
+        res.status(400).json(error);
+
+    }
+
+} 
+
 export default {
 
     deleteCartProductRouter,
+    deleteWishlistProductRouter,
 
 }

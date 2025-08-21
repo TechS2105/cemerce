@@ -8,7 +8,7 @@ function Wishlistproductdetails(props) {
         
             <h4>{props.title}</h4>
             <p>Rs. {props.price}</p>
-            <span>Remove</span>
+            <span onClick={props.DeleteWishlistProduct}>Remove</span>
 
         </>
 

@@ -1,40 +1,57 @@
 import React from 'react';
 import WishlistProductImage from '../components/Wishlistproductimage';
 import WishlistProductDetails from '../components/Wishlistproductdetails';
+import { useDispatch } from 'react-redux';
 
-let image = "https://images.pexels.com/photos/4202325/pexels-photo-4202325.jpeg";
-
-function Wishlistproduct({WishlistStyle}) {
+function Wishlistproduct({WishlistStyle, WishlistItems, DeleteWishlistProduct}) {
     
+    const dispatch = useDispatch();
+
+    function handleWishlistProductDeletion(id) {
+        
+        dispatch(DeleteWishlistProduct(id));
+
+    }
+
     return (
 
         <>
         
             <div className={WishlistStyle.wishlistProduct}>
 
-                <div className={WishlistStyle.box}>
+                {WishlistItems.map((item, idx) => {
 
-                    <div className={WishlistStyle.wishlistProductImage}>
+                    return (
 
-                        <WishlistProductImage
-                        
-                            image={image}
-                            
-                        />
+                        <div className={WishlistStyle.box} key={idx}>
 
-                    </div>
-                    <div className={WishlistStyle.wishlistProductDetails}>
+                            <div className={WishlistStyle.wishlistProductImage}>
 
-                        <WishlistProductDetails
-                        
-                            title="Product Title"
-                            price="2,000"
-                            
-                        />
+                                <WishlistProductImage
+                                                
+                                    image={item.image}
+                                    title={item.title}
+                                                
+                                />
 
-                    </div>
+                            </div>
+                            <div className={WishlistStyle.wishlistProductDetails}>
 
-                </div>
+                                <WishlistProductDetails
+                                                
+                                    title={item.title}
+                                    price={item.price}
+                                    DeleteWishlistProduct={() => handleWishlistProductDeletion(item.id)}
+                                                    
+                                />
+
+                            </div>
+
+                        </div>
+
+                    );
+
+                })}
     
            </div>
             

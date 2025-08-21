@@ -7,6 +7,7 @@ import { HiOutlineShoppingCart } from "react-icons/hi2";
 import NavMenu from '../components/Navmenu';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { fetchCartProduct } from '../features/Shop/CartSlice';
+import { fetchWishlistProduct } from '../features/Shop/WishListSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import RegisterPage from '../components/Register';
 import LoginPage from '../components/Login';
@@ -16,13 +17,16 @@ function Navbar() {
     const navigate = useNavigate();
 
     const { items: cartProductLength } = useSelector((state) => state.cart);
+    const { items: wishlistProductLength } = useSelector((state) => state.wishlist);
+
     const dispatch = useDispatch();
 
     useEffect(() => {
 
         dispatch(fetchCartProduct());
+        dispatch(fetchWishlistProduct());
 
-    }, [dispatch])
+    }, [dispatch]);
 
     const [navMenu, setNavMenu] = useState({
 
@@ -284,7 +288,7 @@ function Navbar() {
                         />
                         
                     </li>
-                    <li><NavLink to="/wishlist"><GoHeart /><span>2</span></NavLink></li>
+                    <li><NavLink to="/wishlist"><GoHeart /><span>{wishlistProductLength.length}</span></NavLink></li>
                     <li><NavLink to="/cart"><HiOutlineShoppingCart /><span>({cartProductLength.length})</span></NavLink></li>
 
                 </ul>        
