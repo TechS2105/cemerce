@@ -176,6 +176,24 @@ const getCartProduct = async (req, res) => {
 
 }
 
+// GET Wishlist Product From DB
+const getWishlistProduct = async (req, res) => {
+    
+    try {
+        
+        const getAllWishlistProducts = await db.query("SELECT * FROM wishlist");
+        let wishlistProducts = [];
+        wishlistProducts = getAllWishlistProducts.rows;
+        res.status(200).json(wishlistProducts);
+
+    } catch (error) {
+        
+        res.status(400).json(error);
+
+    }
+
+}
+
 export default {
 
     getVideoProductRouter,
@@ -189,5 +207,6 @@ export default {
     getKidProductPageProductCollectionRouter,
     getSendMailRouter,
     getCartProduct,
+    getWishlistProduct,
 
 }

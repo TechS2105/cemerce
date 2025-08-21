@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { GoHeart } from "react-icons/go";
 import { FaRegEye } from "react-icons/fa";
 import { addToCart } from '../features/Shop/CartSlice';
-import { addToWishList } from '../features/Shop/WishListSlice';
+import { addToWishlist } from '../features/Shop/WishListSlice';
 
 function Kidcollections() {
 
@@ -37,7 +37,7 @@ function Kidcollections() {
 
                         <div className={KidProduct.kidProductImage}>
 
-                            <GoHeart onClick={() => {dispatch(addToWishList(kidItems))}} />
+                            <GoHeart onClick={() => {dispatch(addToWishlist(kidItems))}} />
                             <FaRegEye />
                             <img src={ kidItems.image } alt={kidItems.title} />
 

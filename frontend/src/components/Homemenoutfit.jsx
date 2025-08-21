@@ -5,7 +5,7 @@ import { FaEye } from "react-icons/fa";
 import { fetchHomeMenProduct } from '../features/Shop/HomeMenSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart } from '../features/Shop/CartSlice';
-import { addToWishList } from '../features/Shop/WishListSlice';
+import { addToWishlist } from '../features/Shop/WishListSlice';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Autoplay, Navigation } from 'swiper/modules';
@@ -66,7 +66,7 @@ function Homemenoutfit({menProductCarousel, menProductButton}) {
 
                             <div className={HomeMenOutfitStyle.menProductImage}>
 
-                                <GoHeart onClick={() => { dispatch(addToWishList(menItem)) }} />
+                                <GoHeart onClick={() => { dispatch(addToWishlist(menItem)) }} />
                                 <FaEye />
                                 <img src={menItem.image} alt={menItem.title} />
 

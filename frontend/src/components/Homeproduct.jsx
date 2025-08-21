@@ -3,7 +3,7 @@ import HomeProductStyle from '../../public/styles/Homeproduct.module.css';
 import { fetchHomeWomenProduct } from '../features/Shop/HomeWomenSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart } from '../features/Shop/CartSlice';
-import { addToWishList } from '../features/Shop/WishListSlice';
+import { addToWishlist } from '../features/Shop/WishListSlice';
 import { GoHeart } from "react-icons/go";
 import { FaRegEye } from "react-icons/fa";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -70,7 +70,7 @@ function Homeproduct({homeWomenProductAnime, homeWemenProductNavigationArrow, ho
                             <div className={HomeProductStyle.homeProductImage}>
 
                                 <FaRegEye />
-                                <GoHeart onClick={ () => {dispatch(addToWishList(womenProduct))}} />
+                                <GoHeart onClick={ () => {dispatch(addToWishlist(womenProduct))}} />
                                 <img src={womenProduct.image} alt={womenProduct.title} />
 
                             </div>

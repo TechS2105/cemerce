@@ -59,9 +59,38 @@ const postCartProductRouter = async(req, res) => {
 
 }
 
+// POST Wishlist Product Router
+const postWishlistProductRouter = async (req, res) => {
+  
+  const { image, title, category, price } = req.body;
+
+  try { 
+
+    const checkWishlistProduct = await db.query("SELECT * FROM wishlist WHERE title = $1", [title]);
+    
+    if (checkWishlistProduct.rows.length > 0) {
+      
+      res.status(200).json({ message: "Product has already been added into the wishlist page..." });
+
+    } else {
+      
+      await db.query("INSERT INTO wishlist(image, title, category, price) VALUES($1, $2, $3, $4)", [image, title, category, price]);
+      res.status(200).send();
+
+    }
+
+  } catch (error) {
+    
+    res.status(400).json(error);
+
+  }
+
+}
+
 export default {
 
   postSendMailRouter,
   postCartProductRouter,
+  postWishlistProductRouter,
 
 }

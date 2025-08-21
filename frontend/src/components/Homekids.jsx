@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { fetchKidsHomeProduct } from '../features/Shop/HomeKidsSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart } from '../features/Shop/CartSlice';
-import { addToWishList } from "../features/Shop/WishListSlice"; 
+import { addToWishlist } from "../features/Shop/WishListSlice"; 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -76,7 +76,7 @@ function Homekids({kidsProductSectionScrollAnime, kidsProductSectionHeadingAnime
                                 <div className={HomeKidStyle.homeKidsProductImage}>
 
                                     <FaRegEye />
-                                    <GoHeart onClick={ () => {dispatch(addToWishList(kidsItem));}} />
+                                    <GoHeart onClick={ () => {dispatch(addToWishlist(kidsItem));}} />
                                     <img src={kidsItem.image} alt={kidsItem.title} />
 
                                 </div>

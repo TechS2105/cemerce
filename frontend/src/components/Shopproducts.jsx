@@ -3,7 +3,7 @@ import ShopProductsStyle from '../../public/styles/Shopproducts.module.css';
 import { fetchShopProduct } from "../features/Shop/ShopProductSlice";
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart } from '../features/Shop/CartSlice';
-import { addToWishList } from '../features/Shop/WishListSlice';
+import { addToWishlist } from '../features/Shop/WishListSlice';
 import { GoHeart } from "react-icons/go";
 import { FaRegEye } from "react-icons/fa";
 
@@ -41,7 +41,7 @@ function Shopproducts() {
 
                             <div className={ShopProductsStyle.shopProductImage}>
 
-                                <GoHeart onClick={ () => {dispatch(addToWishList(shopItem))}} />
+                                <GoHeart onClick={ () => {dispatch(addToWishlist(shopItem))}} />
                                 <FaRegEye />
                                 <img src={shopItem.image} alt={shopItem.title} />
 

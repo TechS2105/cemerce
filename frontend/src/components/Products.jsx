@@ -5,7 +5,7 @@ import ProductContent from '../components/Productcontent';
 import { fetchMenCollections } from '../features/Shop/MenCollectionSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart } from '../features/Shop/CartSlice';
-import { addToWishList } from '../features/Shop/WishListSlice';
+import { addToWishlist } from '../features/Shop/WishListSlice';
 
 function Product() {
 
@@ -44,7 +44,7 @@ function Product() {
                             
                                 productImage={menProduct.image}
                                 title={menProduct.title}
-                                onButtonClick = {() => {dispatch(addToWishList(menProduct))}}
+                                onButtonClick = {() => {dispatch(addToWishlist(menProduct))}}
                                 
                             />
 

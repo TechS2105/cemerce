@@ -1,44 +1,43 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-const WishListSlice = createSlice({
+export const fetchWishlistProduct = createAsyncThunk('wishlist/fetchWishlistProduct', async () => {
+    
+    const response = await axios.get('http://localhost:3000/api/wishlist/product');
+    return response.data;
+
+});
+
+export const addToWishlist = createAsyncThunk('wishlist/addToWishlist', async ({ image, title, category, price }) => {
+    
+    const response = await axios.post('http://localhost:3000/api/wishlist/product', { image, title, category, price });
+    return response.data;
+
+});
+
+const WishlistSlice = createSlice({
 
     name: 'wishlist',
     initialState: {
 
         items: [],
-        tempItems: []
+        status: 'idle'
 
     },
-    reducers: {
+    extraReducers: (build) => {
 
-        addToWishList: (state, action) => {
+        build.addCase(fetchWishlistProduct.fulfilled, (state, action) => {
 
-            const existingItems = state.items.find((item) => item.id === action.payload.id);
+            state.items = action.payload;
 
-            if (existingItems) {
-                
-                existingItems.quantity += 1;
+        }).addCase(addToWishlist.fulfilled, (state, action) => {
 
-            } else {
-                
-                state.items.push({...action.payload, quantity: 1})
+            state.items.push(action.payload);
 
-            }
-
-            state.tempItems = [...state.items];
-
-        },
-
-        removeWishlistProduct: (state, action) => {
-
-            state.items = state.items.filter((item) => item.id !== action.payload);
-            state.tempItems = [...state.items];
-
-        }
+        })
 
     }
 
 });
 
-export const { addToWishList, removeWishlistProduct } = WishListSlice.actions; 
-export default WishListSlice.reducer;
+export default WishlistSlice.reducer;
