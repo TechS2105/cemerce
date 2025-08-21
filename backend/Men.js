@@ -3,10 +3,18 @@ const menProduct = [
     {
 
         id: 1,
-        title: 'Denim Jins With Black Shirt & Brown Jacket',
+        title: 'Brown Jacket and Blue Denim Jeans',
         image: 'https://images.unsplash.com/photo-1617114919297-3c8ddb01f599?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        category: "Men's Outfit",
-        price: '5000'
+        category: "Men’s Outerwear",
+        price: '5000',
+        details: {
+
+            description: "A casually dressed man sits on a sunlit concrete bench. He wears a warm brown jacket layered over a dark top and light blue jeans. His hands rest comfortably in his pockets, and his posture is relaxed.",
+            sku: "MJ-BRJ005",
+            types: "Men’s Outerwear",
+            vender: "C-EMERCE"
+            
+        }
 
     },
 

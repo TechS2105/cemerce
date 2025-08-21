@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Autoplay, Navigation } from 'swiper/modules';
 import Reuseablenavigationarrow from '../components/Reuseablenavigationarrow';
+import QuickViewBox from '../components/Quickviewbox';
 
 function Homemenoutfit({menProductCarousel, menProductButton}) {
 
@@ -40,11 +41,11 @@ function Homemenoutfit({menProductCarousel, menProductButton}) {
                 spaceBetween={20}
                 loop={true}
                 speed={1000}
-                autoplay={{
+                // autoplay={{
 
-                    delay: 2000
+                //     delay: 2000
 
-                }}
+                // }}
 
                 navigation={{
 
@@ -55,6 +56,22 @@ function Homemenoutfit({menProductCarousel, menProductButton}) {
 
                 modules={[Autoplay, Navigation]}
                 style={menProductCarousel}
+
+                onSwiper={(swiper) => {
+
+                    swiper.el.addEventListener('mouseover', () => {
+
+                        swiper.autoplay.stop();
+
+                    });
+
+                    swiper.el.addEventListener('mouseout', () => {
+
+                        swiper.autoplay.start();
+
+                    })
+
+                }}
                 
             >
 
@@ -68,6 +85,7 @@ function Homemenoutfit({menProductCarousel, menProductButton}) {
 
                                 <GoHeart onClick={() => { dispatch(addToWishlist(menItem)) }} />
                                 <FaEye />
+                                {/* <QuickViewBox /> */}
                                 <img src={menItem.image} alt={menItem.title} />
 
                             </div>
@@ -88,6 +106,8 @@ function Homemenoutfit({menProductCarousel, menProductButton}) {
                 })}
                 
             </Swiper>
+
+             <QuickViewBox />
             
             <Reuseablenavigationarrow
             
