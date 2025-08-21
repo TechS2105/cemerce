@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'cartEmptyFont';
+    src: url('../fonts/magenda/MagendaRegular-MVwjx.ttf');
+}
+
+.cartEmptyMessageSection{
+
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0px;
+
+}
+
+.cartEmptyMessageSection > .cartEmptyMessageBox{
+
+    width: 800px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    box-shadow: 5px 5px 10px #2929291e;
+    border-left: 2px solid #2929291e;
+    border-top: 2px solid #2929291e;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+
+}
+
+.cartEmptyMessageBox > p{
+
+    font-family: 'cartEmptyFont';
+    letter-spacing: 2px;
+    font-size: 25px;
+    position: relative;
+
+}
+
+.cartEmptyMessageBox > p::after{
+
+    position: absolute;
+    top: 50px;
+    left: -150px;
+    height: 1px;
+    width: 200%;
+    content: "";
+    background-color: rgb(226, 226, 226);
+
+}
+
+.cartEmptyMessageBox > button{
+
+    width: 200px;
+    height: 50px;
+    background-color: transparent;
+    border: 1px solid orange;
+    outline: none;
+    font-family: 'cartEmptyFont';
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.8s ease;
+
+}
+
+.cartEmptyMessageBox > button:hover{
+
+    color: #fff;
+    border: none;
+    box-shadow: 5px 5px 5px #29292935;
+
+}
+
+.cartEmptyMessageBox > button::after{
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0%;
+    width: 100%;
+    content: "";
+    background-color: orange;
+    z-index: -2;
+    transition: all 0.8s ease;
+
+}
+
+.cartEmptyMessageBox > button:hover::after{
+
+    height: 100%;
+
+}
