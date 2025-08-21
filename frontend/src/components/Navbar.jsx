@@ -284,8 +284,8 @@ function Navbar() {
                         />
                         
                     </li>
-                    <li><NavLink to="/wishlist"><GoHeart /></NavLink></li>
-                    <li><NavLink to="/cart"><HiOutlineShoppingCart /><span>{cartProductLength.length}</span></NavLink></li>
+                    <li><NavLink to="/wishlist"><GoHeart /><span>2</span></NavLink></li>
+                    <li><NavLink to="/cart"><HiOutlineShoppingCart /><span>({cartProductLength.length})</span></NavLink></li>
 
                 </ul>        
 

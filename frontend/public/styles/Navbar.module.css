@@ -101,13 +101,13 @@ header > .navOtherIcons{
 
 }
 
-.navOtherIcons ul li a > span{
+.navOtherIcons ul li a > span:nth-child(2){
 
-    color: snow;
+    color: orange;
     position: relative;
-    top: -20px;
+    top: -7px;
+    margin-left: 5px;
     font-size: 1rem;
-    background-color: orange;
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -116,6 +116,35 @@ header > .navOtherIcons{
     justify-content: center;
     align-items: center;
     font-family: 'navTextFont';
+
+}
+
+.navOtherIcons ul li:nth-child(3) > a{
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+}
+
+.navOtherIcons ul li:nth-child(3) a > svg{
+
+    position: relative;
+    left: 12px;
+
+}
+
+.navOtherIcons ul li:nth-child(3) a > span{
+
+    position: relative;
+    top: 5px;
+    left: -9px;
+    display: inline-flex;
+    background-color: rgb(255, 255, 255);
+    font-size: 15px;
+    width: 15px;
+    height: 15px;
 
 }
 
