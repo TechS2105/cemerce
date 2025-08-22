@@ -2,26 +2,26 @@ import React from 'react';
 import QuickViewBoxStyle from '../../public/styles/Quickviewbox.module.css';
 import { BsBoxSeam } from "react-icons/bs";
 
-function Quickviewbox() {
-    
+function Quickviewbox({product, quickBoxSectionStyle, onClick, quickViewBoxAnime, closeIconAnime}) {
+
     return (
 
         <>
         
-            <div className={QuickViewBoxStyle.quickViewBoxSection}>
+            <div className={QuickViewBoxStyle.quickViewBoxSection} style={quickBoxSectionStyle}>
 
-                <div className={QuickViewBoxStyle.closeIcon}>
+                <div className={QuickViewBoxStyle.closeIcon} onClick={onClick} style={closeIconAnime}>
 
                     <span></span>
                     <span></span>
 
                 </div>
                 
-                <div className={QuickViewBoxStyle.quickViewBox}>
+                <div className={QuickViewBoxStyle.quickViewBox} style={quickViewBoxAnime}>
 
                     <div className={QuickViewBoxStyle.quickViewBoxImage}>
 
-                        <img src="https://cdn.shopify.com/s/files/1/0915/4147/1510/files/M56_1729cd4a-5e9b-4b90-bee3-6dbb87261e0f_600x.jpg?v=1742554510" alt="" />
+                        <img src={product.image} alt={product.title} />
 
                     </div>
 
@@ -29,9 +29,9 @@ function Quickviewbox() {
 
                         <div className={QuickViewBoxStyle.firstQuickViewBoxDetails}>
 
-                            <h2> Tassur Silk Saree </h2>
-                            <p> Rs. 50,000 </p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, labore! Impedit quam incidunt deserunt.</p>
+                            <h2> {product.title} </h2>
+                            <p> Rs. {product.price} </p>
+                            <p>{product.details.description}</p>
                             <button> ADD TO CART </button>
 
                         </div>
@@ -43,9 +43,9 @@ function Quickviewbox() {
 
                             <ul>
 
-                                <li>SKU: BJ-0043RA</li>
-                                <li>TYPE: TUSSUR </li>
-                                <li>VENDOR: C-EMERCE</li>
+                                <li>SKU: {product.details.sku}</li>
+                                <li>TYPE: {product.details.types} </li>
+                                <li>VENDOR: {product.details.vendor}</li>
 
                             </ul>
 

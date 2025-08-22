@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import HomeMenOutfitStyle from '../../public/styles/Homemenoutfit.module.css';
 import { GoHeart } from "react-icons/go";
 import { FaEye } from "react-icons/fa";
@@ -13,6 +13,116 @@ import Reuseablenavigationarrow from '../components/Reuseablenavigationarrow';
 import QuickViewBox from '../components/Quickviewbox';
 
 function Homemenoutfit({menProductCarousel, menProductButton}) {
+
+     // useState 
+    const [activeIdx, setActiveIdx] = useState(false);
+    const [quickBoxSectionStyle, setQuickBoxSectionStyle] = useState({
+
+        transform: "scale(0)",
+        opacity: "0",
+
+    });
+    const [quickViewBoxAnime, setQuickViewBoxAnime] = useState({
+
+        transform: "translateY(-2000px)",
+        opacity: "0",
+        filter: "blur(50px)",
+
+    });
+
+    const [closeIconAnime, setCloseIconAnime] = useState({
+
+        transform: "scale(0)",
+        opacity: "0",
+
+    });
+
+    function handleViewClick(idx) {
+        
+        setActiveIdx(idx);
+         
+            setQuickBoxSectionStyle({
+              transform: "scale(0)",
+              opacity: "0",
+              transition: "none",
+            });
+
+            setQuickViewBoxAnime({
+              transform: "translateY(-2000px)",
+              opacity: "0",
+              filter: "blur(20px)",
+              transition: "none",
+            });
+
+            setCloseIconAnime({
+              transform: "scale(0)",
+              opacity: "0",
+              filter: "blur(20px)",
+              transition: "none",
+            });
+
+        // Trigger animation with slight dealy
+        requestAnimationFrame(() => {
+
+            setQuickBoxSectionStyle({
+
+                transform: "scale(1)",
+                opacity: "1",
+                transition: "all 0.8s ease"
+
+            });
+
+            setQuickViewBoxAnime({
+
+                transform: "translateY(0px)",
+                opacity: "1",
+                filter: "blur(0px)",
+                transition: 'all 0.8s ease 0.5s'
+
+            });
+
+            setCloseIconAnime({
+
+                opacity: "1",
+                filter: "blur(0px)",
+                transition: 'all 0.8s ease 0.5s',
+                transform: "scale(1)",
+
+            })
+
+        })
+        
+    }
+
+    function handleCloseQuickViewBox() {
+        
+        setQuickBoxSectionStyle({
+
+            transform: "scale(0)",
+            opacity: "0",
+            transition: "all 0.8s ease 0.5s"
+
+        });
+
+        setQuickViewBoxAnime({
+
+            transform: "translateY(-2000px)",
+            opacity: "0",
+            filter: "blur(50px)",
+            transition: "all 1s ease 0.3s"
+
+        });
+
+        setCloseIconAnime({
+
+            transform: "scale(0)",
+            transition: 'all 0.8s ease',
+            opacity: "0",
+            filter: "blur(20px)"
+
+        })
+
+    }
 
     const { items: menProduct, status } = useSelector((state) => state.homeMenProduct);
 
@@ -30,7 +140,7 @@ function Homemenoutfit({menProductCarousel, menProductButton}) {
     
     if(status === 'loading') return <p style={{fontSize: "1.5rem"}}> Product is loading... </p>
     if(status === 'failed') return <p style={{fontSize: "1.5rem"}}> Product  not found... </p>
-    
+
     return (
 
         <>
@@ -41,12 +151,11 @@ function Homemenoutfit({menProductCarousel, menProductButton}) {
                 spaceBetween={20}
                 loop={true}
                 speed={1000}
-                // autoplay={{
+                autoplay={{
 
-                //     delay: 2000
+                    delay: '2000'
 
-                // }}
-
+                }}
                 navigation={{
 
                     nextEl: '#next',
@@ -84,12 +193,11 @@ function Homemenoutfit({menProductCarousel, menProductButton}) {
                             <div className={HomeMenOutfitStyle.menProductImage}>
 
                                 <GoHeart onClick={() => { dispatch(addToWishlist(menItem)) }} />
-                                <FaEye />
-                                {/* <QuickViewBox /> */}
+                                <FaEye onClick={() => handleViewClick(idx)} />
                                 <img src={menItem.image} alt={menItem.title} />
 
                             </div>
-
+                            
                             <div className={HomeMenOutfitStyle.menProductContent}>
 
                                 <h3 style={{ paddingLeft: "20px" }}> {menItem.title.length > 40 ? menItem.title.slice(0, 40) : menItem.title} </h3>
@@ -107,7 +215,31 @@ function Homemenoutfit({menProductCarousel, menProductButton}) {
                 
             </Swiper>
 
-             <QuickViewBox />
+            {menProduct.map((menProduct, idx) => {
+
+                return (
+
+                    <div key={idx}>
+
+                        { activeIdx === idx && (
+                        
+                            <QuickViewBox
+                            
+                                product={menProduct}
+                                quickBoxSectionStyle={quickBoxSectionStyle}
+                                onClick={handleCloseQuickViewBox}
+                                quickViewBoxAnime={quickViewBoxAnime}
+                                closeIconAnime={closeIconAnime}
+                                
+                            />
+
+                        )}
+
+                    </div>
+
+                )
+
+            })}
             
             <Reuseablenavigationarrow
             
