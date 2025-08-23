@@ -8,8 +8,9 @@
     left: 0;
     top: 0;
     width: 33rem;
-    background-color: rgba(255, 255, 255, 0.592);
-    backdrop-filter: blur(5px);
+    /* background-color: rgb(255, 255, 255); */
+    /* backdrop-filter: blur(5px); */
+    background-image: linear-gradient(55deg, orange 50%, #fff 50%);
     height: 100vh;
     display: flex;
     align-items: center;
@@ -25,10 +26,20 @@
     top: 20px;
     font-size: 25px;
     cursor: pointer;
-    border-radius: 10%;
+    border-radius: 50%;
     padding: 10px;
+    color: rgb(255, 255, 255);
+    background-color: orange;
+    transition: all 0.8s ease;
+
+}
+
+.navMenu > svg:hover{
+
+    background-color: #fff;
+    border: 1px solid orange;
     color: orange;
-    background-color: #292929;
+    transform: scale(1.1);
 
 }
 
@@ -59,6 +70,7 @@
 
 }
 
+
 .navMenuNameBox ul li > a{
 
     text-decoration: none;
@@ -76,14 +88,16 @@
 
    transform: translateX(120px) scale(2);
    padding-top: 10px;
-   color: #292929;
-   text-shadow: 5px 5px 2px orange;
+   text-shadow: -5px 5px 2px rgb(79, 79, 79);
+   -webkit-text-stroke: #292929;
+   -webkit-text-stroke-width: 0.5px;
+   -webkit-text-fill-color: #fff;
 
 }
 
 .navMenuNameBox ul:hover li > a:not(:hover){
 
    filter: blur(5px);
-   opacity: 0.5;
+   opacity: 0;
 
 }

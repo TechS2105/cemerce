@@ -30,7 +30,49 @@ function Navbar() {
 
     const [navMenu, setNavMenu] = useState({
 
-        transform: "translateX(-1000px)"
+        transform: "translateX(-1000px)",
+        opacity: "0",
+        filter: "blur(50px)"
+
+    });
+
+    const [firstListAnime, setFirstListAnime] = useState({
+
+        transform: 'translateX(-500px)',
+        opacity: "0",
+        filter: "blur(20px)",
+
+    });
+
+    const [secondListAnime, setSecondListAnime] = useState({
+
+        transform: "translateX(-500px)",
+        opacity: "0",
+        filter: "blur(20px)",
+
+    });
+
+    const [thirdListAnime, setThirdListAnime] = useState({
+
+        transform: "translateX(-500px)",
+        opacity: "0",
+        filter: "blur(20px)"
+
+    });
+
+    const [fourthListAnime, setFourthLastAnime] = useState({
+
+        transform: "translateX(-500px)",
+        opacity: "0",
+        filter: "blur(20px)"
+
+    });
+
+    const [fifthListAnime, setFifthLastAnime] = useState({
+
+        transform: "translateX(-500px)",
+        opacity: "0",
+        filter: "blur(20px)",
 
     });
 
@@ -38,14 +80,23 @@ function Navbar() {
 
         transform: "scale(1)",
 
-    })
+    });
+
+    const [navCloseIconAnime, setNavCloseIconAnime] = useState({
+
+        transform: "scale(0)",
+        opacity: "0"
+
+    });
 
     function handleNavmenu() {
         
         setNavMenu({
 
             transform: "translateX(0px)",
-            transition: "all 0.8s ease"
+            transition: "all 0.8s ease",
+            opacity: "1",
+            filter: "blur(0px)"
 
         });
 
@@ -54,7 +105,60 @@ function Navbar() {
             transform: "scale(0)",
             transition: "all 0.8s ease"
 
-        })
+        });
+
+        setNavCloseIconAnime({
+
+            transform: "scale(1)",
+            opacity: "1",
+            transition: "all 0.8s ease"
+
+        });
+
+        setFirstListAnime({
+
+            transform: "translateX(0px)",
+            transition: "all 0.8s ease 0.5s",
+            opacity: "1",
+            filter: "blur(0px)"
+
+        });
+
+        setSecondListAnime({
+
+            transform: "translateX(0px)",
+            transition: "all 0.8s ease 0.7s",
+            opacity: "1",
+            filter: "blur(0px)"
+
+        });
+
+        setThirdListAnime({
+
+            transform: 'translateX(0px)',
+            transition: "all 0.8s ease 0.9s",
+            opacity: "1",
+            filter: "blur(0px)"
+
+        });
+
+        setFourthLastAnime({
+
+            transform: 'translateX(0px)',
+            transition: "all 0.8s ease 1.1s",
+            opacity: "1",
+            filter: "blur(0px)",
+
+        });
+
+        setFifthLastAnime({
+
+            transform: "translateX(0px)",
+            transition: "all 0.8s ease 1.3s",
+            opacity: "1",
+            filter: "blur(0px)",
+
+        });
 
     }
 
@@ -65,16 +169,71 @@ function Navbar() {
         setNavMenu({
 
             transform: "translate(-1000px)",
-            transition: 'all 0.8s ease',
+            transition: 'all 0.8s ease 1.5s',
+            opacity: "0",
+            filter: "blur(50px)",
 
         });
 
         setHideMenu({
 
             transform: "scale(1)",
-            transition: "all 0.8s ease",
+            transition: "all 0.8s ease 1.5s",
+
+        });
+
+        setNavCloseIconAnime({
+
+            transform: 'scale(0)',
+            opacity: "0",
+            transition: "all 0.8s ease"
 
         })
+
+        setFirstListAnime({
+
+            transform: "translateX(-500px)",
+            opacity: "0",
+            filter: "blur(20px)",
+            transition: "all 0.8s ease 1.3s"
+
+        });
+
+        setSecondListAnime({
+
+            transform: "translateX(-500px)",
+            opacity: "0",
+            filter: "blur(20px)",
+            transition: "all 0.8s ease 1.1s"
+
+        });
+
+        setThirdListAnime({
+
+            transform: "translateX(-500px)",
+            opacity: "0",
+            filter: "blur(20px)",
+            transition: "all 0.8s ease 0.9s"
+
+        });
+
+        setFourthLastAnime({
+
+            transform: "translateX(-500px)",
+            opacity: "0",
+            filter: "blur(20px)",
+            transition: "all 0.8s ease 0.7s"
+
+        });
+
+        setFifthLastAnime({
+
+            transform: "translateX(-500px)",
+            opacity: "0",
+            filter: "blur(20px)",
+            transition: "all 0.8s ease 0.5s"
+
+        });
 
     }
 
@@ -242,6 +401,12 @@ function Navbar() {
                 
                     state={navMenu}
                     onClick={hendelClose}
+                    firstListAnime={firstListAnime}
+                    secondListAnime={secondListAnime}
+                    thirdListAnime={thirdListAnime}
+                    fourthListAnime={fourthListAnime}
+                    fifthListAnime={fifthListAnime}
+                    navCloseIconAnime={navCloseIconAnime}
                     
                 />
 
