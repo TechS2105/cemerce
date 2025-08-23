@@ -6,6 +6,15 @@ const Women = [
     title: "Design Printed Full Sleeve Grey Kurti",
     price: "5000",
     category: "Women's Outfit",
+    details: {
+
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id",
+      sku: 'DPSG-882KF',
+      types: 'Party Ware',
+      vendor: 'C-EMERCE'
+
+    }
+
   },
 
   {
@@ -15,6 +24,15 @@ const Women = [
     title: "Design Printed Full Sleeve Kurti",
     price: "2000",
     category: "Women's Outfit",
+    details: {
+
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id",
+      sku: 'DPSG-882KF',
+      types: 'Party Ware',
+      vendor: 'C-EMERCE'
+
+    }
+
   },
 
   {
@@ -24,6 +42,15 @@ const Women = [
     title: "Full Sleeve Blue Flower Printed Design Kurti",
     price: "3000",
     category: "Women's Outfit",
+    details: {
+
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id",
+      sku: 'DPSG-882KF',
+      types: 'Party Ware',
+      vendor: 'C-EMERCE'
+
+    }
+
   },
 
   {
@@ -33,6 +60,15 @@ const Women = [
     title: "Traditional Half Sleeve Kurti",
     price: "5000",
     category: "Women's Outfit",
+    details: {
+
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id",
+      sku: 'DPSG-882KF',
+      types: 'Party Ware',
+      vendor: 'C-EMERCE'
+
+    }
+
   },
 
   {
@@ -42,6 +78,15 @@ const Women = [
     title: "Design Printed Gray Kurti",
     price: "3000",
     category: "Women's Outfit",
+    details: {
+
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id",
+      sku: 'DPSG-882KF',
+      types: 'Party Ware',
+      vendor: 'C-EMERCE'
+
+    }
+
   },
 
   {
@@ -51,7 +96,17 @@ const Women = [
     title: "Design Printed Red Kurti",
     category: "Women's Outfit",
     price: "6000",
+    details: {
+
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id",
+      sku: 'DPSG-882KF',
+      types: 'Party Ware',
+      vendor: 'C-EMERCE'
+
+    }
+
   },
+
 ];
 
 export default Women;

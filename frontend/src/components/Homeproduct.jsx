@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import HomeProductStyle from '../../public/styles/Homeproduct.module.css';
 import { fetchHomeWomenProduct } from '../features/Shop/HomeWomenSlice';
 import { useSelector, useDispatch } from 'react-redux';
@@ -12,8 +12,130 @@ import { Autoplay, Navigation } from 'swiper/modules';
 import ReuseableNavigationArrow from '../components/Reuseablenavigationarrow';
 import ReuseableHomeProductButton from '../components/Reuseablehomeproductbutton';
 import { useNavigate } from 'react-router-dom';
+import QuickViewBox from '../components/Quickviewbox';
 
 function Homeproduct({homeWomenProductAnime, homeWemenProductNavigationArrow, homeWomenProductViewMoreButton}) {
+
+    const [activeIdx, setActiveIdx] = useState(false);
+    const [womenQuickBoxSectionStyle, setWomenQuickBoxSectionStyle] = useState({
+
+        transform: "translateX(-1500px)",
+        opacity: "0",
+        filter: "blur(20px)"
+
+    });
+
+    const [womenQuickViewBoxAnime, setWomenQuickViewBoxAnime] = useState({
+
+        transform: "translateX(1000px)",
+        opacity: "0",
+        filter: "blur(20px) brightness(150%)"
+
+    });
+
+    const [womenCloseIconAnime, setWomenCloseIconAnime] = useState({
+
+        transform: "scale(0)",
+        filter: "blur(20px)",
+        opacity: "0"
+
+    })
+
+    function handleQuickViewBox(idx) {
+        
+        setActiveIdx(idx);
+
+        setWomenQuickBoxSectionStyle({
+
+            transform: "translateX(-1500px)",
+            opacity: "0",
+            filter: "blur(20px)",
+            transition: "none"
+
+        });
+        
+        setWomenQuickViewBoxAnime({
+
+            transform: "translateY(1000px)",
+            opacity: "0",
+            filter: 'blur(20px) brightness(250%)',
+            transition: "all 0.8s ease 0.5s"
+
+        });
+
+        setWomenCloseIconAnime({
+
+            transform: "scale(0)",
+            opacity: "0",
+            filter: "blur(20px)",
+            transition: "none"
+
+        })
+
+        // targeted animation when tiggered
+        requestAnimationFrame(() => {
+
+            setWomenQuickBoxSectionStyle({
+
+                transform: "translateX(0px)",
+                opacity: "1",
+                filter: "blur(0px)",
+                transition: "all 0.8s ease"
+
+            });
+
+            setWomenQuickViewBoxAnime({
+
+                transform: "translateY(0px)",
+                opacity: "1",
+                filter: "blur(0px) brightness(100%)",
+                transition: "all 0.8s ease 0.5s"
+
+            });
+
+            setWomenCloseIconAnime({
+
+                transform: "scale(1)",
+                opacity: "1",
+                filter: "blur(0px)",
+                transition: "all 0.8s ease 0.8s"
+
+            });
+
+        });
+
+    }
+
+    function handleCloseIcon(){
+
+        setWomenQuickBoxSectionStyle({
+
+            transform: "translateX(-1500px)",
+            opacity: "0",
+            filter: "blur(20px)",
+            transition: "all 0.8s ease 0.7s"
+
+        });
+
+        setWomenQuickViewBoxAnime({
+
+            transform: "translateY(1000px)",
+            opacity: "0",
+            filter: "blur(20px) brightness(250%)",
+            transition: "all 0.8s ease 0.5s",
+
+        });
+
+        setWomenCloseIconAnime({
+
+            transform: "scale(0)",
+            opacity: "0",
+            filter: "blur(20px)",
+            transition: "all 0.8s ease"
+
+        });
+
+    }
 
     const { items: homeWomenProducts, status } = useSelector((state) => state.homeWomenProduct);
     const dispatch = useDispatch();
@@ -58,18 +180,34 @@ function Homeproduct({homeWomenProductAnime, homeWemenProductNavigationArrow, ho
 
                 modules={[Autoplay, Navigation]}
                 style={homeWomenProductAnime}
+
+                onSwiper={(swiper) => {
+
+                    swiper.el.addEventListener("mouseover", () => {
+
+                        swiper.autoplay.stop();
+
+                    });
+
+                    swiper.el.addEventListener("mouseout", () => {
+
+                        swiper.autoplay.start();
+
+                    })
+
+                }}
             
             >
 
-                {homeWomenProducts.map((womenProduct) => {
+                {homeWomenProducts.map((womenProduct, idx) => {
 
                     return (
 
-                        <SwiperSlide className={HomeProductStyle.homeProductBox} key={womenProduct.id}>
+                        <SwiperSlide className={HomeProductStyle.homeProductBox} key={idx}>
 
                             <div className={HomeProductStyle.homeProductImage}>
 
-                                <FaRegEye />
+                                <FaRegEye onClick={ () => handleQuickViewBox(idx)} />
                                 <GoHeart onClick={ () => {dispatch(addToWishlist(womenProduct))}} />
                                 <img src={womenProduct.image} alt={womenProduct.title} />
 
@@ -91,6 +229,37 @@ function Homeproduct({homeWomenProductAnime, homeWemenProductNavigationArrow, ho
                 })}
 
             </Swiper>
+
+            {homeWomenProducts.map((womenProduct, idx) => {
+
+                return (
+
+                    // active idx && idx when equal
+                    <>
+                        
+                        <div key={idx}>
+
+                            {activeIdx === idx && (
+
+                                <QuickViewBox
+                                
+                                    product={womenProduct}
+                                    quickBoxSectionStyle={womenQuickBoxSectionStyle}
+                                    onClick={handleCloseIcon}
+                                    quickViewBoxAnime={womenQuickViewBoxAnime}
+                                    closeIconAnime={womenCloseIconAnime}
+                                    
+                                />
+
+                            )}
+
+                        </div>
+
+                    </>
+
+                );
+
+            })}
 
             <ReuseableNavigationArrow
             
