@@ -2,8 +2,9 @@ import React from 'react';
 import ShopStyle from '../../public/styles/Shop.module.css'
 import ShopBannerImage from '../components/Shopbanner';
 import ShopProducts from '../components/Shopproducts';
+import ShopPageHeading from '../components/Reuseablepageheading';
 
-let shopBannerImage = "../../public/images/shopbanner.jpeg"
+let shopBannerImage = "../../public/images/Shop Banner Images/shop.webp";
 
 function Shop() {
     
@@ -24,11 +25,7 @@ function Shop() {
 
                 <div className={ShopStyle.shopProducts}>
 
-                    <div className={ShopStyle.shopProductHeading}>
-
-                        <h2> Collections For You </h2>
-
-                    </div>
+                    <ShopPageHeading />
                     
                     <ShopProducts />
 
