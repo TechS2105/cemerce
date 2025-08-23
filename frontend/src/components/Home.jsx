@@ -5,7 +5,6 @@ import CategoryBox from '../components/Categorybox';
 import HomeGrid from '../components/Homegrid';
 import HomeMenOutfit from '../components/Homemenoutfit';
 import { useNavigate } from 'react-router-dom';
-import Footer from '../components/Footer';
 import HomeWomenProduct from '../components/Homewomenproduct';
 import ProductDiscount from '../components/Productdiscount';
 import BrandCarousel from '../components/Brandcarousel';
@@ -312,7 +311,7 @@ function Home() {
     // Women Product Discount Scroll Anime
     function handleWomenProductDiscountScroll() {
         
-        if (window.scrollY > 3400) {
+        if (window.scrollY > 4200) {
             
             setWomenDiscountImageAnime({
 
@@ -437,7 +436,7 @@ function Home() {
     // Kid Product Section Scroll
     function handleKidsProductSectionScroll() {
         
-        if(window.scrollY > 3800){
+        if(window.scrollY > 4600){
 
             setKidsProductSectionHeadingAnime({
 
@@ -479,7 +478,7 @@ function Home() {
 
         }
 
-        if (window.scrollY >= 4300) {
+        if (window.scrollY >= 5000) {
             
             setKidsProductNavigationArrow({
 
@@ -501,7 +500,7 @@ function Home() {
 
         }
 
-        if (window.scrollY >= 4400) {
+        if (window.scrollY >= 5100) {
             
             setKidsProductSectionViewMoreButton({
 
@@ -570,7 +569,7 @@ function Home() {
     // Kid Product Discount Section Scroll
     function handleKidsProductDiscountScroll() {
         
-        if (window.scrollY > 4600) {
+        if (window.scrollY > 5400) {
             
             setKidDiscountImageAnime({
 
@@ -810,9 +809,6 @@ function Home() {
             <BrandCarousel />
 
             </main>
-                
-            {/** Footer Section Component */}
-            <Footer />
             
         </>
 

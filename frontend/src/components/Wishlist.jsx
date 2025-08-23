@@ -2,7 +2,6 @@ import React, {useEffect} from 'react';
 import ReuseableProductSecondNavbar from '../components/Reuseablesecondproductnav';
 import WishlistProductSection from '../components/Wishlistproductsection';
 import WishlistStyle from '../../public/styles/Wishlist.module.css';
-import Footer from '../components/Footer';
 import { fetchWishlistProduct } from '../features/Shop/WishListSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeWishlistProduct } from '../features/Shop/WishListSlice';
@@ -44,8 +43,6 @@ function Wishlist() {
                 />
 
             </main>
-            
-            <Footer />
 
         </>
 

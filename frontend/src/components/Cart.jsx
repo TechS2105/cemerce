@@ -5,7 +5,6 @@ import CartProductSection from '../components/Cartproductsection';
 import { fetchCartProduct } from '../features/Shop/CartSlice';
 import { removeCartProduct } from '../features/Shop/CartSlice';
 import { useSelector, useDispatch } from 'react-redux';
-import Footer from '../components/Footer';
 
 function Cart() {
     
@@ -44,8 +43,6 @@ function Cart() {
                 />
                 
             </main>
-
-            <Footer />
             
         </>
 

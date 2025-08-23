@@ -22,7 +22,7 @@ function Testimonialcarousel() {
 
     function handleScrollAnime() {
         
-        if (window.scrollY > 5000) {
+        if (window.scrollY > 5800) {
             
             setTestimonialHeadingAnime({
 

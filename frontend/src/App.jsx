@@ -32,6 +32,7 @@ function App() {
 
         createRoutesFromElements(
 
+
             <Route path='/' element={<RootLayout />}>
 
                 <Route index element={ <Home />} />

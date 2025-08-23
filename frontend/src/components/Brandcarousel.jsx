@@ -22,7 +22,7 @@ function Brandcarousel() {
 
     function handleBrandScrollAnimation() {
         
-       if(window.scrollY > 5700){
+       if(window.scrollY > 6300){
 
            setBrandCarouselStyle({
 

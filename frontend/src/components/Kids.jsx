@@ -3,7 +3,6 @@ import KidCollectionStyle from '../../public/styles/Kidcollections.module.css';
 import KidsBannerImage from '../components/Productbannervideo';
 import KidsHeading from '../components/Productheading';
 import KidsProduct from '../components/Kidproducts';
-import Footer from '../components/Footer';
 
 let kidVideo = "../../public/video/kidsvideo.mp4"
 
@@ -13,25 +12,27 @@ function Kids() {
 
         <>
 
-            <div className={KidCollectionStyle.kidCollectionPageBanner}>
-        
-                <KidsBannerImage
+            <main>
+
+                <div className={KidCollectionStyle.kidCollectionPageBanner}>
+            
+                    <KidsBannerImage
+                    
+                        video={kidVideo}
+                        
+                    />
+                    
+                </div>
+
+                <KidsHeading
                 
-                    video={kidVideo}
+                    headingTitle="Kid's Collection"
                     
                 />
-                
-            </div>
 
-            <KidsHeading
-            
-                headingTitle="Kid's Collection"
-                
-            />
+                <KidsProduct />
 
-            <KidsProduct />
-
-            <Footer />
+            </main>
 
         </>
 
