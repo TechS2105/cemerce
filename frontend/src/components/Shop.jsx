@@ -25,7 +25,11 @@ function Shop() {
 
                 <div className={ShopStyle.shopProducts}>
 
-                    <ShopPageHeading />
+                    <ShopPageHeading 
+                    
+                        pageHeading="Collections For You"
+                        
+                    />
                     
                     <ShopProducts />
 
