@@ -4,7 +4,7 @@ function Productbannervideo(props) {
     
     return(
 
-        <video src={props.video} autoPlay muted></video>
+        <img src={props.image} autoPlay muted></img>
 
     );
 

@@ -3,8 +3,9 @@ import ProductBannerVideo from '../components/Productbannervideo';
 import WomenStyle from '../../public/styles/Women.module.css';
 import ProductHeading from '../components/Productheading';
 import Womencollection from '../components/Womencollection';
+import WomenPageHeading from '../components/Reuseablepageheading';
 
-let video = '../../public/video/womenpagevideo.mp4';
+let womenBannerImage = "../../public/images/Women's Banner Images/image4.jpg";
 
 function Women() {
     
@@ -18,15 +19,15 @@ function Women() {
 
                     <ProductBannerVideo
                     
-                        video={video}
+                       image={womenBannerImage}
                         
                     />
 
                 </div>
 
-                <ProductHeading
+                <WomenPageHeading
                 
-                    headingTitle = "Women's Collections"
+                    pageHeading="Women's Collections"
                     
                 />
 

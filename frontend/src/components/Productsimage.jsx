@@ -9,7 +9,7 @@ function Productimage(props) {
         <>
         
             <GoHeart onClick={props.onButtonClick} />
-            <FaRegEye />
+            <FaRegEye onClick={props.handleQuickViewBox}/>
             <img src={props.productImage} alt={props.title} />
         
         </>
