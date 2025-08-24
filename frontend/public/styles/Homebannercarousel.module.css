@@ -31,6 +31,21 @@
     height: 100%;
     object-fit: cover;
     object-position: bottom;
+    animation: homeBannerImages 30s linear;
+
+}
+
+@keyframes homeBannerImages {
+    
+    50%{
+
+        transform: scale(1.2);
+
+    }0%, 100%{
+
+        transform: scale(1);
+
+    }
 
 }
 
