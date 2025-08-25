@@ -17,7 +17,7 @@ function SingleProductPageProductSection({SingleProductPageStyle}) {
                     <SingleProductPageImage
                     
                         image={image}
-                        title="Sharee Image "
+                        title="Sharee Image"
                         
                     />
 

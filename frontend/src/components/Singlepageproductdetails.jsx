@@ -3,6 +3,13 @@ import { GoPlus } from "react-icons/go";
 import { GoDash } from "react-icons/go";
 import { GoHeart } from "react-icons/go";
 import { LuArrowRightLeft } from "react-icons/lu";
+import { BsTruck } from "react-icons/bs";
+import { IoLeafOutline } from "react-icons/io5";
+import { GoLock } from "react-icons/go";
+import { BsBoxSeam } from "react-icons/bs";
+import { FaFacebookF } from "react-icons/fa";
+import { RiTwitterXLine } from "react-icons/ri";
+import { FaPinterestP } from "react-icons/fa";
 
 function Singlepageproductdetails({ SingleProductPageStyle }) {
     
@@ -21,6 +28,58 @@ function Singlepageproductdetails({ SingleProductPageStyle }) {
     function handleCounterIncrease() {
 
         setCounterValue(counterValue + 1);
+
+    }
+
+    // Shipbox Dropdown
+    const [isAnimate, setIsAnimate] = useState(false);
+    const [isCareGuideAnimate, setIsCareGuideAnimate] = useState(false);
+
+    function handleShippingInformationDropDown() {
+        
+        setIsAnimate(prev => !prev);
+
+    }
+
+    function handleCareGuideDropdownBox() {
+        
+        setIsCareGuideAnimate(prev => !prev)
+
+    }
+
+    const shippingInfoDropDownBox = isAnimate ? {
+
+        height: "8rem",
+        transition: 'all 0.8s ease',
+
+    } : {
+        
+        height: '0rem',
+        transition: "all 0.8s ease"
+
+    }
+
+    const careGuideAnime = isAnimate ? {
+
+        marginTop: "8rem",
+        transition: "all 0.8s ease"
+
+    } : {
+
+        marginTop: "0rem",
+        transition: "all 0.8s ease"
+
+    }
+
+    const careGuidBox = isCareGuideAnimate ? {
+
+        height: "8rem",
+        transition: 'all 0.8s ease'
+
+    } : {
+
+        height: "0rem",
+        transition: 'all 0.8s ease'
 
     }
     
@@ -66,6 +125,106 @@ function Singlepageproductdetails({ SingleProductPageStyle }) {
 
                     <span> <GoHeart /> Add To Wishlist </span>
                     <span> <LuArrowRightLeft /> Compare </span>
+
+                </div>
+
+            </div>
+
+            <div className={SingleProductPageStyle.singleProductPageProductDetailsBox}>
+
+                <table>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td> Vendor: </td>
+                            <td> C-EMERCE </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td> Types: </td>
+                            <td> Jamdani </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td> Available: </td>
+                            <td> Available</td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <div className={SingleProductPageStyle.singleProductPageProductOtherDetailsBox}>
+
+                <div className={SingleProductPageStyle.singleProductPageProductFirstDropdownBox}>
+
+                    <div className={SingleProductPageStyle.singleProductPageProductFirstDropdownBoxContent} onClick={handleShippingInformationDropDown}>
+
+                        <span><BsTruck /><p>Shipping information</p></span>
+                        <span><GoPlus/></span>
+
+                        
+                    </div>
+
+                    <div className={SingleProductPageStyle.shippingInformationBox} style={shippingInfoDropDownBox}>
+
+                        <p>- All India Free Delivery. </p>
+                        <p>- Ships within 1-2 business days. </p>
+                        <p>- Ships in our fully recyclable and biodegradable signature boxes. </p>
+
+                    </div>
+
+                </div>
+
+                <div className={SingleProductPageStyle.singleProductPageProductSecondDropDownBox}>
+
+                    <div className={SingleProductPageStyle.singleProductPageProductSecondDropdownBoxContent} style={careGuideAnime} onClick={handleCareGuideDropdownBox}>
+
+                        <span><IoLeafOutline /><p>Care Guide</p></span>
+                        <span><GoPlus/></span>
+
+                    </div>
+
+                    <div className={SingleProductPageStyle.careGuideBox} style={careGuidBox}>
+
+                        <p> <b>Dry Clean Only</b> to maintain the integrity of the fabric and zari work. </p>
+
+                        <ul>
+
+                            <li> Store in a muslin cloth to protect against moisture and sunlight. </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div className={SingleProductPageStyle.singleProductPageProductThirdBox}>
+
+                    <span> <GoLock /> <p>Secure payment </p></span>
+
+                    <div className={SingleProductPageStyle.productFreeDeliveryBox}>
+
+                        <span> <BsBoxSeam /> <p>Your order is free delivery !</p> </span>
+
+                    </div>
+
+                    <div className={SingleProductPageStyle.socialIconSection}>
+
+                        <span> <FaFacebookF /> Share </span>
+                        <span> <RiTwitterXLine /> Tweet </span>
+                        <span> <FaPinterestP /> Pin it </span>
+
+                    </div>
 
                 </div>
 

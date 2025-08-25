@@ -2,6 +2,8 @@ import React from 'react';
 import ReuseableSingleProductPageNavigation from './Reuseablesecondproductnav';
 import SingleProductPageProductSection from '../components/Singleproductpageproductsection';
 import SingleProductPageStyle from '../../public/styles/Singleproductpage.module.css'
+import SingleProductPageLikeProduct from '../components/Singleproductpagelikeproduct';
+import SingleProductPageProductShortDescriptionSection from '../components/Singleproductpageproductshortdescription';
 
 function Productfulldetails() {
     
@@ -11,7 +13,7 @@ function Productfulldetails() {
 
             <main>
 
-                <div className={SingleProductPageStyle.singleProducPagetStyle}>
+                <div className={SingleProductPageStyle.singleProducPage}>
 
                     <ReuseableSingleProductPageNavigation
                 
@@ -26,9 +28,19 @@ function Productfulldetails() {
                         
                     />
 
+                    <SingleProductPageLikeProduct
+                    
+                        SingleProductPageStyle={SingleProductPageStyle}
+                        
+                    />
+
+                    <SingleProductPageProductShortDescriptionSection
+                    
+                        SingleProductPageStyle={SingleProductPageStyle}
+                        
+                    />
+
                 </div>
-                 
-                
                 
             </main>
            

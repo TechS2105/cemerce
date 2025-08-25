@@ -3,20 +3,18 @@
     src: url('../fonts/magenda/MagendaRegular-MVwjx.ttf');
 }
 
-.singleProducPagetStyle{
+.singleProducPage{
 
     width: 100%;
     height: 100%;
 
 }
 
-.singleProducPagetStyle > .singleProductSection{
+.singleProducPage > .singleProductSection{
 
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
     margin: 50px 0px;
 
 }
@@ -44,6 +42,10 @@
 
     width: 50%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
 
 }
 
@@ -92,9 +94,21 @@
 
     width: 100%;
     height: 9rem;
-    /* background-color: antiquewhite; */
     display: flex;
     flex-direction: column;
+    position: relative;
+
+}
+
+.singleProductPageButtonsBox::after{
+
+    position: absolute;
+    top: 150px;
+    left: 0;
+    content: "";
+    height: 1.5px;
+    width: 90%;
+    background-color: rgb(224, 224, 224);
 
 }
 
@@ -400,3 +414,549 @@
 
 }
 
+.singleProductContent > .singleProductPageProductDetailsBox{
+
+    width: 100%;
+    height: 8rem;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+
+}
+
+.singleProductContent .singleProductPageProductDetailsBox > table {
+
+    width: 30%;
+
+}
+
+.singleProductContent .singleProductPageProductDetailsBox > table, tr, td, th {
+
+    border-bottom: none;
+    padding: 7px 0px;
+    font-family: 'singleProductPageFont';
+    font-size: 15px;
+    letter-spacing: 2px;
+
+}
+
+.singleProductContent > .singleProductPageProductOtherDetailsBox{
+
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    /* overflow: hidden; */
+
+}
+
+.singleProductPageProductOtherDetailsBox > .singleProductPageProductFirstDropdownBox{
+
+    width: 90%;
+    height: 3rem;
+    background-color: #ffffff;
+
+}
+
+.singleProductPageProductFirstDropdownBox > .singleProductPageProductFirstDropdownBoxContent{
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    position: relative;
+
+}
+
+.singleProductPageProductFirstDropdownBoxContent::after{
+
+    position: absolute;
+    top: 50px;
+    left: 0;
+    content: "";
+    height: 1.5px;
+    background-color: rgb(224, 224, 224);
+    width: 100%;
+
+}
+
+.singleProductPageProductFirstDropdownBoxContent > span:nth-child(1){
+
+    display: inline-flex;
+    gap: 10px;
+    height: 50%;
+
+}
+
+.singleProductPageProductFirstDropdownBoxContent span:nth-child(1) > p{
+
+    font-family: 'singleProductPageFont';
+    letter-spacing: 2px;
+    text-transform: capitalize;
+
+}
+
+.singleProductPageProductFirstDropdownBoxContent span:nth-child(1) > svg{
+
+    font-size: 18px;
+
+}
+
+.singleProductPageProductFirstDropdownBoxContent > span:nth-child(2){
+
+    font-size: 25px;
+    cursor: pointer;
+    font-weight: bolder;
+
+}
+
+.singleProductPageProductFirstDropdownBox > .shippingInformationBox{
+
+    width: 100%;
+    height: 8rem;
+    overflow: hidden;
+    margin-top: 2px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: column;
+
+}
+
+.shippingInformationBox > p{
+
+    font-family: 'singleProductPageFont';
+    letter-spacing: 1.5px;
+    text-transform: capitalize;
+    font-size: 15px;
+
+}
+
+.singleProductPageProductOtherDetailsBox > .singleProductPageProductSecondDropDownBox{
+
+    width: 100%;
+    height: 100%;
+    margin-top: 5px;
+
+}
+
+.singleProductPageProductSecondDropDownBox > .singleProductPageProductSecondDropdownBoxContent{
+
+    width: 90%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    cursor: pointer;
+    background-color: #ffffff;
+
+}
+
+.singleProductPageProductSecondDropdownBoxContent::after{
+
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgb(224, 224, 224);
+    content: "";
+
+}
+
+.singleProductPageProductSecondDropdownBoxContent > span:nth-child(1){
+
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.singleProductPageProductSecondDropdownBoxContent span:nth-child(1) > p{
+
+    font-family: 'singleProductPageFont';
+    letter-spacing: 2px;
+
+} 
+
+.singleProductPageProductSecondDropdownBoxContent > span:nth-child(1) svg{
+
+    font-size: 18px;
+
+}
+
+.singleProductPageProductSecondDropdownBoxContent > span:nth-child(2){
+
+    font-size: 25px;
+
+}
+
+.singleProductPageProductSecondDropDownBox > .careGuideBox{
+    
+    width: 90%;
+    height: 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    overflow: hidden;
+
+}
+
+.careGuideBox > p{
+
+    font-family: 'singleProductPageFont';
+    letter-spacing: 1.5px;
+
+}
+
+.careGuideBox > ul{
+
+    margin-left: 15px;
+
+}
+
+.careGuideBox ul > li{
+
+    font-family: 'singleProductPageFont';
+    font-size: 15px;
+    letter-spacing: 1.5px;
+
+}
+
+.singleProductPageProductOtherDetailsBox > .singleProductPageProductThirdBox{
+
+    width: 90%;
+    height: 100%;
+    margin-top: 2px;
+    padding: 20px 0px;
+
+}
+
+.singleProductPageProductThirdBox > span{
+
+    display: inline-flex;
+    gap: 10px;
+
+}
+
+.singleProductPageProductThirdBox span > svg{
+
+    font-size: 18px;
+
+}
+
+.singleProductPageProductThirdBox span > p{
+
+    font-family: 'singleProductPageFont';
+    letter-spacing: 2px;
+    text-transform: capitalize;
+
+}
+
+.singleProductPageProductThirdBox > .productFreeDeliveryBox{
+
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+
+}
+
+.productFreeDeliveryBox::after{
+
+    position: absolute;
+    top: 60px;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    content: "";
+    background-color: #292929;
+
+}
+
+.productFreeDeliveryBox > span{
+
+    display: inline-flex;
+    gap: 10px;
+
+}
+
+.productFreeDeliveryBox span > svg{
+
+    font-size: 18px;
+
+}
+
+.productFreeDeliveryBox span > p{
+
+    font-family: 'singleProductPageFont';
+    text-transform: capitalize;
+    font-size: 15px;
+    letter-spacing: 2px;
+
+}
+
+.singleProductPageProductThirdBox > .socialIconSection{
+
+    width: 100%;
+    height: 3rem;
+    /* background-color: antiquewhite; */
+    margin-top: 20px;
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+
+}
+
+.socialIconSection > span{
+
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'singleProductPageFont';
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+}
+
+.socialIconSection span > svg{
+
+    font-size: 18px;
+
+}
+
+.socialIconSection > span:hover{
+
+    color: orange;
+    transform: scale(1.1);
+
+}
+
+.singleProducPage > .singleProductPageLikeProductSection{
+
+    width: 100%;
+    height: 100%;
+    padding: 50px 0px;
+
+}
+
+.singleProductPageLikeProductSection > .singleProductPageLikeProductSectionHeading{
+
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.singleProductPageLikeProductSectionHeading > h2{
+
+    font-family: 'singleProductPageFont';
+    letter-spacing: 2px;
+    font-size: 30px;
+
+}
+
+.singleProductPageLikeProductSection > .singleProductPageLikeProductSectionProducts{
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    row-gap: 50px;
+    padding-top: 30px;
+
+}
+
+.singleProductPageLikeProductSectionProducts > .productBox{
+
+    width: 20rem;
+    height: 35rem;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #2929293a;
+
+}
+
+.productBox > img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.8s ease;
+    position: absolute;
+
+}
+
+.productBox:hover > img{
+
+    transform: scale(1.1);
+
+}
+
+.productBox > svg{
+
+    position: absolute;
+    z-index: 2;
+    top: 20px;
+    right: 20px;
+    background-color: #ffffff;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 50px;
+    color: orange;
+
+}
+
+.productBox > button{
+
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translate(-50%, 30%);
+    width: 80%;
+    height: 8%;
+    background-color: #ffffff;
+    border: none;
+    outline: none;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.8s ease;
+    overflow: hidden;
+
+}
+
+.productBox:hover > button{
+
+    bottom: 30px;
+
+}
+
+.productBox > button::after{
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0%;
+    width: 100%;
+    background-color: orange;
+    content: "";
+    transition: all 0.8s ease;
+
+}
+
+.productBox > button:hover::after{
+
+    height: 100%;
+
+}
+
+.productBox button > svg{
+
+    font-size: 18px;
+    color: orange;
+    position: relative;
+    z-index: 2;
+    transition: all 0.8s ease;
+
+}
+
+.productBox button:hover > svg{
+
+    color: #ffffff;
+
+}
+
+.productBox button > p{
+
+    font-size: 15px;
+    color: orange;
+    font-family: 'singleProductPageFont';
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+    transition: all 0.8s ease;
+
+}
+
+.productBox button:hover > p{
+
+    color: #ffffff;
+
+}
+
+.singleProducPage > .productShorDescriptionSection{
+
+    width: 100%;
+    height: 80vh;
+    background-image: url('https://images.unsplash.com/photo-1639747276707-a615a3a4655a?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+}
+
+.productShorDescriptionSection > .productShortDescriptionBox{
+
+    width: 50%;
+    /* background-color: #292929; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+.productShortDescriptionBox > span{
+
+    color: #292929;
+    font-size: 20px;
+    font-family: 'singleProductPageFont';
+    letter-spacing: 2px;
+    padding-left: 40px;
+    text-transform: uppercase;
+
+}
+
+.productShortDescriptionBox > h3{
+
+    color: #292929;
+    text-transform: capitalize;
+    padding-left: 40px;
+    font-family: 'singleProductPageFont';
+    letter-spacing: 2px;
+    font-size: 60px;
+    width: 600px;
+
+}
+
+.productShortDescriptionBox > p{
+
+    color: #292929;
+    padding-left: 40px;
+    width: 650px;
+    font-family: 'singleProductPageFont';
+    letter-spacing: 2px;
+    line-height: 25px;
+
+}
