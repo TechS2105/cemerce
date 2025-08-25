@@ -21,6 +21,7 @@
     box-shadow: 5px 5px 5px #29292945;
     border-radius: 10px;
     margin-top: -2px;
+    cursor: pointer;
 
 }
 
@@ -43,6 +44,13 @@
     top: 0;
     left: 0;
     z-index: -2;
+    transition: all 0.8s ease;
+
+}
+
+.menProduct:hover .menProductImage > img{
+
+    transform: scale(1.2);
 
 }
 
@@ -99,8 +107,9 @@
 .menProductContent > h3{
 
     font-family: 'homeMenOutfitFont';
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     letter-spacing: 2px;
+    width: 280px;
 
 }
 

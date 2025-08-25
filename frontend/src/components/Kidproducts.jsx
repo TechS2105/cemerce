@@ -162,7 +162,7 @@ function Kidcollections() {
 
                             <GoHeart onClick={() => {dispatch(addToWishlist(kidItems))}} />
                             <FaRegEye onClick={() => {handleQuickViewBox(idx)}}/>
-                            <img src={ kidItems.image } alt={kidItems.title} />
+                            <img src={kidItems.image} alt={kidItems.title} />
 
                         </div>
 
@@ -185,9 +185,7 @@ function Kidcollections() {
 
                 return (
 
-                    <>
-                    
-                        <div key={idx} style={{position: "fixed", zIndex: "99"}}>
+                    <div key={idx} style={{position: "fixed", zIndex: "99"}}>
 
                            {activeIdx === idx && (
 
@@ -203,9 +201,7 @@ function Kidcollections() {
                                 
                            )}
 
-                        </div>
-                        
-                    </>
+                    </div>              
 
                 );
 

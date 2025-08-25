@@ -1,0 +1,402 @@
+@font-face {
+    font-family: 'singleProductPagefont';
+    src: url('../fonts/magenda/MagendaRegular-MVwjx.ttf');
+}
+
+.singleProducPagetStyle{
+
+    width: 100%;
+    height: 100%;
+
+}
+
+.singleProducPagetStyle > .singleProductSection{
+
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0px;
+
+}
+
+.singleProductSection > .singleProductImage{
+
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.singleProductImage > img{
+
+    width: 75%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+
+}
+
+.singleProductSection > .singleProductContent{
+
+    width: 50%;
+    height: 100%;
+
+}
+
+.singleProductContent > .singleProductDetailsBox{
+
+    width: 100%;
+    height: 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+
+}
+
+.singleProductDetailsBox::after{
+
+    position: absolute;
+    top: 130px;
+    left: 0;
+    height: 1px;
+    width: 90%;
+    background-color: rgb(190, 190, 190);
+    content: "";
+
+}
+
+.singleProductDetailsBox > h2{
+
+    font-family: 'singleProductPageFont';
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+
+}
+
+.singleProductDetailsBox > p{
+
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+
+}
+
+.singleProductContent > .singleProductPageButtonsBox{
+
+    width: 100%;
+    height: 9rem;
+    /* background-color: antiquewhite; */
+    display: flex;
+    flex-direction: column;
+
+}
+
+.singleProductPageButtonsBox > .singleProductPageButtonsSection{
+
+    width: 100%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+
+}
+
+.singleProductPageButtonsSection > .singleProductPageCounterBox{
+
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* background-color: aqua; */
+
+}
+
+.singleProductPageCounterBox > input{
+
+    width: 60px;
+    height: 50px;
+    border: none;
+    outline: none;
+    text-align: center;
+    font-family: 'singleProductPageFont';
+    font-size: 20px;
+    border-top: 2px solid rgb(224, 224, 224);
+    border-bottom: 2px solid rgb(224, 224, 224);
+
+}
+
+.singleProductPageCounterBox > input[type="number"]::-webkit-inner-spin-button{
+
+    -webkit-appearance: none;
+
+}
+
+.singleProductPageCounterBox > .decrease{
+
+    width: 20%;
+    height: 51px;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 2px solid rgb(224, 224, 224);
+    border-bottom: 2px solid rgb(224, 224, 224);
+    border-left: 2px solid rgb(224, 224, 224);
+    cursor: pointer;
+    transition: all 0.8s ease;
+
+}
+
+.decrease:hover{
+
+    background-color: orange;
+    border-color: orange;
+
+}
+
+.decrease:hover > svg{
+
+    color: #ffffff;
+
+}
+
+.decrease > svg{
+
+    font-size: 20px;
+    transition: all 0.8s ease;
+
+}
+
+.singleProductPageCounterBox > .increase{
+
+    width: 20%;
+    height: 51px;
+    border-top: 2px solid rgb(224, 224, 224);
+    border-bottom: 2px solid rgb(224, 224, 224);
+    border-right: 2px solid rgb(224, 224, 224);
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.8s ease;
+
+}
+
+.increase:hover{
+
+    background-color: orange;
+    cursor: pointer;
+
+}
+
+.increase:hover > svg{
+
+    color: #ffffff;
+
+}
+
+.increase > svg{
+
+    font-size: 20px;
+    transition: all 0.8s ease;
+
+}
+
+.singleProductPageButtonsSection > button:nth-child(2){
+
+    width: 200px;
+    background-color: transparent;
+    border: 2px solid orange;
+    outline: none;
+    height: 40px;
+    font-size: 15px;
+    color: #292929;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    font-family: 'singleProductPagefont';
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-right: 30px;
+    position: relative;
+    transition: all 0.8s ease;
+
+}
+
+.singleProductPageButtonsSection > button:nth-child(2):hover{
+
+    border: transparent;
+    color: #ffffff;
+
+}
+
+.singleProductPageButtonsSection > button:nth-child(2)::after{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background-color: orange;
+    content: "";
+    transition: all 0.8s ease;
+    z-index: -2;
+    opacity: 0;
+
+}
+
+.singleProductPageButtonsSection > button:nth-child(2)::before{
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #292929;
+    content: "";
+    z-index: -2;
+    transition: all 0.8s ease;
+    opacity: 0;
+
+}
+
+.singleProductPageButtonsSection > button:nth-child(2):hover::after{
+
+   width: 50%;
+   opacity: 1;
+
+}
+
+.singleProductPageButtonsSection > button:nth-child(2):hover::before{
+
+    width: 50%;
+    opacity: 1;
+
+}
+
+.singleProductPageButtonsSection > button:nth-child(3){
+
+    width: 200px;
+    height: 40px;
+    background-color: orange;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-family: 'singleProductPageFont';
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.8s ease;
+
+}
+
+.singleProductPageButtonsSection > button:nth-child(3):hover{
+
+    color: #ffffff;
+
+}
+
+.singleProductPageButtonsSection > button:nth-child(3)::after{
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    content: "Buy It Now ";
+    background-color: #292929;
+    transform: scaleY(0);
+    transition: all 0.8s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.singleProductPageButtonsSection > button:nth-child(3):hover::after{
+
+    transform: scaleY(1);
+
+}
+
+.singleProductPageButtonsBox > .singleProductPageSecondButtonsSection{
+
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+
+}
+
+.singleProductPageSecondButtonsSection > span:nth-child(1){
+
+    font-size: 15px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-family: 'singleProductPageFont';
+    font-weight: 500;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+}
+
+.singleProductPageSecondButtonsSection span:nth-child(1) > svg{
+
+    font-size: 18px;
+    transition: all 0.5s ease;
+
+} 
+
+.singleProductPageSecondButtonsSection > span:nth-child(1):hover{
+
+    color: orange;
+
+}
+
+.singleProductPageSecondButtonsSection > span:nth-child(2){
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-family: 'singleProductPageFont';
+    letter-spacing: 2px;
+    font-size: 15px;
+    transition: all 0.5s ease;
+
+}
+
+.singleProductPageSecondButtonsSection span:nth-child(2) > svg{
+
+    font-size: 15px;
+    transition: all 0.5s ease;
+
+}
+
+.singleProductPageSecondButtonsSection > span:nth-child(2):hover{
+
+    color: orange;
+    cursor: pointer;
+
+}
+

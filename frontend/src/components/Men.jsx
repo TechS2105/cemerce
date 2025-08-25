@@ -1,7 +1,6 @@
 import React from 'react';
 import MenPageStyle from '../../public/styles/Menpage.module.css';
 import ProductBannerVideo from '../components/Productbannervideo';
-import ProductHeading from '../components/Productheading';
 import MenCollection from '../components/Mencollection';
 import MenPageHeading from '../components/Reuseablepageheading';
 

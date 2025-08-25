@@ -31,7 +31,7 @@
     height: 100%;
     object-fit: cover;
     object-position: bottom;
-    animation: homeBannerImages 30s linear;
+    animation: homeBannerImages 50s ease;
 
 }
 
@@ -43,7 +43,7 @@
 
     }0%, 100%{
 
-        transform: scale(1);
+        transform: scale(0.999);
 
     }
 

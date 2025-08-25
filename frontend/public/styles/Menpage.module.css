@@ -22,12 +22,12 @@
     50%{
 
         transform: scale(1.2);
-        filter: blur(0px) brightness(120%);
+        filter: brightness(120%);
 
     }0%, 100%{
 
         transform: scale(1);
-        filter: blur(2px) brightness(120%);
+        filter: brightness(120%);
 
     }
 
