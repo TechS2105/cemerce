@@ -3,7 +3,7 @@ import { GoHeart } from "react-icons/go";
 import { GoPlus } from "react-icons/go";
 import SingleProductPageLikeProducImage from '../components/Singleproductpagelikeproductimage';
 
-let image = 'https://i.pinimg.com/1200x/dd/e7/2b/dde72b7e4e54ce7bd7bdc89d387a5c86.jpg';
+let image = 'https://images.unsplash.com/photo-1665873880222-c20b98ae1bf8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDU4fHx8ZW58MHx8fHx8';
 
 function Singleproductpagelikeproduct({SingleProductPageStyle}) {
     

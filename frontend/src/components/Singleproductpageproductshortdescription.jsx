@@ -1,4 +1,5 @@
 import React from 'react';
+import SinglePageShortDescriptionText from '../components/Singlepageshortdescriptiontext';
 
 function Singleproductpageproductshortdescription({SingleProductPageStyle}) {
     
@@ -10,9 +11,13 @@ function Singleproductpageproductshortdescription({SingleProductPageStyle}) {
 
                 <div className={SingleProductPageStyle.productShortDescriptionBox}>
 
-                    <span>Defined Style, Every Day</span>
-                    <h3> Premium Shirts and Tees for Modern Living </h3>
-                    <p>Command attention with a collection built for confidence and comfort. Our shirts and t-shirts are crafted to deliver sharp fits, lasting quality, and effortless versatility. Whether at work or off duty, redefine your style with pieces designed to stand out.</p>
+                    <SinglePageShortDescriptionText
+                    
+                        SinglePageSpanText="Defined Style, Every Day"
+                        SinglePageHeadingText="Premium Shirts and Tees for Modern Living"
+                        SinglePageParaText="Command attention with a collection built for confidence and comfort. Our shirts and t-shirts are crafted to deliver sharp fits, lasting quality, and effortless versatility. Whether at work or off duty, redefine your style with pieces designed to stand out."
+                    
+                    />
 
                 </div>
 

@@ -4,6 +4,9 @@ import SingleProductPageProductSection from '../components/Singleproductpageprod
 import SingleProductPageStyle from '../../public/styles/Singleproductpage.module.css'
 import SingleProductPageLikeProduct from '../components/Singleproductpagelikeproduct';
 import SingleProductPageProductShortDescriptionSection from '../components/Singleproductpageproductshortdescription';
+import SingleProductPageDiscoverSection from '../components/Singleproductpagediscoversection';
+import SingleProductDelivarySection from '../components/Singleproductdelivarysection';
+import SingleProductPageFaqSection from '../components/Singleproductpagefaqsection';
 
 function Productfulldetails() {
     
@@ -35,6 +38,24 @@ function Productfulldetails() {
                     />
 
                     <SingleProductPageProductShortDescriptionSection
+                    
+                        SingleProductPageStyle={SingleProductPageStyle}
+                        
+                    />
+
+                    <SingleProductPageDiscoverSection 
+                    
+                        SingleProductPageStyle={SingleProductPageStyle}
+                        
+                    />
+
+                    <SingleProductDelivarySection
+                    
+                        SingleProductPageStyle={SingleProductPageStyle}
+                        
+                    />
+
+                    <SingleProductPageFaqSection
                     
                         SingleProductPageStyle={SingleProductPageStyle}
                         

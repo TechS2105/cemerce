@@ -960,3 +960,478 @@
     line-height: 25px;
 
 }
+
+.singleProducPage > .discoverSection{
+
+    width: 100%;
+    height: 75vh;
+    display: flex;
+
+}
+
+.discoverSection > .discoverImage{
+
+    width: 50%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: antiquewhite; */
+
+}
+
+.discoverImage > img:nth-child(1){
+
+    position: absolute;
+    left: 50px;
+    width: 600px;
+    height: 400px;
+    object-fit: cover;
+    object-position: left;
+
+}
+
+.discoverImage > img:nth-child(2){
+
+    height: 350px;
+    width: 300px;
+    position: absolute;
+    object-fit: cover;
+    object-position: center center;
+    right: 30px;
+    
+
+}
+
+.discoverSection > .discoverSectionContent{
+
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+.discoverSectionContent > span{
+
+    font-family: 'singleProductPageFont';
+    font-size: 15px;
+    letter-spacing: 3px;
+    color: orange;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-left: 50px;
+
+}
+
+.discoverSectionContent > h3{
+
+    font-family: 'singleProductPageFont';
+    font-size: 35px;
+    letter-spacing: 2px;
+    padding-left: 50px;
+
+}
+
+.discoverSectionContent > p{
+
+    font-family: 'singleProductPageFont';
+    width: 650px;
+    padding-left: 50px;
+    line-height: 25px;
+    letter-spacing: 1.5px;
+
+}
+
+.discoverSectionContent > button{
+
+    margin-left: 50px;
+    width: 150px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid #292929;
+    cursor: pointer;
+    font-family: 'singleProductPageFont';
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    transition: all 0.8s ease;
+
+}
+
+.discoverSectionContent > button:hover{
+
+    border: transparent;
+    color: #ffffff;
+
+}
+
+.discoverSectionContent > button::after{
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0%;
+    width: 100%;
+    background-color: orange;
+    content: "";
+    transition: all 0.8s ease;
+    z-index: -2;
+
+}
+
+.discoverSectionContent > button:hover::after{
+
+    height: 100%;
+
+}
+
+.singleProducPage > .delivaryDetailSection{
+
+    width: 100%;
+    height: 30vh;
+    background-color: #292929;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.delivaryDetailSection > .freeShipping{
+
+    width: 20rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.freeShipping span > svg{
+
+    font-size: 50px;
+    color: orange;
+    margin-bottom: 20px;
+
+}
+
+.freeShipping > h4{
+
+    font-family: 'singleProductPageFont';
+    color: #ffffff;
+    letter-spacing: 2px;
+    font-size: 20px;
+
+}
+
+.freeShipping > p{
+
+    font-family: 'singleProductPageFont';
+    color: #ffffff;
+    letter-spacing: 2px;
+    margin-top: 10px;
+
+}
+
+.delivaryDetailSection > .qualitySupport{
+
+    width: 20rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.qualitySupport span > svg {
+
+    color: orange;
+    font-size: 50px;
+    margin-bottom: 20px;
+
+} 
+
+.qualitySupport > h4{
+
+    font-family: 'singleProductPageFont';
+    font-size: 20px;
+    color: #ffffff;
+    letter-spacing: 2px;
+
+}
+
+.qualitySupport > p{
+
+    color: #ffffff;
+    font-family: 'singleProductPageFont';
+    letter-spacing: 2px;
+    margin-top: 10px;
+
+}
+
+.delivaryDetailSection > .qualityCheck{
+
+    width: 20rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.qualityCheck span > svg{
+
+    font-size: 50px;
+    color: orange;
+    margin-bottom: 20px;
+
+}
+
+.qualityCheck > h4{
+
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-family: 'singleProductPageFont';
+
+}
+
+.qualityCheck > p{
+
+    color: #ffffff;
+    letter-spacing: 2px;
+    margin-top: 10px;
+    font-family: 'singleProductPageFont';
+
+}
+
+.singleProducPage > .faqSection{
+
+    width: 100%;
+    height: 70vh;
+
+}
+
+.faqSection > .faqHeading{
+
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+
+}
+
+.faqHeading > h3{
+
+    font-size: 50px;
+    text-transform: uppercase;
+    font-family: 'singleProductPageFont';
+    letter-spacing: 10px;
+
+}
+
+.faqHeading > p{
+
+    font-size: 17px;
+    font-family: 'singleProductPageFont';
+    letter-spacing: 1px;
+
+}
+
+.faqSection > .faqDropDown{
+
+    width: 100%;
+    height: 70%;
+    padding-top: 30px;
+
+}
+
+.faqDropDown > .firstFaq{
+
+    width: 60%;
+    margin: 0px auto;
+    padding-top: 30px;
+
+}
+
+.firstFaq > .firstFaqQuestionBar{
+
+    width: 100%;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #e6e6e6ff;
+    border-bottom: 1px solid #e6e6e6ff;
+    justify-content: space-between;
+    cursor: pointer;
+    background-color: #ffffff;
+
+}
+
+.firstFaqQuestionBar > span {
+
+    font-family: 'singleProductPageFont';
+    font-size: 20px;
+    letter-spacing: 2px;
+
+}
+
+.firstFaqQuestionBar span > svg{
+
+    font-size: 30px;
+
+}
+
+.firstFaq > .firstFaqQuestionDropDownBox{
+
+    text-align: left;
+    height: 3rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+}
+
+.firstFaqQuestionDropDownBox > p{
+
+    font-family: 'singleProductPageFont';
+    letter-spacing: 2px;
+    font-size: 15px;
+
+}
+
+.faqDropDown > .secondFaq{
+
+    width: 60%;
+    margin: 0px auto;
+    cursor: pointer;
+
+}
+
+.secondFaq > .secondFaqQuestionBar{
+
+    width: 100%;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e6e6e6ff;
+    background-color: #ffffff;
+
+}
+
+.secondFaqQuestionBar > span{
+
+    font-family: 'singleProductPageFont';
+    font-size: 20px;
+    letter-spacing: 2px;
+
+}
+
+.secondFaqQuestionBar span > svg{
+
+    font-size: 30px;
+
+}
+
+.secondFaq > .secondFaqQuestionBarDropDown{
+
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+}
+
+.secondFaqQuestionBarDropDown > p{
+
+    font-family: 'singleProductPageFont';
+    letter-spacing: 2px;
+    font-size: 15px;
+
+}
+
+.faqDropDown > .thirdFaq{
+
+    width: 60%;
+    margin: 0px auto;
+
+}
+
+.thirdFaq > .thirdFaqQuestionBar{
+
+    width: 100%;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    border-bottom: 1px solid #e6e6e6ff;
+    background-color: #ffffff;
+
+}
+
+.thirdFaqQuestionBar > span{
+
+    font-family: 'singleProductPageFont';
+    letter-spacing: 2px;
+    font-size: 20px;
+
+}
+
+.thirdFaqQuestionBar > .thirdFaqQuestionBarIcons{
+
+    height: 100%;
+    width: 50px;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.thirdFaqQuestionBarIcons span:nth-child(1) > svg{
+
+    position: relative;
+    top: 10px;
+    left: 20px;
+    font-size: 30px;
+
+}
+
+.thirdFaqQuestionBarIcons span:nth-child(2) > svg{
+
+    position: relative;
+    top: 10px;
+    left: 20px;
+    font-size: 30px;
+
+}
+
+.thirdFaq > .thirdFaqQuestionDropDownBox{
+    
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+}
+
+.thirdFaqQuestionDropDownBox > p{
+
+    font-family: 'singleProductPageFont';
+    letter-spacing: 2px;
+    font-size: 15px;
+
+}
