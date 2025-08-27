@@ -5,9 +5,12 @@ import { RiSubtractFill } from "react-icons/ri";
 function Singleproductpagefaqsection({ SingleProductPageStyle }) {
     
     const [isFaqBoxActive, setIsFaqBoxActive] = useState(false);
+    const [isFirstFaqQuestionBoxIconActive, setIsFirstFaqQuestionBoxIconActive] = useState(false);
     const [isSecondFaqBoxActive, setIsSecondFaqBoxActive] = useState(false); 
+    const [isSecondFaqQuestionBarIconActive, setIsSecondFaqQuestionBarIconActive] = useState(false);
     const [isThirdFaqBoxActive, setIsThirdFaqBoxActive] = useState(false);
     const [isThirdFaqQuestionBarIconActive, setIsThirdFaqQuestionBarIconActive] = useState(false);
+
 
     function handleFirstFaqQuestionBox() {
         
@@ -15,6 +18,8 @@ function Singleproductpagefaqsection({ SingleProductPageStyle }) {
         setIsSecondFaqBoxActive(prev => prev === !prev);
         setIsThirdFaqBoxActive(prev => prev === !prev);
         setIsThirdFaqQuestionBarIconActive(prev => prev === !prev);
+        setIsSecondFaqQuestionBarIconActive(prev => prev === !prev);
+        setIsFirstFaqQuestionBoxIconActive(prev => !prev);
 
     }
 
@@ -24,6 +29,8 @@ function Singleproductpagefaqsection({ SingleProductPageStyle }) {
         setIsFaqBoxActive(prev => prev === !prev);
         setIsThirdFaqBoxActive(prev => prev === !prev);
         setIsThirdFaqQuestionBarIconActive(prev => prev === !prev);
+        setIsSecondFaqQuestionBarIconActive(prev => !prev);
+        setIsFirstFaqQuestionBoxIconActive(prev => prev === !prev);
 
     }
 
@@ -33,6 +40,8 @@ function Singleproductpagefaqsection({ SingleProductPageStyle }) {
         setIsFaqBoxActive(prev => prev === !prev);
         setIsSecondFaqBoxActive(prev => prev === !prev);
         setIsThirdFaqQuestionBarIconActive(prev => !prev);
+        setIsSecondFaqQuestionBarIconActive(prev => prev === !prev);
+        setIsFirstFaqQuestionBoxIconActive(prev => prev === !prev);
 
     }
 
@@ -83,28 +92,82 @@ function Singleproductpagefaqsection({ SingleProductPageStyle }) {
 
     const faqQuestionBarIcon1 = isThirdFaqQuestionBarIconActive ? {
 
-        display: "none",
-        opacity: "0",
+        transform: "scale(0)",
+        position: "absolute",
         transition: "all 0.8s ease"
 
     } : {
 
-        display: "block",
-        opacity: "1",
+        transform: "scale(1)",
+        position: "absolute",
         transition: "all 0.8s ease"
 
     }
 
     const faqQuestionBarIcon2 = isThirdFaqQuestionBarIconActive ? {
 
-        display: "block",
-        opacity: "1",
+        transform: "scale(1)",
+        position: "relative",
         transition: "all 0.8s ease"
 
     } : {
 
-        display: "none",
-        opacity: "0",
+        transform: "scale(0)",
+        position: "relative",
+        transition: "all 0.8s ease"
+
+    }
+
+    const secondFaqtQuestionBarIcon1 = isSecondFaqQuestionBarIconActive ? {
+
+        transform: "scale(0)",
+        position: "absolute",
+        transition: "all 0.8s ease"
+
+    } : {
+
+        transform: "scale(1)",
+        position: "absolute",
+        transition: "all 0.8s ease"
+
+    }
+
+    const secondFaqQuestionBarIcon2 = isSecondFaqQuestionBarIconActive ? {
+
+        transform: "scale(1)",
+        transition: "all 0.8s ease"
+
+    } : {
+
+        transform: "scale(0)",
+        transition: "all 0.8s ease",
+
+    }
+
+    const firstFaqQuestionBoxIcon1 = isFirstFaqQuestionBoxIconActive ? {
+
+        transform: "scale(0)",
+        position: "absolute",
+        transition: "all 0.8s ease"
+
+    } : {
+
+        transform: "scale(1)",
+        position: "absolute",
+        transition: "all 0.8s ease"
+
+    }
+
+    const firstFaqQuestionBoxIcon2 = isFirstFaqQuestionBoxIconActive ? {
+
+        transform: "scale(1)",
+        position: "relative",
+        transition: "all 0.8s ease"
+
+    } : {
+
+        transform: "scale(0)",
+        position: "relative",
         transition: "all 0.8s ease"
 
     }
@@ -128,8 +191,14 @@ function Singleproductpagefaqsection({ SingleProductPageStyle }) {
 
                         <div className={SingleProductPageStyle.firstFaqQuestionBar} onClick={handleFirstFaqQuestionBox}>
 
-                                <span> Is the shipping free? </span>
-                                <span> <GoPlus /> </span>
+                            <span> Is the shipping free? </span>
+                            
+                            <div className={SingleProductPageStyle.firstFaqQuestionBarIcons}>
+
+                                <span style={firstFaqQuestionBoxIcon1}> <GoPlus /> </span>
+                                <span style={firstFaqQuestionBoxIcon2}><RiSubtractFill /></span>
+
+                            </div>
 
                         </div>
 
@@ -146,7 +215,13 @@ function Singleproductpagefaqsection({ SingleProductPageStyle }) {
                         <div className={SingleProductPageStyle.secondFaqQuestionBar} onClick={handleSecondFaqQuestionBar}>
 
                             <span> When will I receive my item? </span>
-                            <span><GoPlus /></span>
+
+                            <div className={SingleProductPageStyle.secondFaqQuestionBarIcons}>
+
+                                <span style={secondFaqtQuestionBarIcon1}><GoPlus /></span>
+                                <span style={secondFaqQuestionBarIcon2}><RiSubtractFill /></span>
+
+                            </div>
 
                         </div>
 

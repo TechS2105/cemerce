@@ -481,6 +481,7 @@
 
 }
 
+
 .singleProductPageProductFirstDropdownBoxContent > span:nth-child(1){
 
     display: inline-flex;
@@ -497,9 +498,36 @@
 
 }
 
-.singleProductPageProductFirstDropdownBoxContent span:nth-child(1) > svg{
+.singleProductPageProductFirstDropdownBoxContent > .shippintDropDownBarIcons{
 
-    font-size: 18px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+
+.shippintDropDownBarIcons > span{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+
+.shippintDropDownBarIcons span:nth-child(1) > svg{
+
+    font-size: 25px;
+    position: absolute;
+
+}
+
+.shippintDropDownBarIcons span:nth-child(2) > svg{
+
+    position: relative;
+    font-size: 25px;
 
 }
 
@@ -582,9 +610,36 @@
 
 } 
 
-.singleProductPageProductSecondDropdownBoxContent > span:nth-child(1) svg{
+.singleProductPageProductSecondDropdownBoxContent > .careGuideDropDownBarIcons{
 
-    font-size: 18px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+
+.careGuideDropDownBarIcons > span{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+
+.careGuideDropDownBarIcons span:nth-child(1) > svg{
+
+    font-size: 25px;
+    position: absolute;
+
+}
+
+.careGuideDropDownBarIcons span:nth-child(2) > svg{
+
+    font-size: 25px;
+    position: relative;
 
 }
 
@@ -1287,9 +1342,36 @@
 
 }
 
-.firstFaqQuestionBar span > svg{
+.firstFaqQuestionBar > .firstFaqQuestionBarIcons{
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+}
+
+.firstFaqQuestionBarIcons > span{
+
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.firstFaqQuestionBarIcons span:nth-child(1) > svg{
+
+    position: absolute;
+    font-size: 30px;
+
+}
+
+.firstFaqQuestionBarIcons span:nth-child(2) > svg{
 
     font-size: 30px;
+    position: relative;
 
 }
 
@@ -1340,9 +1422,36 @@
 
 }
 
-.secondFaqQuestionBar span > svg{
+.secondFaqQuestionBar > .secondFaqQuestionBarIcons{
+
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+
+.secondFaqQuestionBarIcons > span{
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+
+.secondFaqQuestionBarIcons span:nth-child(1) > svg{
 
     font-size: 30px;
+    position: absolute;
+
+}
+
+.secondFaqQuestionBarIcons span:nth-child(2) > svg{
+
+    font-size: 30px;
+    position: relative;
 
 }
 
@@ -1388,23 +1497,32 @@
     font-family: 'singleProductPageFont';
     letter-spacing: 2px;
     font-size: 20px;
+    display: inline-flex;
 
 }
 
 .thirdFaqQuestionBar > .thirdFaqQuestionBarIcons{
 
     height: 100%;
-    width: 50px;
     position: relative;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.thirdFaqQuestionBarIcons > span{
+
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
 }
 
 .thirdFaqQuestionBarIcons span:nth-child(1) > svg{
 
-    position: relative;
-    top: 10px;
-    left: 20px;
+    position: absolute;
     font-size: 30px;
 
 }
@@ -1412,8 +1530,6 @@
 .thirdFaqQuestionBarIcons span:nth-child(2) > svg{
 
     position: relative;
-    top: 10px;
-    left: 20px;
     font-size: 30px;
 
 }

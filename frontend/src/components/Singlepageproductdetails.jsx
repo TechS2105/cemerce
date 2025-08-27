@@ -10,6 +10,7 @@ import { BsBoxSeam } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
 import { RiTwitterXLine } from "react-icons/ri";
 import { FaPinterestP } from "react-icons/fa";
+import { RiSubtractFill } from "react-icons/ri";
 
 function Singlepageproductdetails({ SingleProductPageStyle }) {
     
@@ -33,17 +34,22 @@ function Singlepageproductdetails({ SingleProductPageStyle }) {
 
     // Shipbox Dropdown
     const [isAnimate, setIsAnimate] = useState(false);
+    const [isShippingDrowDownBarIconActive, setIsShippingDrowDownBarIconActive] = useState(false);
+
     const [isCareGuideAnimate, setIsCareGuideAnimate] = useState(false);
+    const [isCareGuideDropDownBarIconActive, setIsCareGuideDropDownBoxActive] = useState(false);
 
     function handleShippingInformationDropDown() {
         
         setIsAnimate(prev => !prev);
+        setIsShippingDrowDownBarIconActive(prev => !prev);
 
     }
 
     function handleCareGuideDropdownBox() {
         
-        setIsCareGuideAnimate(prev => !prev)
+        setIsCareGuideAnimate(prev => !prev);
+        setIsCareGuideDropDownBoxActive(prev => !prev);
 
     }
 
@@ -80,6 +86,62 @@ function Singlepageproductdetails({ SingleProductPageStyle }) {
 
         height: "0rem",
         transition: 'all 0.8s ease'
+
+    }
+
+    const shippingDropDownBarIcon1 = isShippingDrowDownBarIconActive ? {
+
+        transform: "scale(0)",
+        position: "absolute",
+        transition: "all 0.8s ease"
+
+    } : {
+
+        transform: "scale(1)",
+        position: "absolute",
+        transition: "all 0.8s ease"
+
+    }
+
+    const shippingDropDownBarIcon2 = isShippingDrowDownBarIconActive ? {
+
+        transform: "scale(1)",
+        position: "relative",
+        transition: "all 0.8s ease"
+
+    } : {
+
+        transform: "scale(0)",
+        position: "relative",
+        transition: "all 0.8s ease",
+
+    }
+
+    const careGuideDropDownBarIcon1 = isCareGuideDropDownBarIconActive ? {
+
+        transform: "scale(0)",
+        position: "absolute",
+        transition: "all 0.8s ease"
+
+    } : {
+
+        transform: "scale(1)",
+        position: "absolute",
+        transition: "all 0.8s ease"
+
+    }
+
+    const careGuideDropDownBarIcon2 = isCareGuideDropDownBarIconActive ? {
+
+        transform: "scale(1)",
+        position: "relative",
+        transition: "all 0.8s ease"
+
+    } : {
+
+        transform: "scale(0)",
+        position: "relative",
+        transition: "all 0.8s ease"
 
     }
     
@@ -170,7 +232,13 @@ function Singlepageproductdetails({ SingleProductPageStyle }) {
                     <div className={SingleProductPageStyle.singleProductPageProductFirstDropdownBoxContent} onClick={handleShippingInformationDropDown}>
 
                         <span><BsTruck /><p>Shipping information</p></span>
-                        <span><GoPlus/></span>
+
+                        <div className={SingleProductPageStyle.shippintDropDownBarIcons}>
+
+                            <span style={shippingDropDownBarIcon1}><GoPlus /></span>
+                            <span style={shippingDropDownBarIcon2}><RiSubtractFill /></span>
+
+                        </div>
 
                         
                     </div>
@@ -190,7 +258,13 @@ function Singlepageproductdetails({ SingleProductPageStyle }) {
                     <div className={SingleProductPageStyle.singleProductPageProductSecondDropdownBoxContent} style={careGuideAnime} onClick={handleCareGuideDropdownBox}>
 
                         <span><IoLeafOutline /><p>Care Guide</p></span>
-                        <span><GoPlus/></span>
+
+                        <div className={SingleProductPageStyle.careGuideDropDownBarIcons}>
+
+                            <span style={careGuideDropDownBarIcon1}><GoPlus /></span>
+                            <span style={careGuideDropDownBarIcon2}><RiSubtractFill /></span>
+
+                        </div>
 
                     </div>
 
