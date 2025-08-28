@@ -70,32 +70,31 @@ function Homeproductvideo() {
                     {getVideoProduct.map((videoproduct) => {
 
                         return (
+                          <SwiperSlide
+                            className={HomeProductVideoStyle.videoProductBox}
+                            key={videoproduct.id}
+                          >
+                            <div className={HomeProductVideoStyle.videoProduct}>
 
-                            <SwiperSlide className={HomeProductVideoStyle.videoProductBox} key={videoproduct.id}>
+                              <ProductVideo
+                                
+                                src={videoproduct.videoURL}
 
-                                <div className={HomeProductVideoStyle.videoProduct}>
+                              />
+                              
+                            </div>
 
-                                    <ProductVideo
-                                    
-                                        productVideo={videoproduct.videoURL}
-                                        
-                                    />
-
-                                </div>
-
-                                <div className={HomeProductVideoStyle.videoProductDetails}>
-
-                                    <HomeVideoProductDetails
-                                    
-                                        videoProductHeading={videoproduct.title}
-                                        price={videoproduct.price}
-                                        
-                                    />
-
-                                </div>
-
-                            </SwiperSlide>
-
+                            <div
+                              className={
+                                HomeProductVideoStyle.videoProductDetails
+                              }
+                            >
+                              <HomeVideoProductDetails
+                                videoProductHeading={videoproduct.title}
+                                price={videoproduct.price}
+                              />
+                            </div>
+                          </SwiperSlide>
                         );
 
                     })}    

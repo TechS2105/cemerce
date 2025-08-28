@@ -5,9 +5,12 @@ import deleteRouterController from '../controllers/deleteroutercontroller.js';
 
 const router = express.Router();
 
+
 router.get('/', getRouterController.getRootRoute); // GET Root Router
 
-router.get('/api/video/product', getRouterController.getVideoProductRouter); // GET Product 1Video Router
+router.get('/api/video/product', getRouterController.getVideoProductRouter); // GET Product Video Router
+
+router.get('/product/:category/:id', getRouterController.getProductCollectionRouter); //
 
 router.get('/api/shop/product', getRouterController.getShopProductRouter); // GET Shop Product Router
 

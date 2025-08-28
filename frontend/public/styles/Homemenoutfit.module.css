@@ -34,7 +34,15 @@
 
 }
 
-.menProductImage > img{
+.menProductImage > a{
+
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+
+}
+
+.menProductImage a > img{
 
     width: 100%;
     height: 100%;
@@ -48,7 +56,7 @@
 
 }
 
-.menProduct:hover .menProductImage > img{
+.menProduct:hover .menProductImage a > img{
 
     transform: scale(1.2);
 

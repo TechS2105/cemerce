@@ -1,11 +1,6 @@
 import React, { useEffect } from "react";
 import "../public/styles/App.css";
-import {
-  Route,
-  createBrowserRouter,
-  createRoutesFromElements,
-  RouterProvider,
-} from "react-router-dom";
+import {Route, createBrowserRouter, createRoutesFromElements, RouterProvider} from "react-router-dom";
 import RootLayout from "./layouts/Rootlayout";
 import Home from "./components/Home";
 import Shop from "./components/Shop";
@@ -39,7 +34,7 @@ function App() {
         <Route path="kids" element={<Kids />} />
         <Route path="wishlist" element={<Wishlist />} />
         <Route path="cart" element={<Cart />} />
-        <Route path="product" element={<ProductFullDetails />} />
+        <Route path="product/:category/:id" element={<ProductFullDetails />} />
       </Route>
     )
   );

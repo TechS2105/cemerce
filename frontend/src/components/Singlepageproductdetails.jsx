@@ -12,7 +12,7 @@ import { RiTwitterXLine } from "react-icons/ri";
 import { FaPinterestP } from "react-icons/fa";
 import { RiSubtractFill } from "react-icons/ri";
 
-function Singlepageproductdetails({ SingleProductPageStyle }) {
+function Singlepageproductdetails({ SingleProductPageStyle, ProductDetails }) {
     
     const [counterValue, setCounterValue] = useState(1);
 
@@ -151,8 +151,8 @@ function Singlepageproductdetails({ SingleProductPageStyle }) {
         
             <div className={SingleProductPageStyle.singleProductDetailsBox}>
 
-                <h2> Organza Zardosi Work</h2>
-                <p> Rs.10,999 </p>
+                <h2> { ProductDetails.title} </h2>
+                <p> Rs.{ProductDetails.price} </p>
 
             </div>
 
@@ -168,7 +168,7 @@ function Singlepageproductdetails({ SingleProductPageStyle }) {
 
                             </div>
 
-                            <input type="number" value={counterValue} />
+                            <input type="number" value={counterValue} readOnly/>
 
                             <div className={SingleProductPageStyle.increase} onClick={handleCounterIncrease}>
 
@@ -208,7 +208,7 @@ function Singlepageproductdetails({ SingleProductPageStyle }) {
                         <tr>
 
                             <td> Types: </td>
-                            <td> Jamdani </td>
+                            <td> {ProductDetails.details.types} </td>
 
                         </tr>
 

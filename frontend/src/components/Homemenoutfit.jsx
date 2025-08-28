@@ -11,11 +11,13 @@ import 'swiper/css';
 import { Autoplay, Navigation } from 'swiper/modules';
 import Reuseablenavigationarrow from '../components/Reuseablenavigationarrow';
 import QuickViewBox from '../components/Quickviewbox';
+import { Link } from 'react-router-dom';
 
 function Homemenoutfit({menProductCarousel, menProductButton}) {
 
      // useState 
     const [activeIdx, setActiveIdx] = useState(false);
+
     const [quickBoxSectionStyle, setQuickBoxSectionStyle] = useState({
 
         transform: "scale(0)",
@@ -124,6 +126,7 @@ function Homemenoutfit({menProductCarousel, menProductButton}) {
 
     }
 
+
     const { items: menProduct, status } = useSelector((state) => state.homeMenProduct);
 
     const dispatch = useDispatch();
@@ -194,10 +197,16 @@ function Homemenoutfit({menProductCarousel, menProductButton}) {
 
                                 <GoHeart onClick={() => { dispatch(addToWishlist(menItem)) }} />
                                 <FaEye onClick={() => handleViewClick(idx)} />
-                                <img src={menItem.image} alt={menItem.title} />
+                                
+                                <Link to={`/product/${menItem.category}/${menItem.id}`}>
+                                
+                                    <img src={menItem.image} alt={menItem.title}/>
+                                
+                                </Link>
 
+                                    
                             </div>
-                            
+                                
                             <div className={HomeMenOutfitStyle.menProductContent}>
 
                                 <h3 style={{ paddingLeft: "20px" }}> {menItem.title.length > 40 ? menItem.title.slice(0, 40) : menItem.title} </h3>
@@ -208,6 +217,7 @@ function Homemenoutfit({menProductCarousel, menProductButton}) {
                             </div>
 
                         </SwiperSlide> 
+
 
                     );
 

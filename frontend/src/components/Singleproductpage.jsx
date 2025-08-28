@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import ReuseableSingleProductPageNavigation from './Reuseablesecondproductnav';
 import SingleProductPageProductSection from '../components/Singleproductpageproductsection';
 import SingleProductPageStyle from '../../public/styles/Singleproductpage.module.css'
@@ -6,10 +6,51 @@ import SingleProductPageLikeProduct from '../components/Singleproductpagelikepro
 import SingleProductPageProductShortDescriptionSection from '../components/Singleproductpageproductshortdescription';
 import SingleProductPageDiscoverSection from '../components/Singleproductpagediscoversection';
 import SingleProductDelivarySection from '../components/Singleproductdelivarysection';
-import SingleProductPageFaqSection from '../components/Singleproductpagefaqsection';
+import SingleProductPageFaqSecton from '../components/Singleproductpagefaqsection';
+import { useParams } from 'react-router-dom';
+
 
 function Productfulldetails() {
-    
+
+    const { category, id } = useParams();
+    const [getProduct, setGetProduct] = useState({});
+    console.log(getProduct);
+
+    useEffect(() => {
+            
+        const fetchProductData = async () => {
+
+            try {
+
+                const response = await fetch(
+                  `http://localhost:3000/product/${category}/${id}`
+                );
+
+                if(!response){
+
+                    throw new Error(`${response.status}`)
+
+                }
+                    
+                let data = await response.json();
+                setGetProduct(data);
+
+            } catch (error) {
+                
+                console.log(error);
+
+            }
+
+        }
+
+        if (id) {
+            
+            fetchProductData();
+
+        }
+
+    }, [category, id]);
+
     return (
         
         <>
@@ -21,13 +62,14 @@ function Productfulldetails() {
                     <ReuseableSingleProductPageNavigation
                 
                         navLink="HOME"
-                        currentPageName="Product Name"
+                        title={getProduct.title}
                     
                     />
 
                     <SingleProductPageProductSection
                     
                         SingleProductPageStyle={SingleProductPageStyle}
+                        product={getProduct}
                         
                     />
 
@@ -55,7 +97,7 @@ function Productfulldetails() {
                         
                     />
 
-                    <SingleProductPageFaqSection
+                    <SingleProductPageFaqSecton
                     
                         SingleProductPageStyle={SingleProductPageStyle}
                         

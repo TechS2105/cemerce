@@ -15,7 +15,7 @@ function Reuseablesecondproductnav(props) {
 
                 <span onClick={() => { navigate('/') }}> {props.navLink} </span>
                 <MdOutlineKeyboardArrowRight />
-                <p> {props.currentPageName} </p>
+                <p> {props.title} </p>
 
             </div>
             
