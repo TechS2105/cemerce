@@ -13,6 +13,7 @@ import ReuseableNavigationArrow from '../components/Reuseablenavigationarrow';
 import ReuseableHomeProductButton from '../components/Reuseablehomeproductbutton';
 import { useNavigate } from 'react-router-dom';
 import QuickViewBox from '../components/Quickviewbox';
+import { NavLink } from 'react-router-dom';
 
 function Homeproduct({homeWomenProductAnime, homeWemenProductNavigationArrow, homeWomenProductViewMoreButton}) {
 
@@ -208,9 +209,14 @@ function Homeproduct({homeWomenProductAnime, homeWemenProductNavigationArrow, ho
                             <div className={HomeProductStyle.homeProductImage}>
 
                                 <FaRegEye onClick={ () => handleQuickViewBox(idx)} />
-                                <GoHeart onClick={ () => {dispatch(addToWishlist(womenProduct))}} />
-                                <img src={womenProduct.image} alt={womenProduct.title} />
+                                <GoHeart onClick={() => { dispatch(addToWishlist(womenProduct)) }} />
+                                
+                                <NavLink to={`/${womenProduct.category}/${womenProduct.title}`}>
 
+                                    <img src={womenProduct.image} alt={womenProduct.title} />
+
+                                </NavLink>
+                            
                             </div>
 
                             <div className={HomeProductStyle.homeProductContent}>

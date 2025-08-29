@@ -1,6 +1,7 @@
 import React from 'react';
 import QuickViewBoxStyle from '../../public/styles/Quickviewbox.module.css';
 import { BsBoxSeam } from "react-icons/bs";
+import { NavLink } from 'react-router-dom';
 
 function Quickviewbox({product, quickBoxSectionStyle, onClick, quickViewBoxAnime, closeIconAnime}) {
 
@@ -49,7 +50,11 @@ function Quickviewbox({product, quickBoxSectionStyle, onClick, quickViewBoxAnime
 
                             </ul>
 
-                            <span> View details </span>
+                            <NavLink to={`/${product.category}/${product.title}`}>
+
+                                <span> View details </span>
+
+                            </NavLink>
 
                         </div>
 

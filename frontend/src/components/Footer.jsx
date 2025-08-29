@@ -63,7 +63,7 @@ function Footer() {
                                 <ul>
 
                                     <li>Toll Free: <span>081-882-88221</span></li>
-                                    <li>Email: <span> cMerce.buisiness@gmailcom</span> </li>
+                                    <li>Email: <span> cemerce.business@gmail.com</span> </li>
 
                                 </ul>
 

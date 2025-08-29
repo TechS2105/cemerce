@@ -21,7 +21,7 @@ const store = configureStore({
         homeWomenProduct: HomeWomenSlice,
         womenProduct: WomenCollectionSlice,
         homeKidsProduct: HomeKidsSlice,
-        kidCollections: KidCollectionsSlice
+        kidCollections: KidCollectionsSlice,
 
     }
 

@@ -257,7 +257,13 @@
 
 }
 
-.secondQuickViewBoxDetails > span{
+.secondQuickViewBoxDetails > a{
+
+    color: rgb(193, 193, 193);
+
+}
+
+.secondQuickViewBoxDetails a > span{
 
     font-family: 'quickViewFont';
     letter-spacing: 2px;

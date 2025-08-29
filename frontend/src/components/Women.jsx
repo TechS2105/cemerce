@@ -1,7 +1,6 @@
 import React from 'react';
 import ProductBannerVideo from '../components/Productbannervideo';
 import WomenStyle from '../../public/styles/Women.module.css';
-import ProductHeading from '../components/Productheading';
 import Womencollection from '../components/Womencollection';
 import WomenPageHeading from '../components/Reuseablepageheading';
 

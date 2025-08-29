@@ -9,29 +9,25 @@ import SingleProductDelivarySection from '../components/Singleproductdelivarysec
 import SingleProductPageFaqSecton from '../components/Singleproductpagefaqsection';
 import { useParams } from 'react-router-dom';
 
-
 function Productfulldetails() {
 
-    const { category, id } = useParams();
-    const [getProduct, setGetProduct] = useState({});
-    console.log(getProduct);
+    const { title } = useParams();
+    const [getProduct, setGetProduct] = useState([]);
 
     useEffect(() => {
-            
+
         const fetchProductData = async () => {
-
+           
             try {
+                
+                const response = await fetch(`http://localhost:3000/api/product/collection/${title}`);
 
-                const response = await fetch(
-                  `http://localhost:3000/product/${category}/${id}`
-                );
-
-                if(!response){
-
-                    throw new Error(`${response.status}`)
+                if (!response) {
+                    
+                    throw new Error(`${response.status}`);
 
                 }
-                    
+
                 let data = await response.json();
                 setGetProduct(data);
 
@@ -42,21 +38,21 @@ function Productfulldetails() {
             }
 
         }
-
-        if (id) {
+        
+        if (title) {
             
             fetchProductData();
 
         }
 
-    }, [category, id]);
+    }, [title]);
 
     return (
         
         <>
 
             <main>
-
+                
                 <div className={SingleProductPageStyle.singleProducPage}>
 
                     <ReuseableSingleProductPageNavigation

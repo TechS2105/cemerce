@@ -36,7 +36,15 @@
 
 }
 
-.kidProductImage > img{
+.kidProductImage > a{
+
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+
+}
+
+.kidProductImage a > img{
 
     width: 100%;
     height: 100%;
@@ -50,7 +58,7 @@
 
 }
 
-.kidProductBox:hover .kidProductImage > img{
+.kidProductBox:hover .kidProductImage a > img{
 
     transform: scale(1.2);
 

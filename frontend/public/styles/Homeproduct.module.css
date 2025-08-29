@@ -36,7 +36,15 @@
 
 }
 
-.homeProductImage > img{
+.homeProductImage > a{
+
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+
+}
+
+.homeProductImage a > img{
 
     width: 100%;
     height: 100%;
@@ -50,7 +58,7 @@
 
 }
 
-.homeProductBox:hover .homeProductImage > img{
+.homeProductBox:hover .homeProductImage a > img{
 
     transform: scale(1.2);
 

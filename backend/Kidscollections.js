@@ -3,7 +3,7 @@ const Kidscollections = [
         id: 1,
         image:
         "https://images.unsplash.com/photo-1664982803698-b6b514e9928b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fEtpZCdzJTIwVCUyMHNoaXJ0c3xlbnwwfHwwfHx8MA%3D%3D",
-        title: "Light Blue Casual Polo Shirt",
+        title: "Light Blue Polo Shirt Boys’ Outfit",
         category: "Kids’ Clothing",
         price: "5000",
         details: {
@@ -20,7 +20,7 @@ const Kidscollections = [
         id: 2,
         image:
         "https://plus.unsplash.com/premium_photo-1693242804074-20a78966f4e6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8S2lkJ3MlMjBUJTIwc2hpcnRzfGVufDB8fDB8fHww",
-        title: "Burnt Orange Kids Cargo Outfit",
+        title: "Orange Casual Tee and Cargo Shorts",
         category: "Kids’ Clothing",
         price: "2000",
         details: {
@@ -37,7 +37,7 @@ const Kidscollections = [
         id: 3,
         image:
         "https://images.unsplash.com/photo-1628195267183-831f2b190c03?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fEtpZCdzJTIwVCUyMHNoaXJ0c3xlbnwwfHwwfHx8MA%3D%3D",
-        title: "Bold Yellow Graphic Skate Tee",
+        title: "Graphic Tee Boys’ Outfit",
         category: "Kids’ Clothing",
         price: "4000",
         details: {
@@ -54,7 +54,7 @@ const Kidscollections = [
         id: 4,
         image:
         "https://images.unsplash.com/photo-1600023533868-d0a6101da971?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fEtpZCdzJTIwVCUyMHNoaXJ0c3xlbnwwfHwwfHx8MA%3D%3D",
-        title: "Classic White Levi’s Logo Tee",
+        title: "Levi’s Graphic Tee and Jeans",
         category: "Youth Apparel",
         price: "8000",
         details: {
@@ -340,6 +340,44 @@ const Kidscollections = [
             sku: "BB-DJ-1122",
             types: "Denim Clothing",
             vendor: "C-EMERCE"
+
+        }
+
+    },
+
+    {
+
+        id: 21,
+        image: 'https://images.unsplash.com/photo-1725071287951-b12b67bd3dd9?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        title: 'Nautical Polo Shirt Boys’ Outfit',
+        category: "Kid's Casual",
+        price: '4000',
+        details: {
+
+            description: 'Navy polo shirt with anchor print, paired with beige shorts.',
+            sku: 'BB-NS-4569',
+            types: 'Summer Outfits',
+            vendor: 'C-EMERCE'
+
+
+        }
+
+    },
+
+    {
+
+        id: 22,
+        image: 'https://images.unsplash.com/photo-1661274765524-20669dc4091b?q=80&w=686&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        title: 'Boys’ Formal Vest and Trouser Set',
+        category: "Kid's Formal Wear",
+        price: '5000',
+        details: {
+
+            description: 'Navy vest suit with white shirt and sneakers.',
+            sku: 'BB-FS-6789',
+            types: 'Casual T-ShirtOccasion Outfits',
+            vendor: 'C-EMERCE'
+
 
         }
 

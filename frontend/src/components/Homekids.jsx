@@ -13,10 +13,12 @@ import 'swiper/css';
 import ReuseableNavigationArrow from '../components/Reuseablenavigationarrow';
 import ReuseableHomeProductButton from '../components/Reuseablehomeproductbutton';
 import QuickViewBox from '../components/Quickviewbox';
+import { NavLink } from 'react-router-dom';
 
 function Homekids({kidsProductSectionScrollAnime, kidsProductSectionHeadingAnime, kidsProductAnime, kidsProductNavigationArrow, kidsProductSectionViewMoreButton}) {
 
     const [activeIdx, setActiveIdx] = useState(false);
+
     const [kidQuickBoxSectionStyle, setKidQuickBoxSectionStyle] = useState({
 
         transform: "translateX(1500px)",
@@ -24,6 +26,7 @@ function Homekids({kidsProductSectionScrollAnime, kidsProductSectionHeadingAnime
         filter: "blur(20px)",
 
     });
+
     const [kidQuickViewBoxAnime, setKidQuickViewBoxAnime] = useState({
 
         transform: "translateY(-1000px)",
@@ -214,7 +217,12 @@ function Homekids({kidsProductSectionScrollAnime, kidsProductSectionHeadingAnime
 
                                     <FaRegEye onClick={ () => handleKidsQuickViewIcon(idx) } />
                                     <GoHeart onClick={ () => {dispatch(addToWishlist(kidsItem));}} />
-                                    <img src={kidsItem.image} alt={kidsItem.title} />
+
+                                    <NavLink to={`/${kidsItem.category}/${kidsItem.title}`}>
+
+                                        <img src={kidsItem.image} alt={kidsItem.title} />
+
+                                    </NavLink>
 
                                 </div>
 
@@ -263,9 +271,7 @@ function Homekids({kidsProductSectionScrollAnime, kidsProductSectionHeadingAnime
                         </>
 
 
-                    );
-                
-                    
+                    );        
 
                 })}
 

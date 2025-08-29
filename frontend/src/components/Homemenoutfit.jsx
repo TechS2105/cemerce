@@ -11,7 +11,7 @@ import 'swiper/css';
 import { Autoplay, Navigation } from 'swiper/modules';
 import Reuseablenavigationarrow from '../components/Reuseablenavigationarrow';
 import QuickViewBox from '../components/Quickviewbox';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function Homemenoutfit({menProductCarousel, menProductButton}) {
 
@@ -126,7 +126,6 @@ function Homemenoutfit({menProductCarousel, menProductButton}) {
 
     }
 
-
     const { items: menProduct, status } = useSelector((state) => state.homeMenProduct);
 
     const dispatch = useDispatch();
@@ -198,13 +197,12 @@ function Homemenoutfit({menProductCarousel, menProductButton}) {
                                 <GoHeart onClick={() => { dispatch(addToWishlist(menItem)) }} />
                                 <FaEye onClick={() => handleViewClick(idx)} />
                                 
-                                <Link to={`/product/${menItem.category}/${menItem.id}`}>
-                                
-                                    <img src={menItem.image} alt={menItem.title}/>
-                                
-                                </Link>
+                                <NavLink to={`/${menItem.category}/${menItem.title}`}>
 
-                                    
+                                    <img src={menItem.image} alt={menItem.title}/>
+
+                                </NavLink>
+        
                             </div>
                                 
                             <div className={HomeMenOutfitStyle.menProductContent}>

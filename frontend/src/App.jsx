@@ -9,10 +9,12 @@ import Women from "./components/Women";
 import Kids from "./components/Kids";
 import Cart from "./components/Cart";
 import Wishlist from "./components/Wishlist";
-import ProductFullDetails from "./components/Singleproductpage";
+import ProductDetailsPage from './components/Singleproductpage';
 
 function App() {
+
   useEffect(() => {
+
     let responsiveDiv = document.createElement("div");
     responsiveDiv.classList.add("resDivContainer");
     let body = document.querySelector("body");
@@ -22,11 +24,15 @@ function App() {
       document.querySelector(".resDivContainer").innerHTML =
         "This site's tablet and mobile responsiveness has been under maintenance.<br><br> Please stay with us.";
     }
+
   }, []);
 
   const router = createBrowserRouter(
+
     createRoutesFromElements(
+
       <Route path="/" element={<RootLayout />}>
+
         <Route index element={<Home />} />
         <Route path="shop" element={<Shop />} />
         <Route path="men" element={<Men />} />
@@ -34,9 +40,12 @@ function App() {
         <Route path="kids" element={<Kids />} />
         <Route path="wishlist" element={<Wishlist />} />
         <Route path="cart" element={<Cart />} />
-        <Route path="product/:category/:id" element={<ProductFullDetails />} />
+        <Route path="/:category/:title" element={<ProductDetailsPage />} />
+
       </Route>
+
     )
+
   );
 
   return (

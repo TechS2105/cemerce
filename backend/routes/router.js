@@ -5,14 +5,13 @@ import deleteRouterController from '../controllers/deleteroutercontroller.js';
 
 const router = express.Router();
 
-
 router.get('/', getRouterController.getRootRoute); // GET Root Router
 
 router.get('/api/video/product', getRouterController.getVideoProductRouter); // GET Product Video Router
 
-router.get('/product/:category/:id', getRouterController.getProductCollectionRouter); //
-
 router.get('/api/shop/product', getRouterController.getShopProductRouter); // GET Shop Product Router
+
+router.get('/api/product/collection/:title', getRouterController.getAllProductCollections); // GET All Product Collection Router
 
 router.get('/api/men/product', getRouterController.getHomeMenCollectionRouter); // GET Home Men's Collection Router
 router.get("/api/men/collections/product", getRouterController.getMenProductPageCollectionRouter); // GET Men's Product Page Product Collection Router

@@ -6,7 +6,7 @@ import homeWomenCollection from '../Women.js';
 import womenProductPageCollection from '../Womencollections.js';
 import homeKidCollection from '../Kids.js';
 import kidProductPageCollection from '../Kidscollections.js';
-import products from '../product.js';
+import products from '../products.js';
 import db from '../database/database.js';
 
 // GET Root 
@@ -66,22 +66,6 @@ const getHomeMenCollectionRouter = (req, res) => {
         res.status(400).json(error)
 
     }
-
-}
-
-// GET Home Men Collections 2
-const getProductCollectionRouter = (req, res) => {
-
-    const { id, category } = req.params;
-
-    const product = homeMenCollection.find((item) => item.category === category || item.id === id);
-
-    if (product) {
-        
-        res.json(product);
-
-    }
-
 
 }
 
@@ -211,6 +195,29 @@ const getWishlistProduct = async (req, res) => {
 
 }
 
+// GET All Product Collections
+const getAllProductCollections = (req, res) => {
+
+    const { title } = req.params;
+
+    try {
+        
+        const product = products.find((item) => item.title === title);
+        
+        if (product) {
+            
+            res.status(200).json(product);
+
+        }
+
+    } catch (error) {
+        
+        console.log(error);
+
+    }
+
+}
+
 export default {
 
     getVideoProductRouter,
@@ -225,6 +232,6 @@ export default {
     getSendMailRouter,
     getCartProduct,
     getWishlistProduct,
-    getProductCollectionRouter
+    getAllProductCollections
 
 }

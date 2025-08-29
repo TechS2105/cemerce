@@ -23,7 +23,15 @@
 
 }
 
-.womenProductImage > img{
+.womenProductImage > a{
+
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+
+}
+
+.womenProductImage a > img{
 
     width: 100%;
     height: 100%;
@@ -37,7 +45,7 @@
 
 }
 
-.womenProductBox:hover .womenProductImage > img{
+.womenProductBox:hover .womenProductImage a > img{
 
     transform: scale(1.2);
 

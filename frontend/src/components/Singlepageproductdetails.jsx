@@ -12,7 +12,7 @@ import { RiTwitterXLine } from "react-icons/ri";
 import { FaPinterestP } from "react-icons/fa";
 import { RiSubtractFill } from "react-icons/ri";
 
-function Singlepageproductdetails({ SingleProductPageStyle, ProductDetails }) {
+function Singlepageproductdetails({ SingleProductPageStyle, productDetails}) {
     
     const [counterValue, setCounterValue] = useState(1);
 
@@ -151,8 +151,8 @@ function Singlepageproductdetails({ SingleProductPageStyle, ProductDetails }) {
         
             <div className={SingleProductPageStyle.singleProductDetailsBox}>
 
-                <h2> { ProductDetails.title} </h2>
-                <p> Rs.{ProductDetails.price} </p>
+                <h2> {productDetails.title} </h2>
+                <p> Rs.{productDetails.price} </p>
 
             </div>
 
@@ -201,14 +201,14 @@ function Singlepageproductdetails({ SingleProductPageStyle, ProductDetails }) {
                         <tr>
 
                             <td> Vendor: </td>
-                            <td> C-EMERCE </td>
+                            <td> {productDetails.details.vendor}  </td>
 
                         </tr>
 
                         <tr>
 
                             <td> Types: </td>
-                            <td> {ProductDetails.details.types} </td>
+                            <td> {productDetails.details.types} </td>
 
                         </tr>
 
@@ -284,7 +284,7 @@ function Singlepageproductdetails({ SingleProductPageStyle, ProductDetails }) {
 
                 <div className={SingleProductPageStyle.singleProductPageProductThirdBox}>
 
-                    <span> <GoLock /> <p>Secure payment </p></span>
+                    <span> <GoLock /> <p> Secure payment </p></span>
 
                     <div className={SingleProductPageStyle.productFreeDeliveryBox}>
 

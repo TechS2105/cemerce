@@ -7,6 +7,7 @@ import { GoHeart } from "react-icons/go";
 import { addToWishlist } from "../features/Shop/WishListSlice";
 import { FaRegEye } from "react-icons/fa";
 import QuickViewBox from '../components/Quickviewbox';
+import { NavLink } from 'react-router-dom';
 
 function Womenproduct() {
     
@@ -160,8 +161,13 @@ function Womenproduct() {
                         <div className={WomenProductStyle.womenProductImage}>
 
                             <GoHeart onClick={ () => {dispatch(addToWishlist(womenItems));}} />
-                            <FaRegEye onClick={ () => handleQuickViewBox(idx) } />
-                            <img src={womenItems.image} alt={womenItems.title} />
+                            <FaRegEye onClick={() => handleQuickViewBox(idx)} />
+                            
+                            <NavLink to={`/${womenItems.category}/${womenItems.title}`}>
+
+                                <img src={womenItems.image} alt={womenItems.title} />
+
+                            </NavLink>
 
                         </div>
 

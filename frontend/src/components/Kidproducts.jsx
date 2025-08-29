@@ -7,6 +7,7 @@ import { FaRegEye } from "react-icons/fa";
 import { addToCart } from '../features/Shop/CartSlice';
 import { addToWishlist } from '../features/Shop/WishListSlice';
 import QuickViewBox from '../components/Quickviewbox';
+import { NavLink } from 'react-router-dom';
 
 function Kidcollections() {
 
@@ -161,8 +162,13 @@ function Kidcollections() {
                         <div className={KidProduct.kidProductImage}>
 
                             <GoHeart onClick={() => {dispatch(addToWishlist(kidItems))}} />
-                            <FaRegEye onClick={() => {handleQuickViewBox(idx)}}/>
-                            <img src={kidItems.image} alt={kidItems.title} />
+                            <FaRegEye onClick={() => { handleQuickViewBox(idx) }} />
+                            
+                            <NavLink to={`/${kidItems.category}/${kidItems.title}`}>
+
+                                <img src={kidItems.image} alt={kidItems.title} />
+
+                            </NavLink>
 
                         </div>
 

@@ -170,6 +170,7 @@ function Product() {
                                 title={menProduct.title}
                                 onButtonClick={() => { dispatch(addToWishlist(menProduct)) }}
                                 handleQuickViewBox={() => handleQuickViewBox(idx)}
+                                productCategory={menProduct.category}
                                 
                             />
 

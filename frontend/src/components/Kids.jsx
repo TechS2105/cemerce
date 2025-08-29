@@ -1,7 +1,6 @@
 import React from 'react';
 import KidCollectionStyle from '../../public/styles/Kidcollections.module.css';
 import KidsBannerImage from '../components/Productbannervideo';
-import KidsHeading from '../components/Productheading';
 import KidsProduct from '../components/Kidproducts';
 import KidsPageHeading from '../components/Reuseablepageheading';
 

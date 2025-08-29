@@ -18,7 +18,15 @@
 
 }
 
-.productImage > img{
+.productImage > a{
+
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+
+}
+
+.productImage a > img{
 
     width: 100%;
     height: 100%;
@@ -32,7 +40,7 @@
 
 }
 
-.productBox:hover .productImage > img{
+.productBox:hover .productImage a > img{
 
     transform: scale(1.2);
 
