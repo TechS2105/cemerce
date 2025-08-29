@@ -12,7 +12,7 @@ import HomeKids from '../components/Homekids';
 import TestimonialCarousel from '../components/Testimonialcarousel';
 import HomeBannerCarousel from '../components/Homebannercarousel';
 import ReuseHomeProductButton from '../components/Reuseablehomeproductbutton';
-import Loader from '../components/Loader';
+// import Loader from '../components/Loader';
 import HomeProductVideo from '../components/Homeproductvideo';
 
 function Home() {

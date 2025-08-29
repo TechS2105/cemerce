@@ -7,6 +7,7 @@ import { addToWishlist } from '../features/Shop/WishListSlice';
 import { GoHeart } from "react-icons/go";
 import { FaRegEye } from "react-icons/fa";
 import QuickViewBox from '../components/Quickviewbox';
+import { NavLink } from 'react-router-dom';
 
 function Shopproducts() {
 
@@ -166,8 +167,13 @@ function Shopproducts() {
                             <div className={ShopProductsStyle.shopProductImage}>
 
                                 <GoHeart onClick={ () => {dispatch(addToWishlist(shopItem))}} />
-                                <FaRegEye onClick={ () => {handleShopProductQuickViewBox(idx)}} />
-                                <img src={shopItem.image} alt={shopItem.title} />
+                                <FaRegEye onClick={() => { handleShopProductQuickViewBox(idx) }} />
+                                
+                                <NavLink to={`/${shopItem.category}/${shopItem.title}`}>
+
+                                    <img src={shopItem.image} alt={shopItem.title} />
+
+                                </NavLink>
 
                             </div>
                             <div className={ShopProductsStyle.shopProductContent}>
@@ -191,7 +197,7 @@ function Shopproducts() {
 
                         
                         
-                            <div key={idx}>
+                            <div key={idx} style={{display: "fixed", zIndex: "2"}}>
 
                                 {/** active idx and idx when match */}
                                 {activeIdx === idx && (

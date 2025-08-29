@@ -99,7 +99,14 @@
 
 }
 
-.wishlistProductDetails > h4{
+.wishlistProductDetails > a{
+
+    text-decoration: none;
+    color: #292929;
+
+}
+
+.wishlistProductDetails a > h4{
 
     font-family: 'wishlistProductFont';
     letter-spacing: 2px;

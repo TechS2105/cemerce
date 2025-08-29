@@ -7,6 +7,7 @@
 
     width: 100%;
     height: 90vh;
+    overflow: hidden;
 
 }
 
@@ -16,6 +17,24 @@
     height: 100%;
     object-fit: cover;
     object-position: top;
+    filter: brightness(100%);
+    animation: imageAnime 20s linear;
+
+}
+
+@keyframes imageAnime {
+    
+    50%{
+
+        transform: scale(1.2);
+        filter: brightness(130%);
+
+    }0%, 100%{
+
+        transform: scale(1);
+        filter: brightness(100%);
+
+    }
 
 }
 

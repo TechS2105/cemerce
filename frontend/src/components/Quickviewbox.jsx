@@ -2,8 +2,12 @@ import React from 'react';
 import QuickViewBoxStyle from '../../public/styles/Quickviewbox.module.css';
 import { BsBoxSeam } from "react-icons/bs";
 import { NavLink } from 'react-router-dom';
+import { addToCart } from '../features/Shop/CartSlice';
+import { useDispatch } from 'react-redux';
 
 function Quickviewbox({product, quickBoxSectionStyle, onClick, quickViewBoxAnime, closeIconAnime}) {
+
+    const dispatch = useDispatch();
 
     return (
 
@@ -33,7 +37,7 @@ function Quickviewbox({product, quickBoxSectionStyle, onClick, quickViewBoxAnime
                             <h2> {product.title} </h2>
                             <p> Rs. {product.price} </p>
                             <p>{product.details.description}</p>
-                            <button> ADD TO CART </button>
+                            <button onClick={() => {dispatch(addToCart(product))}}> ADD TO CART </button>
 
                         </div>
 

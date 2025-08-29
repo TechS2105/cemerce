@@ -11,10 +11,15 @@ import { FaFacebookF } from "react-icons/fa";
 import { RiTwitterXLine } from "react-icons/ri";
 import { FaPinterestP } from "react-icons/fa";
 import { RiSubtractFill } from "react-icons/ri";
+import { addToCart } from '../features/Shop/CartSlice';
+import { addToWishlist } from '../features/Shop/WishListSlice';
+import { useDispatch } from 'react-redux';
 
 function Singlepageproductdetails({ SingleProductPageStyle, productDetails}) {
     
     const [counterValue, setCounterValue] = useState(1);
+
+    const dispatch = useDispatch();
 
     function handleCounterDecrease() {
         
@@ -178,14 +183,14 @@ function Singlepageproductdetails({ SingleProductPageStyle, productDetails}) {
 
                         </div>
                     
-                        <button> Add To Cart </button>
+                        <button onClick={() => {dispatch(addToCart(productDetails))}}> Add To Cart </button>
                         <button> Buy It Now </button>
                     
                 </div>
 
                 <div className={SingleProductPageStyle.singleProductPageSecondButtonsSection}>
 
-                    <span> <GoHeart /> Add To Wishlist </span>
+                    <span onClick={() => {dispatch(addToWishlist(productDetails))}}> <GoHeart /> Add To Wishlist </span>
                     <span> <LuArrowRightLeft /> Compare </span>
 
                 </div>

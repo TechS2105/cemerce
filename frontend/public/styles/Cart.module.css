@@ -107,7 +107,14 @@
 
 }
 
-.cartProductDetails > p{
+.cartProductDetails > a{
+
+    text-decoration: none;
+    color: #292929;
+
+}
+
+.cartProductDetails a > p{
 
     padding-left: 20px;
     font-family: 'cartHeadingFont';

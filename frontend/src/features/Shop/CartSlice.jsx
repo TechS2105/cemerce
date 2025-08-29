@@ -42,7 +42,18 @@ const CartSlice = createSlice({
 
         }).addCase(addToCart.fulfilled, (state, action) => {
 
-            state.items.push(action.payload);
+            const existingCode = state.items.find((item) => item.id === action.payload.id);
+
+            if (existingCode) {
+                
+                existingCode.quentity += 1;
+
+            } else {
+                
+                state.items.push({ ...action.payload, quentity: 1});
+
+            }
+
 
         }).addCase(removeCartProduct.fulfilled, (state, action) => {
 

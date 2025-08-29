@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 function Cartproducttable({CartStyle, cartProduct, removeProduct}) {
 
@@ -45,7 +46,11 @@ function Cartproducttable({CartStyle, cartProduct, removeProduct}) {
 
                                             <div className={CartStyle.cartProductDetails}>
 
-                                                <p> {product.title} </p>
+                                                <NavLink to={`/${product.category}/${product.title}`}>
+
+                                                    <p> {product.title} </p>
+
+                                                </NavLink>
                                                 <span onClick={() => dispatch(removeProduct(product.id))}> Remove</span>
 
                                             </div>

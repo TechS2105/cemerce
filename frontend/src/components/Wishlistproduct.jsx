@@ -31,6 +31,7 @@ function Wishlistproduct({WishlistStyle, WishlistItems, DeleteWishlistProduct}) 
                                                 
                                     image={item.image}
                                     title={item.title}
+                                    category={item.category}
                                                 
                                 />
 

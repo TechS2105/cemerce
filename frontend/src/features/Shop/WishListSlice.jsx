@@ -42,7 +42,18 @@ const WishListSlice = createSlice({
 
         }).addCase(addToWishlist.fulfilled, (state, action) => {
 
-            state.items.push(action.payload)
+            const existingItems = state.items.find((item) => item.id === action.payload.id);
+
+            if(existingItems){
+
+                existingItems.quentity += 1;
+
+            } else {
+                
+                state.items.push({ ...action.payload, quentity: 1 });
+
+            }
+
 
         }).addCase(removeWishlistProduct.fulfilled, (state, action) => {
 

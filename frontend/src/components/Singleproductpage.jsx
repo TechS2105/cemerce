@@ -14,6 +14,29 @@ function Productfulldetails() {
     const { title } = useParams();
     const [getProduct, setGetProduct] = useState([]);
 
+    const [sectionLoadAnimation, setSectionLoadAnimation] = useState({
+
+        opacity: "1",
+        transform: "translateY(0px)",
+        backgroundColor: "snow",
+        backdropFilter: "blur(50px)"
+
+    });
+
+    function handleLoadAnimation(){
+
+        setSectionLoadAnimation({
+
+            opacity: "0",
+            backgroundColor: "none",
+            transform: "translateY(-1000px)",
+            backdropFilter: "blur(0px)",
+            transition: "all 2s ease 0.9s"
+
+        });
+
+    }
+
     useEffect(() => {
 
         const fetchProductData = async () => {
@@ -45,6 +68,8 @@ function Productfulldetails() {
 
         }
 
+        window.addEventListener("load", handleLoadAnimation);
+
     }, [title]);
 
     return (
@@ -53,8 +78,10 @@ function Productfulldetails() {
 
             <main>
                 
-                <div className={SingleProductPageStyle.singleProducPage}>
+                <div className={SingleProductPageStyle.singleProducPage} onLoad={handleLoadAnimation}>
 
+                    <div className={SingleProductPageStyle.loaderDiv} style={sectionLoadAnimation}></div>
+                    
                     <ReuseableSingleProductPageNavigation
                 
                         navLink="HOME"
@@ -102,7 +129,6 @@ function Productfulldetails() {
                 </div>
                 
             </main>
-           
             
         </>
 
