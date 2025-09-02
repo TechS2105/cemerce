@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'productDetailsNavFont';
+    src: url('../fonts/magenda/MagendaRegular-MVwjx.ttf');
+}
+
+.productDetailsNavBar{
+
+    padding-left: 60px;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: orange;
+
+}
+
+.productDetailsNavBar > a{
+
+    color: #ffffff;
+
+} 
+
+.productDetailsNavBar a > span:nth-child(1){
+
+    font-family: 'productDetailsNavFont';
+    letter-spacing: 1.8px;
+    color: #ffffff;
+    display: inline-flex;
+    font-weight: bold;
+    font-size: 15px;
+
+}
+
+.productDetailsNavBar > span:nth-child(3){
+
+    font-family: 'productDetailsNavFont';
+    color: #ffffff;
+    font-weight: bold;
+    letter-spacing: 1.8px;
+    font-size: 15px;
+
+}
+
+.productDetailsNavBar > svg{
+
+    font-size: 20px;
+    color: #ffffff;
+
+}
+
+.productDetailsNavBar > .scrollableText{
+
+    width: 300px;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 3px -3px 10px #afafaf4b inset;
+
+}
+
+.scrollableText > .productTitle{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: textScrollerAnime 10s linear infinite;
+
+}
+
+.productTitle > span{
+
+    font-family: 'productDetailsNavFont';
+    letter-spacing: 1.8px;
+    color: #292929;
+    display: inline-block;
+    padding-left: 20px;
+    font-size: 15px;
+    font-weight: 500;
+
+}
+
+@keyframes textScrollerAnime {
+    
+    from{
+
+        transform: translateX(-100%);
+
+    }to{
+
+        transform: translateX(0%);
+
+    }
+
+}

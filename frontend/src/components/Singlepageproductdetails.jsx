@@ -15,7 +15,7 @@ import { addToCart } from '../features/Shop/CartSlice';
 import { addToWishlist } from '../features/Shop/WishListSlice';
 import { useDispatch } from 'react-redux';
 
-function Singlepageproductdetails({ SingleProductPageStyle, productDetails}) {
+function Singlepageproductdetails({ SingleProductPageStyle, productDetails, productDetailsHeadingAnime, productDetailsPriceAnime, productDetailsCounter, productDetailsFirstButton, productDetailsSecondButton, productDetailsWishlistButton, productDetailsCompareButton, productDetailsTableFirstRow, productDetailsTableSecondRow, productDetailsTableThirdBox }) {
     
     const [counterValue, setCounterValue] = useState(1);
 
@@ -156,8 +156,8 @@ function Singlepageproductdetails({ SingleProductPageStyle, productDetails}) {
         
             <div className={SingleProductPageStyle.singleProductDetailsBox}>
 
-                <h2> {productDetails.title} </h2>
-                <p> Rs.{productDetails.price} </p>
+                <h2 style={productDetailsHeadingAnime}> {productDetails.title} </h2>
+                <p style={productDetailsPriceAnime}> Rs.{productDetails.price} </p>
 
             </div>
 
@@ -165,7 +165,7 @@ function Singlepageproductdetails({ SingleProductPageStyle, productDetails}) {
 
                 <div className={SingleProductPageStyle.singleProductPageButtonsSection}>
 
-                        <div className={SingleProductPageStyle.singleProductPageCounterBox}>
+                        <div className={SingleProductPageStyle.singleProductPageCounterBox} style={productDetailsCounter}>
                                             
                             <div className={SingleProductPageStyle.decrease} onClick={handleCounterDecrease}>
 
@@ -183,15 +183,15 @@ function Singlepageproductdetails({ SingleProductPageStyle, productDetails}) {
 
                         </div>
                     
-                        <button onClick={() => {dispatch(addToCart(productDetails))}}> Add To Cart </button>
-                        <button> Buy It Now </button>
+                        <button onClick={() => {dispatch(addToCart(productDetails))}} style={productDetailsFirstButton}> Add To Cart </button>
+                        <button style={productDetailsSecondButton}> Buy It Now </button>
                     
                 </div>
 
                 <div className={SingleProductPageStyle.singleProductPageSecondButtonsSection}>
 
-                    <span onClick={() => {dispatch(addToWishlist(productDetails))}}> <GoHeart /> Add To Wishlist </span>
-                    <span> <LuArrowRightLeft /> Compare </span>
+                    <span onClick={() => {dispatch(addToWishlist(productDetails))}} style={productDetailsWishlistButton}> <GoHeart /> Add To Wishlist </span>
+                    <span style={productDetailsCompareButton}> <LuArrowRightLeft /> Compare </span>
 
                 </div>
 
@@ -203,21 +203,21 @@ function Singlepageproductdetails({ SingleProductPageStyle, productDetails}) {
 
                     <tbody>
 
-                        <tr>
+                        <tr style={productDetailsTableFirstRow}>
 
                             <td> Vendor: </td>
                             <td> {productDetails.details.vendor}  </td>
 
                         </tr>
 
-                        <tr>
+                        <tr style={productDetailsTableSecondRow}>
 
                             <td> Types: </td>
                             <td> {productDetails.details.types} </td>
 
                         </tr>
 
-                        <tr>
+                        <tr style={productDetailsTableThirdBox}>
 
                             <td> Available: </td>
                             <td> Available</td>

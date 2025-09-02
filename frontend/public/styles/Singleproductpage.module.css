@@ -26,6 +26,7 @@
     height: 100%;
     display: flex;
     margin: 50px 0px;
+    overflow: hidden;
 
 }
 
@@ -69,6 +70,8 @@
     justify-content: center;
     gap: 20px;
     position: relative;
+    overflow: hidden;
+    padding-bottom: 5px;
 
 }
 
@@ -366,6 +369,7 @@
     align-items: center;
     justify-content: flex-start;
     gap: 50px;
+    overflow: hidden;
 
 }
 
@@ -431,12 +435,14 @@
     margin-top: 10px;
     display: flex;
     align-items: center;
+    overflow: hidden;
 
 }
 
  .singleProductPageProductDetailsBox > table {
 
     width: 40%;
+    overflow: hidden;
 
 }
 

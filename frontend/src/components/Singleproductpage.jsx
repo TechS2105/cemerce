@@ -8,18 +8,118 @@ import SingleProductPageDiscoverSection from '../components/Singleproductpagedis
 import SingleProductDelivarySection from '../components/Singleproductdelivarysection';
 import SingleProductPageFaqSecton from '../components/Singleproductpagefaqsection';
 import { useParams } from 'react-router-dom';
+import ProductDetailSubNavMenu from '../components/Productdetailsubnavbar';
 
 function Productfulldetails() {
 
     const { title } = useParams();
     const [getProduct, setGetProduct] = useState([]);
 
+    // Single Product Page Loader
     const [sectionLoadAnimation, setSectionLoadAnimation] = useState({
 
         opacity: "1",
         transform: "translateY(0px)",
         backgroundColor: "snow",
         backdropFilter: "blur(50px)"
+
+    });
+
+    // Product Sub Nav Section
+    const [productDetailSubNavBarStyle, setProductDetailSubNavBarStyle] = useState({
+
+        transform: "translateY(-300px)",
+        opacity: "0",
+        filter: "blur(50px)"
+
+    });
+
+    // Single Product Page Image Section
+    const [productImageAnime, setProductImageAnime] = useState({
+
+        transform: "translateY(1000px)",
+        filter: "brightness(250%)",
+
+    })
+
+    //Single Product Page Heading 
+    const [productDetailsHeadingAnimation, setProductDetailsHeadingAnime] = useState({
+
+        transform: "translateX(-1000px)",
+        opacity: "0",
+        filter: "blur(20px)",
+
+    });
+
+    // Single product Page Price
+    const [productDetailsPriceAnime, setProductDetailsPriceAnime] = useState({
+
+        transform: "translateX(-500px)",
+        opacity: "0",
+        filter: "blur(20px)",
+
+    });
+
+    //Single Product Counter
+    const [productDetailsCounter, setProductDetailsCounter] = useState({
+
+        transform: "scale(0)",
+        opacity: "0"
+
+    });
+
+    // Single Product Add To Cart Button
+    const [productDetailsFirstButton, setProductDetailsFirstButton] = useState({
+
+        transform: "scale(0)",
+        opacity: "0"
+
+    });
+
+    // Single Product Buy Now Button
+    const [productDetailsSecondButton, setProductDetailsSecondButton] = useState({
+
+        transform: "scale(0)",
+        opacity: "0"
+
+    });
+
+    // Single Product Wishlist Button
+    const [productDetailsWishlistButton, setProductDetailsWishlistButton] = useState({
+
+        transform: "translateY(100px)"
+
+    });
+
+    // Single Product Compare Button
+    const [productDetailsCompareButton, setProductDetailsCompareButton] = useState({
+
+        transform: "translateY(100px)",
+        opacity: "0"
+
+    });
+
+    // Single Product Table First Row
+    const [productDetailsTableFirstRow, setProductDetailsTableFirstRow] = useState({
+        
+        transform: "translateX(-500px)",
+        opacity: "0"
+
+    });
+
+    // Single Product Table Second Row
+    const [productDetailsTableSecondRow, setProductDetailsTableSecondRow] = useState({
+
+        transform: "translateX(-500px)",
+        opacity: "0"
+
+    });
+
+    // Single Product Table Third Box
+    const [productDetailsTableThirdBox, setProductDetailsTableThirdBox] = useState({
+
+        transform: "translateX(-500px)",
+        opacity: "0"
 
     });
 
@@ -31,9 +131,107 @@ function Productfulldetails() {
             backgroundColor: "none",
             transform: "translateY(-1000px)",
             backdropFilter: "blur(0px)",
-            transition: "all 2s ease 0.9s"
+            transition: "all 2s ease 0.8s"
 
         });
+
+        setProductDetailSubNavBarStyle({
+
+            transform: "translateY(0px)",
+            opacity: "1",
+            filter: "blur(0px)",
+            transition: "all 1s ease 1s"
+
+        });
+
+        setProductImageAnime({
+
+            transform: "translateY(0px)",
+            transition: "all 1.5s ease 1.5s",
+            filter: "brightness(100%)"
+
+        });
+
+        setProductDetailsHeadingAnime({
+
+            transform: "translateX(0px)",
+            transition: "all 1s ease 1.7s",
+            opacity: "1",
+            filter: "blur(0px)"
+
+        });
+
+        setProductDetailsPriceAnime({
+
+            transform: "translateX(0px)",
+            transition: "all 1s ease 2s",
+            opacity: "1",
+            filter: "blur(0px)"
+
+        });
+
+        setProductDetailsCounter({
+
+            transform: "scale(1)",
+            transition: "all 0.8s ease 2.3s",
+            opacity: "1",
+
+        });
+
+        setProductDetailsFirstButton({
+
+            transform: "scale(1)",
+            transition: "transform 0.8s ease 2.6s",
+            opacity: "1"
+
+        });
+
+        setProductDetailsSecondButton({
+
+            transform: "scale(1)",
+            transition: "transform 0.8s ease 2.9s",
+            opacity: "1"
+
+        }); 
+
+        setProductDetailsWishlistButton({
+
+            transform: "translateY(0px)",
+            transition: "all 0.8s ease 3s"
+
+        });
+
+        setProductDetailsCompareButton({
+
+            transform: "translateY(0px)",
+            opacity: "1",
+            transition: "all 0.8s ease 3.3s"
+
+        });
+
+        setProductDetailsTableFirstRow({
+
+            transform: "translateX(0px)",
+            opacity: "1",
+            transition: "all 1s ease 3.6s"
+
+        });
+
+        setProductDetailsTableSecondRow({
+
+            transform: "translateX(0px)",
+            transition: "all 1s ease 3.8s",
+            opacity: "1"
+
+        });
+
+        setProductDetailsTableThirdBox({
+
+            transform: "translateX(0px)",
+            opacity: "1",
+            transition: "all 1s ease 4s"
+
+        })
 
     }
 
@@ -68,9 +266,13 @@ function Productfulldetails() {
 
         }
 
-        window.addEventListener("load", handleLoadAnimation);
+        if (getProduct && getProduct.title) {
+            
+            handleLoadAnimation();
 
-    }, [title]);
+        }
+
+    }, [getProduct, title]);
 
     return (
         
@@ -78,21 +280,35 @@ function Productfulldetails() {
 
             <main>
                 
-                <div className={SingleProductPageStyle.singleProducPage} onLoad={handleLoadAnimation}>
+                <div className={SingleProductPageStyle.singleProducPage}>
 
                     <div className={SingleProductPageStyle.loaderDiv} style={sectionLoadAnimation}></div>
+
+                    <ProductDetailSubNavMenu 
                     
-                    <ReuseableSingleProductPageNavigation
-                
-                        navLink="HOME"
-                        title={getProduct.title}
-                    
+                        navLink="Home"
+                        productCategory={getProduct.category}
+                        productTitle={getProduct.title}
+                        productDetailSubNavBarStyle={productDetailSubNavBarStyle}
+                        
                     />
 
                     <SingleProductPageProductSection
                     
                         SingleProductPageStyle={SingleProductPageStyle}
                         product={getProduct}
+                        productImageAnime={productImageAnime}
+                        onLoad={handleLoadAnimation}
+                        productDetailsHeadingAnime={productDetailsHeadingAnimation}
+                        productDetailsPriceAnime={productDetailsPriceAnime}
+                        productDetailsCounter={productDetailsCounter}
+                        productDetailsFirstButton={productDetailsFirstButton}
+                        productDetailsSecondButton={productDetailsSecondButton}
+                        productDetailsWishlistButton={productDetailsWishlistButton}
+                        productDetailsCompareButton={productDetailsCompareButton}
+                        productDetailsTableFirstRow={productDetailsTableFirstRow}
+                        productDetailsTableSecondRow={productDetailsTableSecondRow}
+                        productDetailsTableThirdBox={productDetailsTableThirdBox}
                         
                     />
 
