@@ -2,7 +2,7 @@ import React from 'react';
 import SingleProductPageImage from '../components/Singlepageproductimage';
 import SinglePageProductDetails from '../components/Singlepageproductdetails';
 
-function SingleProductPageProductSection({ SingleProductPageStyle, product, productImageAnime, productDetailsHeadingAnime, productDetailsPriceAnime, productDetailsCounter, productDetailsFirstButton, productDetailsSecondButton, productDetailsWishlistButton, productDetailsCompareButton, productDetailsTableFirstRow, productDetailsTableSecondRow, productDetailsTableThirdBox }) {
+function SingleProductPageProductSection({ SingleProductPageStyle, product, productImageAnime, productDetailsHeadingAnime, productDetailsPriceAnime, productDetailsCounter, productDetailsFirstButton, productDetailsSecondButton, productDetailsWishlistButton, productDetailsCompareButton, productDetailsTableFirstRow, productDetailsTableSecondRow, productDetailsTableThirdBox, productDetailsShippingInfoBox, productDetailsShippingCareGuide, productDetailsSecurePayments, productDetailsFreeDelivery, productDetailsSocialIconRef }) {
     
     return (
 
@@ -39,6 +39,11 @@ function SingleProductPageProductSection({ SingleProductPageStyle, product, prod
                             productDetailsTableFirstRow={productDetailsTableFirstRow}
                             productDetailsTableSecondRow={productDetailsTableSecondRow}
                             productDetailsTableThirdBox={productDetailsTableThirdBox}
+                            productDetailsShippingInfoBox={productDetailsShippingInfoBox}
+                            productDetailsShippingCareGuide={productDetailsShippingCareGuide}
+                            productDetailsSecurePayments={productDetailsSecurePayments}
+                            productDetailsFreeDelivery={productDetailsFreeDelivery}
+                            productDetailsSocialIconRef={productDetailsSocialIconRef}
                                 
                         />
 

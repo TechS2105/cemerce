@@ -1,5 +1,4 @@
-import React, {useState, useEffect} from 'react';
-import ReuseableSingleProductPageNavigation from './Reuseablesecondproductnav';
+import React, {useState, useEffect, useRef} from 'react';
 import SingleProductPageProductSection from '../components/Singleproductpageproductsection';
 import SingleProductPageStyle from '../../public/styles/Singleproductpage.module.css'
 import SingleProductPageLikeProduct from '../components/Singleproductpagelikeproduct';
@@ -14,6 +13,9 @@ function Productfulldetails() {
 
     const { title } = useParams();
     const [getProduct, setGetProduct] = useState([]);
+    
+    const productDetailsSocialIconRef = useRef();
+
 
     // Single Product Page Loader
     const [sectionLoadAnimation, setSectionLoadAnimation] = useState({
@@ -119,6 +121,39 @@ function Productfulldetails() {
     const [productDetailsTableThirdBox, setProductDetailsTableThirdBox] = useState({
 
         transform: "translateX(-500px)",
+        opacity: "0"
+
+    });
+
+    // Single Product Page Shipping info Box
+    const [productDetailsShippingInfoBox, setProductDetailsShippingInfoBox] = useState({
+
+
+        transform: "translateX(-1000px)",
+        opacity: "0",
+
+    });
+
+    // Single Product Page Care Guide Box
+    const [productDetailsShippingCareGuide, setProductDetailsShippingCareGuide] = useState({
+
+        transform: "translateX(1000px)",
+        opacity: "0"
+
+    });
+
+    // Single Product Page Secure Payment Box
+    const [productDetailsSecurePayments, setProductDetailsSecurePayments] = useState({
+
+        transform: 'translateX(-1000px)',
+        opacity: "0"
+
+    });
+
+    // Single Product Page Free Delivary Part
+    const [productDetailsFreeDelivery, setProductDetailsFreeDelivery] = useState({
+
+        transform: "translateY(100px)",
         opacity: "0"
 
     });
@@ -231,7 +266,47 @@ function Productfulldetails() {
             opacity: "1",
             transition: "all 1s ease 4s"
 
-        })
+        });
+
+        setProductDetailsShippingInfoBox({
+
+            transform: "translateX(0px)",
+            transition: 'all 1s ease 4.2s',
+            opacity: "1",
+            
+        });
+
+        setProductDetailsShippingCareGuide({
+
+            transform: "translateX(0px)",
+            transition: "all 1s ease 4.4s",
+            opacity: "1"
+
+        });
+
+        setProductDetailsSecurePayments({
+
+            transform: "translateX(0px)",
+            transition: "all 1s ease 4.6s",
+            opacity: "1"
+
+        });
+
+        setProductDetailsFreeDelivery({
+
+            transform: "translateY(0px)",
+            opacity: "1",
+            transition: "all 1s ease 4.8s"
+
+        });
+
+        const icons = productDetailsSocialIconRef.current.querySelectorAll('span');
+
+        icons.forEach((box) => {
+
+            box.style.opacity = "0"
+
+        });
 
     }
 
@@ -309,6 +384,11 @@ function Productfulldetails() {
                         productDetailsTableFirstRow={productDetailsTableFirstRow}
                         productDetailsTableSecondRow={productDetailsTableSecondRow}
                         productDetailsTableThirdBox={productDetailsTableThirdBox}
+                        productDetailsShippingInfoBox={productDetailsShippingInfoBox}
+                        productDetailsShippingCareGuide={productDetailsShippingCareGuide}
+                        productDetailsSecurePayments={productDetailsSecurePayments}
+                        productDetailsFreeDelivery={productDetailsFreeDelivery}
+                        productDetailsSocialIconRef={productDetailsSocialIconRef}
                         
                     />
 

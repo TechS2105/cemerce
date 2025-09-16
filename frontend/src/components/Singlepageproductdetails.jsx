@@ -15,8 +15,8 @@ import { addToCart } from '../features/Shop/CartSlice';
 import { addToWishlist } from '../features/Shop/WishListSlice';
 import { useDispatch } from 'react-redux';
 
-function Singlepageproductdetails({ SingleProductPageStyle, productDetails, productDetailsHeadingAnime, productDetailsPriceAnime, productDetailsCounter, productDetailsFirstButton, productDetailsSecondButton, productDetailsWishlistButton, productDetailsCompareButton, productDetailsTableFirstRow, productDetailsTableSecondRow, productDetailsTableThirdBox }) {
-    
+function Singlepageproductdetails({ SingleProductPageStyle, productDetails, productDetailsHeadingAnime, productDetailsPriceAnime, productDetailsCounter, productDetailsFirstButton, productDetailsSecondButton, productDetailsWishlistButton, productDetailsCompareButton, productDetailsTableFirstRow, productDetailsTableSecondRow, productDetailsTableThirdBox, productDetailsShippingInfoBox, productDetailsShippingCareGuide, productDetailsSecurePayments, productDetailsFreeDelivery, productDetailsSocialIconRef }) {
+
     const [counterValue, setCounterValue] = useState(1);
 
     const dispatch = useDispatch();
@@ -179,7 +179,7 @@ function Singlepageproductdetails({ SingleProductPageStyle, productDetails, prod
 
                                 <GoPlus/>
 
-                             </div>
+                            </div>
 
                         </div>
                     
@@ -232,7 +232,7 @@ function Singlepageproductdetails({ SingleProductPageStyle, productDetails, prod
 
             <div className={SingleProductPageStyle.singleProductPageProductOtherDetailsBox}>
 
-                <div className={SingleProductPageStyle.singleProductPageProductFirstDropdownBox}>
+                <div className={SingleProductPageStyle.singleProductPageProductFirstDropdownBox} style={productDetailsShippingInfoBox}>
 
                     <div className={SingleProductPageStyle.singleProductPageProductFirstDropdownBoxContent} onClick={handleShippingInformationDropDown}>
 
@@ -258,7 +258,7 @@ function Singlepageproductdetails({ SingleProductPageStyle, productDetails, prod
 
                 </div>
 
-                <div className={SingleProductPageStyle.singleProductPageProductSecondDropDownBox}>
+                <div className={SingleProductPageStyle.singleProductPageProductSecondDropDownBox} style={productDetailsShippingCareGuide}>
 
                     <div className={SingleProductPageStyle.singleProductPageProductSecondDropdownBoxContent} style={careGuideAnime} onClick={handleCareGuideDropdownBox}>
 
@@ -289,15 +289,15 @@ function Singlepageproductdetails({ SingleProductPageStyle, productDetails, prod
 
                 <div className={SingleProductPageStyle.singleProductPageProductThirdBox}>
 
-                    <span> <GoLock /> <p> Secure payment </p></span>
+                    <span style={productDetailsSecurePayments}> <GoLock /> <p> Secure payment </p></span>
 
                     <div className={SingleProductPageStyle.productFreeDeliveryBox}>
 
-                        <span> <BsBoxSeam /> <p>Your order is free delivery !</p> </span>
+                        <span style={productDetailsFreeDelivery}> <BsBoxSeam /> <p>Your order is free delivery !</p> </span>
 
                     </div>
 
-                    <div className={SingleProductPageStyle.socialIconSection}>
+                    <div className={SingleProductPageStyle.socialIconSection} ref={productDetailsSocialIconRef}>
 
                         <span> <FaFacebookF /> Share </span>
                         <span> <RiTwitterXLine /> Tweet </span>
